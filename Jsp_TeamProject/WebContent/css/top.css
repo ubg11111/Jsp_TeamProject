@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+
+.list_menu{
+	display:flex;
+	flex:1;
+}
+
+.link_menu{
+	display: block;
+	text-decoration: none;
+}
