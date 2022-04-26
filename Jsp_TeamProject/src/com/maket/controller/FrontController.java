@@ -68,7 +68,7 @@ public class FrontController extends HttpServlet{
 		
 		prop.load(fis); // Properties prop.load 메서드를 통해서 fis의 프로퍼티를 불러와주는 작업
 		
-		
+	
 		// 해당 주소값이 잘 불러져오는지 확인하기 위한 멤버
 		String value = prop.getProperty(command);
 		System.out.println("value >>> " + value);
