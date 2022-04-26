@@ -8,7 +8,8 @@
 </head>
 <body>
 	<div>
-		메인 홈페이지
+		<h2>메인입니다.</h2>
 	</div>
+
 </body>
 </html>
