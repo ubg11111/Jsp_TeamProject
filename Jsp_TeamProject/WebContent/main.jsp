@@ -8,7 +8,12 @@
 </head>
 <body>
 	<div>
+<<<<<<< HEAD
 		<h2>메인입니다.</h2>
+=======
+		<h2>메인입니다.수정입니다.</h2>
+		<h2>2번째 수정</h2>
+>>>>>>> refs/heads/develop
 	</div>
 
 </body>
