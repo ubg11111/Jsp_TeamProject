@@ -1,5 +1,4 @@
 create table prduct_market(
-
    pnum number(10) primary key,				-- 상품 번호
    pname varchar2(50) not null,				-- 상품명
    pcategory varchar2(10) not null,			-- 카테고리 코드
@@ -13,7 +12,4 @@ create table prduct_market(
    pdiscount varchar2(5) default 0,			-- 할인율
    pdelivery varchar2(10),					-- 배송형태
    package varchar2(10)   					-- 포장타입
-
 );
-
-
