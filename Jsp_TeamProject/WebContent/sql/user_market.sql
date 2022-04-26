@@ -10,3 +10,5 @@ create table user_market(
     user_date date,                         -- 회원 가입일
     user_update date                        -- 회원 수정일
 );
+
+insert into user_market values('id1', '1111', '홍길동', '남', 'gildong@naver.com', 11111, '서초구 청계산로', '010-1111-1111', sysdate, '');
