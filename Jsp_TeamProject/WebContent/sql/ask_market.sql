@@ -12,4 +12,3 @@ CREATE TABLE ASK_MARKET (
 	ask_step number(5),						-- 게시판 글 답변 단계
 	ask_indent number(5)					-- 게시판 답변글 들여쓰기
 );
-
