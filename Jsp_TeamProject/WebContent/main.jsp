@@ -1,19 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>마켓컬리</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/top.css">
+<link rel="stylesheet" type="text/css" href="css/bottom.css">
 </head>
 <body>
 
+	<jsp:include page="/include/main_top.jsp"></jsp:include>
+	<hr width="100%">
+	<br><br>
 
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<div align="center">
+		<h3>안녕하세요</h3>
+	</div>
+	
+	
+	<hr width="100%">
+	<br><br>
+	<jsp:include page="/include/main_bottom.jsp"></jsp:include>
+		
 </body>
 </html>
