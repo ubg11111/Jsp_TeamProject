@@ -256,8 +256,6 @@
 			$("#btn_address").focus();
 			return false;
 		}
-		
-		
 	}
 	
 	
@@ -489,6 +487,5 @@
 
 <script src="<%=request.getContextPath()%>/js/join.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
