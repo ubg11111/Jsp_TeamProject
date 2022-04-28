@@ -82,7 +82,7 @@
 			        
 			        <span class="main_icon">
 				        <a href="#"><i class="fa-solid fa-heart fa-2x"></i></a>
-				        <a href="#"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+				        <a href="<%=request.getContextPath()%>/user_cart_list.do"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
 			        </span>
 			      
 			      </form>

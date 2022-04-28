@@ -112,7 +112,7 @@
 			const userId = input_userId.val();
 			$.ajax({
 				type: "post",
-				url: "../user/user_idCheck.jsp",
+				url: "user/user_idCheck.jsp",
 				data:{paramId : userId},
 				datatype: "jsp",
 				success: function(data){
@@ -157,7 +157,7 @@
 			const userEmail = input_userEmail.val();
 			$.ajax({
 				type: "post",
-				url: "../user/user_emailCheck.jsp",
+				url: "user/user_emailCheck.jsp",
 				data:{paramEmail : userEmail},
 				datatype: "jsp",
 				success: function(data){
