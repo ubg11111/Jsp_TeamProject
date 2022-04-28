@@ -1,4 +1,4 @@
-package com.market.action;
+package com.maket.action;
 
 import java.io.IOException;
 
