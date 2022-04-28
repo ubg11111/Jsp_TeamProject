@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>마켓컬리</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/bottom.css">
+<link rel="stylesheet" type="text/css" href="../css/bottom.css">
 </head>
 <body>
 
