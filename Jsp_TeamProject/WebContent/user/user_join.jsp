@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>회원가입 페이지</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="../css/join.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/join.css">
 <script src="https://kit.fontawesome.com/3de1cbcb05.js" crossorigin="anonymous"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -487,7 +487,7 @@
 <jsp:include page="/include/main_bottom.jsp"></jsp:include>
 
 
-<script src="../js/join.js"></script>
+<script src="<%=request.getContextPath()%>/js/join.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
