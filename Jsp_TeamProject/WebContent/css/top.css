@@ -4,6 +4,14 @@
 	width:90%;
 }
 
+#gnb{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+
 .list_menu{
 	display:flex;
 	flex:1;
@@ -58,10 +66,7 @@
 	font-family: 800;
 }
 
-#gnb{
-	display:flex;
-	justify-content: center;
-}
+
 
 #headerLogo{
 	margin-bottom: 50px;

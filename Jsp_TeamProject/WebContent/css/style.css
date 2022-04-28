@@ -1,2 +1,62 @@
 @charset "UTF-8";
 
+.main_content{
+	display:flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.main_content2{
+	display:flex;
+	justify-content: flex-end;
+	margin-top: 300px;
+}
+
+
+.main-img1{
+	display:flex;
+	justify-content:center;
+	flex: 1;
+}
+
+.main_img2{
+	display:flex;
+	justify-content:flex-start;
+	flex: 1;
+	margin-left: 250px;
+}
+
+.main_img2 div{
+	margin-left: 40px;
+}
+
+.main_img1 img{
+	width: 30%;
+	object-fit:cover;
+}
+
+.nomal_price{
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.sale_price1{
+	font-weight: bold;
+	color:orange;
+}
+
+.sale_price2{
+	font-weight: bold;
+}
+
+.event_price{
+	text-decoration: line-through;
+}
+
+.main_event{
+	margin-left: 50px;
+}
+
+.card img{
+	object-fit:contain;
+}
