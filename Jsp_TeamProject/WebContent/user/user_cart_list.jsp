@@ -9,8 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>장바구니 목록</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/top.css">
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/bottom.css">
+<link rel="stylesheet" type="text/css" href="css/top.css">
+<link rel="stylesheet" type="text/css" href="css/bottom.css">
 </head>
 <body>
 	
