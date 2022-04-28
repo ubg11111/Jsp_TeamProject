@@ -27,8 +27,8 @@
 		          	  고객센터
 		          </a>
 		          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-		            <li><a class="dropdown-item" href="#">공지사항</a></li>
-		            <li><a class="dropdown-item" href="#">1:1문의</a></li>
+		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_main.jsp">공지사항</a></li>
+		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_inquiry_list.jsp">1:1문의</a></li>
 		          </ul>
 			    </li>
 			</ul>
@@ -36,10 +36,12 @@
 			
 			
 		<div id="headerLogo">
-			<a href="/" class="link_menu">
-				<img class="logo_img" src="uploadFile/logo.png">
+			<a href="<%=request.getContextPath()%>/main.jsp" class="link_menu">
+				<img class="logo_img" src="<%=request.getContextPath()%>/uploadFile/logo.png">
 			</a>
 		</div>
+		
+		
 			
 		<div id="gnb">
 			<nav class="navbar navbar-expand-lg navbar-light bg-white" id="navbar1">
