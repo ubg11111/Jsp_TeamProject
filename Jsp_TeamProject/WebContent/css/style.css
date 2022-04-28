@@ -8,10 +8,16 @@
 
 .main_content2{
 	display:flex;
-	justify-content: flex-end;
+	justify-content: center;
 	margin-top: 300px;
 }
 
+
+
+.main_event_content{
+	display:flex;
+	justify-content: center;
+}
 
 .main-img1{
 	display:flex;
@@ -23,11 +29,8 @@
 	display:flex;
 	justify-content:flex-start;
 	flex: 1;
-	margin-left: 250px;
-}
-
-.main_img2 div{
-	margin-left: 40px;
+	margin-left: 200px;
+	margin-right: 100px;
 }
 
 .main_img1 img{
@@ -57,6 +60,37 @@
 	margin-left: 50px;
 }
 
-.card img{
-	object-fit:contain;
+.card-body{
+	padding-left: 20px;
 }
+
+
+/* 각 박스 상위 간격 조정 */
+
+.event_box{
+	display:flex;
+}
+
+.main-box1{
+	margin-top: 500px;	
+}
+
+.main-box2{
+	margin-top: 500px;
+}
+
+.main-box3{
+	margin-top: 500px;
+	margin-bottom: 200px;
+}
+
+
+/* 상품마진값 수정 */
+#mushroom{
+	margin-top:20px;
+}
+
+#sausage{
+	margin-top: 22px;
+}
+
