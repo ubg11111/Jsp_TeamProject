@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>      
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>푸드이야기</title>
+<title>마켓컬리</title>
 <link rel="stylesheet" type="text/css" href="css/top.css">
 <link rel="stylesheet" type="text/css" href="css/bottom.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -23,7 +21,6 @@
 			<div id="TalkMain" class="page_main">
 				<div class="bannaer">
 					<div class="bannaer_content">
-					
 					<!-- 메인컨텐트 첫번째 -->
 					<div class="main_content">
 							<h3>이 상품 어때요?</h3>
@@ -38,7 +35,7 @@
 							    <p class="card-text">
 							    	<span class="nomal_price">국산 딸기 100%</span><br><br>
 							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
-							    	<span class="event_price">17,500원</span>
+							    	<span class="event_price">17,600원</span>
 							    </p>
 							  </div>
 						</div>
@@ -62,7 +59,7 @@
 							  </a> 
 							  
 							  <div class="card-body">
-							    <p class="card-text" id="mushroom">
+							    <p class="card-text">
 							  		<span class="nomal_price">국산 송이버섯 100%</span><br><br>
 							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
 							    	<span class="event_price">9,600원</span>
@@ -72,13 +69,11 @@
 					</div>
 					
 					
-					<!-- 메인컨텐트 두번째 입니다. -->
+					<!-- 메인컨텐트 두번째 -->
 				<div class="main_content2">
-						
-					<div class="main_event_content">
 						<div class="main_event">
 							<h2>일일 특가</h2>
-							<h5>24시간 한정 특가</h5><br>
+							<h4>24시간 한정 특가</h4>
 							<h6>빨리 픽해주세요</h6>
 						</div>
 						
@@ -89,7 +84,7 @@
 							  </a> 
 							  
 							  <div class="card-body">
-							    <p class="card-text" id="sausage">
+							    <p class="card-text">
 							  		<span class="nomal_price">독일에서 만든 엄청난 소세지</span><br><br>
 							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
 							    	<span class="event_price">9,600원</span>
@@ -112,162 +107,6 @@
 							</div>
 						</div>
 					</div>
-					</div>
-					
-					<!-- 메인컨텐트 3번째  -->
-					
-				<div class="main-box1">
-					<div class="main_content">
-							<h3>가장 핫한 상품</h3>
-					</div>
-					
-					<div class="main-img1">
-						<div class="card" style="width: 18rem;">
-							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/딸기.jpg" class="card-img-top" alt="...">
-							  </a>
-							  
-							  <div class="card-body">
-							    <p class="card-text">
-							    	<span class="nomal_price">국산 딸기 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
-							    	<span class="event_price">17,600원</span>
-							    </p>
-							  </div>
-						</div>
-						<div class="card" style="width: 18rem;">
-							<a href="#">
-							  <img src="<%=request.getContextPath()%>/uploadFile/양파.jpg" class="card-img-top" alt="...">
-							</a> 
-							  
-							  
-							  <div class="card-body">
-							    <p class="card-text">
-							   		<span class="nomal_price">국산 양파 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
-							    	<span class="event_price">13,600원</span>
-							    </p>
-							  </div>
-						</div>
-						<div class="card" style="width: 18rem;">
-							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/송이버섯.jpg" class="card-img-top" alt="...">
-							  </a> 
-							  
-							  <div class="card-body">
-							    <p class="card-text" id="mushroom">
-							  		<span class="nomal_price">국산 송이버섯 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
-							    	<span class="event_price">9,600원</span>
-							    </p>
-							  </div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- 메인컨텐트 4번째  -->
-				<div class="main-box2">
-					<div class="main_content">
-							<h3>후기가 많은 상품</h3>
-					</div>
-					
-					<div class="main-img1">
-						<div class="card" style="width: 18rem;">
-							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/딸기.jpg" class="card-img-top" alt="...">
-							  </a>
-							  
-							  <div class="card-body">
-							    <p class="card-text">
-							    	<span class="nomal_price">국산 딸기 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
-							    	<span class="event_price">17,600원</span>
-							    </p>
-							  </div>
-						</div>
-						<div class="card" style="width: 18rem;">
-							<a href="#">
-							  <img src="<%=request.getContextPath()%>/uploadFile/양파.jpg" class="card-img-top" alt="...">
-							</a> 
-							  
-							  
-							  <div class="card-body">
-							    <p class="card-text">
-							   		<span class="nomal_price">국산 양파 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
-							    	<span class="event_price">13,600원</span>
-							    </p>
-							  </div>
-						</div>
-						<div class="card" style="width: 18rem;">
-							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/송이버섯.jpg" class="card-img-top" alt="...">
-							  </a> 
-							  
-							  <div class="card-body">
-							    <p class="card-text" id="mushroom">
-							  		<span class="nomal_price">국산 송이버섯 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
-							    	<span class="event_price">9,600원</span>
-							    </p>
-							  </div>
-						</div>
-					</div>
-				</div>
-				
-				
-				<!-- 메인컨텐트 5번째  -->
-				<div class="main-box3">
-					<div class="main_content">
-							<h3>남녀노소가 모두 좋아하는 상품</h3>
-					</div>
-					
-					<div class="main-img1">
-						<div class="card" style="width: 18rem;">
-							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/딸기.jpg" class="card-img-top" alt="...">
-							  </a>
-							  
-							  <div class="card-body">
-							    <p class="card-text">
-							    	<span class="nomal_price">국산 딸기 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
-							    	<span class="event_price">17,600원</span>
-							    </p>
-							  </div>
-						</div>
-						<div class="card" style="width: 18rem;">
-							<a href="#">
-							  <img src="<%=request.getContextPath()%>/uploadFile/양파.jpg" class="card-img-top" alt="...">
-							</a> 
-							  
-							  
-							  <div class="card-body">
-							    <p class="card-text">
-							   		<span class="nomal_price">국산 양파 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
-							    	<span class="event_price">13,600원</span>
-							    </p>
-							  </div>
-						</div>
-						<div class="card" style="width: 18rem;">
-							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/송이버섯.jpg" class="card-img-top" alt="...">
-							  </a> 
-							  
-							  <div class="card-body">
-							    <p class="card-text" id="mushroom">
-							  		<span class="nomal_price">국산 송이버섯 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
-							    	<span class="event_price">9,600원</span>
-							    </p>
-							  </div>
-						</div>
-					</div>
-				</div>
-				
-				
-					
 				</div>
 			</div>
 		</div>
