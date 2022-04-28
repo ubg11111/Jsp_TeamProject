@@ -71,6 +71,8 @@
 					
 					<!-- 메인컨텐트 두번째 -->
 				<div class="main_content2">
+				
+					<div class="event_box">
 						<div class="main_event">
 							<h2>일일 특가</h2>
 							<h4>24시간 한정 특가</h4>
@@ -106,7 +108,65 @@
 							 </div>
 							</div>
 						</div>
+					</div>	
+						
+				</div>
+				
+				
+				<div class="main-box1">
+					<div class="main_content">
+							<h3>핫한 상품</h3>
 					</div>
+					<div class="main-img1">
+						<div class="card" style="width: 18rem;">
+							  <a href="#">
+							  	<img src="<%=request.getContextPath()%>/uploadFile/딸기.jpg" class="card-img-top" alt="...">
+							  </a>
+							  
+							  <div class="card-body">
+							    <p class="card-text">
+							    	<span class="nomal_price">국산 딸기 100%</span><br><br>
+							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
+							    	<span class="event_price">17,600원</span>
+							    </p>
+							  </div>
+						</div>
+						<div class="card" style="width: 18rem;">
+							<a href="#">
+							  <img src="<%=request.getContextPath()%>/uploadFile/양파.jpg" class="card-img-top" alt="...">
+							</a> 
+							  
+							  
+							  <div class="card-body">
+							    <p class="card-text">
+							   		<span class="nomal_price">국산 양파 100%</span><br><br>
+							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
+							    	<span class="event_price">13,600원</span>
+							    </p>
+							  </div>
+						</div>
+						<div class="card" style="width: 18rem;">
+							  <a href="#">
+							  	<img src="<%=request.getContextPath()%>/uploadFile/송이버섯.jpg" class="card-img-top" alt="...">
+							  </a> 
+							  
+							  <div class="card-body">
+							    <p class="card-text">
+							  		<span class="nomal_price">국산 송이버섯 100%</span><br><br>
+							    	<span class="sale_price1">10%</span> <span class="sale_price2">14,500원</span><br>
+							    	<span class="event_price">9,600원</span>
+							    </p>
+							  </div>
+						</div>
+					</div>
+				</div>	
+					
+				
+				
+				
+				
+				
+				
 				</div>
 			</div>
 		</div>
