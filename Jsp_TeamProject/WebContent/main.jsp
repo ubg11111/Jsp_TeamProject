@@ -72,7 +72,7 @@
 					</div>
 					
 					
-					<!-- 메인컨텐트 두번째 -->
+					<!-- 메인컨텐트 두번째 입니다. -->
 				<div class="main_content2">
 						
 					<div class="main_event_content">
