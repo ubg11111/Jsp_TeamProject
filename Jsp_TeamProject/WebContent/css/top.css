@@ -18,11 +18,10 @@
 	justify-content: flex-end;
 	margin: 30px;
 	list-style: none; 
-	align-items: center;
 }
 
 .list_menu li{
-	margin: 5px 5px;
+	margin: 0px 5px;
 }
 
 #menu_comunity {

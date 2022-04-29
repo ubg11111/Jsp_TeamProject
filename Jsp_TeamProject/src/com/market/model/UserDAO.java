@@ -197,7 +197,7 @@ public class UserDAO {
 			pstmt.setString(1, id);
 			
 			rs = pstmt.executeQuery();
-
+			
 			if(rs.next()) {
 				dto.setUser_id(id);
 				dto.setUser_pwd(rs.getString("user_pwd"));
