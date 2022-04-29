@@ -30,6 +30,7 @@
 		          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_main.jsp">공지사항</a></li>
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_inquiry_list.jsp">1:1문의</a></li>
+		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>">주문내역</a></li>
 		          </ul>
 			    </li>
 			</ul>
@@ -78,14 +79,13 @@
 			      
 			      </ul>
 			      <form class="d-flex" method="post" action="<%=request.getContextPath()%>/user_search.do">
-			        <input id="Serarch_flex" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			        <input id="Serarch_flex" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_product">
 			        <button class="btn btn-outline-success" type="submit">검색</button>
 			        
 			        <span class="main_icon">
 				        <a href="#"><i class="fa-solid fa-heart fa-2x"></i></a>
 				        <a href="<%=request.getContextPath()%>/user_cart_list.do"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
 			        </span>
-			      
 			      </form>
 			      
 			      
