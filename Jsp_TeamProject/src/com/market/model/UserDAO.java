@@ -16,10 +16,6 @@ public class UserDAO {
 	ResultSet rs = null;                        // SQL문을 실행 후 결과 값을 가지고 있는 객체.
 
 	String sql = null;                          // SQL문을 저장할 객체.
-	String driver = "oracle.jdbc.driver.OracleDriver";
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	String user = "web";
-	String password = "1234";
 
 	// UserDAO 객체를 싱글턴 방식으로 만들어 보자.
 	// 1단계 : 싱글톤 방식으로 객체를 만들기 위해서는 우선적으로
@@ -45,8 +41,14 @@ public class UserDAO {
 	public void openConn() {
 		try {
 			
-			Class.forName (driver);
-		    con = DriverManager.getConnection(url, user, password);
+			// 1단계 : JNDI 서버 객체 생성
+			Context ctx = new InitialContext();
+			
+			// 2단계 : lookup() 메서드로 매칭되는 커넥션 찾기
+			DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc/myoracle");
+			
+			// 3단계 : DataSource 객체를 이용하여 커넥션 객체 가져오기
+			con = ds.getConnection();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -121,5 +123,36 @@ public class UserDAO {
 		}
 		return result;
 	}
+	
+	public int insertUser(UserDTO dto) {
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "insert into user_market values(?, ?, ?, ?, ?, ?, ?, ? ,sysdate,'')";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, dto.getUser_id());
+			pstmt.setString(2, dto.getUser_pwd());
+			pstmt.setString(3, dto.getUser_name());
+			pstmt.setString(4, dto.getUser_gender());
+			pstmt.setString(5, dto.getUser_email());
+			pstmt.setString(6, dto.getUser_address());
+			pstmt.setString(7, dto.getUser_detailaddress());
+			pstmt.setString(8, dto.getUser_phone());
+			
+			result = pstmt.executeUpdate();
+	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	
 	
 }

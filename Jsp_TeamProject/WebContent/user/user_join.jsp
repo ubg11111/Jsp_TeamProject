@@ -111,7 +111,7 @@
 			const userId = input_userId.val();
 			$.ajax({
 				type: "post",
-				url: "../user/user_idCheck.jsp",
+				url: "<%=request.getContextPath()%>/user/user_idCheck.jsp",
 				data:{paramId : userId},
 				datatype: "jsp",
 				success: function(data){
@@ -156,7 +156,7 @@
 			const userEmail = input_userEmail.val();
 			$.ajax({
 				type: "post",
-				url: "../user/user_emailCheck.jsp",
+				url: "<%=request.getContextPath()%>/user/user_emailCheck.jsp",
 				data:{paramEmail : userEmail},
 				datatype: "jsp",
 				success: function(data){
@@ -270,7 +270,7 @@
 <div class="container">
 	<h2>회원가입</h2>
 	<p class="page_sub" style="margin-left:550px"><span class="ico">*</span>필수입력사항</p>
-	<form method="post" action="<%=request.getContextPath()%>/user_join.do" onsubmit="return submitCheck();">
+	<form method="post" action="<%=request.getContextPath()%>/user_join_ok.do" onsubmit="return submitCheck();">
 		<table border="0" cellspacing="0" >
 			<tr>
 				<th>아이디<span class="ico">*</span></th>
@@ -486,7 +486,7 @@
 <jsp:include page="/include/main_bottom.jsp"></jsp:include>
 
 
-<script src="../js/join.js"></script>
+<script src="<%=request.getContextPath()%>/js/join.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

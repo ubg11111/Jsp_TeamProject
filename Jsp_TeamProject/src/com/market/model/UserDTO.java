@@ -2,6 +2,17 @@ package com.market.model;
 
 public class UserDTO {
 	private String user_id;
+	private String user_pwd;
+	private String user_name;
+	private String user_gender;
+	private String user_email;
+	private String user_address;
+	private String user_detailaddress;
+	private String user_phone;
+	private String user_date;
+	private String user_update;
+	
+	
 	public String getUser_id() {
 		return user_id;
 	}
@@ -32,17 +43,17 @@ public class UserDTO {
 	public void setUser_email(String user_email) {
 		this.user_email = user_email;
 	}
-	public String getUser_zip_code() {
-		return user_zip_code;
-	}
-	public void setUser_zip_code(String user_zip_code) {
-		this.user_zip_code = user_zip_code;
-	}
 	public String getUser_address() {
 		return user_address;
 	}
 	public void setUser_address(String user_address) {
 		this.user_address = user_address;
+	}
+	public String getUser_detailaddress() {
+		return user_detailaddress;
+	}
+	public void setUser_detailaddress(String user_detailaddress) {
+		this.user_detailaddress = user_detailaddress;
 	}
 	public String getUser_phone() {
 		return user_phone;
@@ -62,14 +73,6 @@ public class UserDTO {
 	public void setUser_update(String user_update) {
 		this.user_update = user_update;
 	}
-	private String user_pwd;
-	private String user_name;
-	private String user_gender;
-	private String user_email;
-	private String user_zip_code;
-	private String user_address;
-	private String user_phone;
-	private String user_date;
-	private String user_update;
+
 	
 }
