@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-관리자 메인 페이지 작업 예정입니다.!
+관리자 메인 페이지 작업 예정입니다.!!
 </body>
 </html>
