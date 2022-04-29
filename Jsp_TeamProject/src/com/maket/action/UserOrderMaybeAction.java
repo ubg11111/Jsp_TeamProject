@@ -12,10 +12,7 @@ import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
 import com.market.model.CartDAO;
 import com.market.model.CartDTO;
-<<<<<<< HEAD
-=======
 import com.market.model.OrderDTO;
->>>>>>> branch 'develop' of https://github.com/ubg11111/Jsp_TeamProject.git
 import com.market.model.UserDTO;
 
 public class UserOrderMaybeAction implements Action{
