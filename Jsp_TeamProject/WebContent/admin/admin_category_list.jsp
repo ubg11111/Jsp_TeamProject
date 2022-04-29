@@ -22,19 +22,25 @@
 		<h3>임시 admin_top.jsp</h3>
 	</div>
 	<div align="center">
-	
-		<h2>임시로 만든 페이지이므로 아직 아무런 기능 없음</h2>
 		<table border="1" cellspacing="0" width="500">
 			<tr bgcolor="lightgray">
 				<th>카테고리 번호</th>
 				<th>카테고리 코드</th>
 				<th>카테고리 이름</th>
-				<th></th>
+				<th>삭제</th>
 			</tr>
-			<!-- 카테고리 리스트 받아올 것 -->
-			<!-- list가 empty가 아닐 때 -->
-			<!-- forEach문으로 dto에서 컬럼을 get 해 올 것 + 수정 삭제 넣기 -->
-			<tr>
+			<c:set var="list" value="${categoryList }" />
+			<c:if test="${!empty list }">
+					<c:forEach items="${list }" var="dto">
+						<tr>
+							<td>${dto.getCategory_num() }</td>
+							<td>${dto.getCategory_code() }</td>
+							<td>${dto.getCategory_name() }</td>
+							<td><input type="button" value="삭제" onclick="check(${dto.getCategory_num() })"></td>
+						</tr>
+					</c:forEach>
+			</c:if>
+			<!-- <tr>
 				<td>01</td>
 				<td>A0010001</td>
 				<td>농작물</td>
@@ -99,15 +105,14 @@
 				<td>D0010003</td>
 				<td>육아용품</td>
 				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(11)"></td>
-			</tr>
-			<!-- list가 empty가 아닐 때 끝 -->
-			<!-- list가 empty일 때 -->
-			<tr>
-				<td colspan="4" align="center"> 아직 입력된 카테고리 리스트가 없습니다 (이후 if처리)</td>
-			</tr>
-			<!-- list가 empty일 때 끝 -->
-			<td colspan="4" align="right"><input type="button" value="추가" onclick="location.href='admin_category_input.jsp'"></td>
-			<!-- location.href='admin_cart_insert.do'로 수정할 것 -->
+			</tr> -->
+			<c:if test="${empty list }">
+				<tr>
+					<td colspan="4" align="center"> 아직 입력된 카테고리 리스트가 없습니다 </td>
+				</tr>
+			</c:if>
+			<td colspan="4" align="right">
+			<input type="button" value="카테고리 추가" onclick="location.href='admin_category_input.do'"></td>
 		</table>
 	</div>
 	<!-- admin_bottom.jsp include 할 것 -->

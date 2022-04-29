@@ -14,17 +14,17 @@
 		const user_name = $("#user_name").text();
 		
 		if(user_name != ''){
-			$("#user_menu").css("display","block");
+			$("#user_menu1").css("display","block");
 			$("#menu_join").css("display","none");
 			$("#menu_login").css("display","none");
 			
 		}
 		else if(user_name==''){
-			$("#user_menu").css("display","none");
+			$("#user_menu1").css("display","none");
 			$("#menu_join").css("display","block");
 			$("#menu_login").css("display","block");
 		} 
-
+		console.log(user_name);
 	});
 
 </script>
@@ -36,7 +36,7 @@
 	<div id="header">
 		<div id="userMenu">
 			<ul class="list_menu">
-			<li class="nav-item dropdown" id="user_menu">
+			<li class="nav-item dropdown" id="user_menu1">
 		          <a class="nav-link dropdown-toggle" href="#" id="userScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 		          	  <span id="welcome">웰컴</span> <span id="user_name">${userCont.getUser_name()}</span>님
 		          </a>
@@ -109,7 +109,7 @@
 			        </li>
 			      
 			      </ul>
-			      <form class="d-flex">
+			      <form class="d-flex" method="post" action="<%=request.getContextPath()%>/user_search.do">
 			        <input id="Serarch_flex" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 			        <button class="btn btn-outline-success" type="submit">검색</button>
 			        
