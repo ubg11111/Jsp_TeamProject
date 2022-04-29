@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
 import com.market.model.CartDAO;
+import com.market.model.UserDTO;
 
 public class UserCartDeleteAllAction implements Action {
 
@@ -17,9 +18,9 @@ public class UserCartDeleteAllAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// 세션으로 아이디 받아와서 해당하는 장바구니를 비우는 로직
 		
-//		HttpSession session = request.getSession();
-//		String userId = (String)session.getAttribute("userId");
-		String userId = "id1";
+		HttpSession session = request.getSession();
+		UserDTO userDto = (UserDTO)session.getAttribute("userCont");
+		String userId = userDto.getUser_id();
 		
 		CartDAO dao = CartDAO.getInstance();
 		int check = dao.deleteAllCart(userId);
