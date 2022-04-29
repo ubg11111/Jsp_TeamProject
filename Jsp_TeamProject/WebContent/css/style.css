@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+html{
+	scroll-behavior: smooth;
+}
+
+
 .main_content{
 	display:flex;
 	justify-content: center;
@@ -92,5 +97,16 @@
 
 #sausage{
 	margin-top: 22px;
+}
+
+
+/* Top버튼 */
+.top_button{
+	display: none;
+	margin:10px;
+}
+
+.top_button i{
+	color: gray;
 }
 
