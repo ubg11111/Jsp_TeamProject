@@ -53,15 +53,19 @@
 				<nav aria-label="Page navigation example">
 					<ul class="pagination justify-content-center">
 						<c:if test="${page > block}">
-							<li class="page-item"><a class="page-link" href="notice_main_list.do?page=1">«</a></li>
-							<li class="page-item"><a class="page-link" href="notice_main_list.do?page=${startBlock -1 }">‹</a></li>
+							<li class="page-item">
+								<a class="page-link" 
+									href="notice_search.do?page=1&search_field=${search_field }&search_keyword=${search_keyword }">«
+								</a>
+							</li>
+							<li class="page-item"><a class="page-link" href="notice_search.do?page=${startBlock -1 }&search_field=${search_field }&search_keyword=${search_keyword }">‹</a></li>
 						</c:if>
 						<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
-							<li class="page-item"><a class="page-link" href="notice_main_list.do?page=${i }">${i }</a></li>
+							<li class="page-item"><a class="page-link" href="notice_search.do?page=${i }&search_field=${search_field }&search_keyword=${search_keyword }">${i }</a></li>
 						</c:forEach>
 						<c:if test="${endBlock < allPage }">
-							<li class="page-item"><a class="page-link" href="notice_main_list.do?page=${endBlock + 1 }">›</a></li>
-							<li class="page-item"><a class="page-link" href="notice_main_list.do?page=${allPage }">»</a></li>
+							<li class="page-item"><a class="page-link" href="notice_search.do?page=${endBlock + 1 }&search_field=${search_field }&search_keyword=${search_keyword }">›</a></li>
+							<li class="page-item"><a class="page-link" href="notice_search.do?page=${allPage }&search_field=${search_field }&search_keyword=${search_keyword }">»</a></li>
 						</c:if>
 					</ul>
 				</nav>
