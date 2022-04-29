@@ -1,6 +1,7 @@
 package com.maket.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,7 @@ import com.market.model.CartDAO;
 import com.market.model.CartDTO;
 import com.market.model.UserDTO;
 
-public class UserCartListAction implements Action {
+public class UserOrderMaybeAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -22,19 +23,17 @@ public class UserCartListAction implements Action {
 		HttpSession session = request.getSession();
 		UserDTO userDto = (UserDTO)session.getAttribute("userCont");
 		String userId = userDto.getUser_id();
-		String userAddr = userDto.getUser_id();
 		
 		CartDAO dao = CartDAO.getInstance();
 		
 		List<CartDTO> list = dao.getCartList(userId);
 		
 		request.setAttribute("cartList", list);
-		request.setAttribute("userAddr", userAddr);
+		request.setAttribute("userDTO", userDto);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("user/user_cart_list.jsp");
+		forward.setPath("user/user_payment.jsp");
 		
 		return forward;
 	}
-
 }
