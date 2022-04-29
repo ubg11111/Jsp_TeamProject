@@ -77,7 +77,7 @@
 			        </li>
 			      
 			      </ul>
-			      <form class="d-flex">
+			      <form class="d-flex" method="post" action="<%=request.getContextPath()%>/user_search.do">
 			        <input id="Serarch_flex" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 			        <button class="btn btn-outline-success" type="submit">검색</button>
 			        
