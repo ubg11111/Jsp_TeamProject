@@ -1,7 +1,8 @@
 package com.maket.action;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,35 +11,30 @@ import javax.servlet.http.HttpSession;
 import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
 import com.market.model.CartDAO;
+import com.market.model.CartDTO;
+import com.market.model.OrderDTO;
 import com.market.model.UserDTO;
 
-public class UserCartDeleteAllAction implements Action {
+public class UserOrderMaybeAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		// 세션으로 아이디 받아와서 해당하는 장바구니를 비우는 로직
+		// session으로 id를 받아와서 해당 아이디의 장바구니 목록을 조회하여 view page로 이동
 		
 		HttpSession session = request.getSession();
 		UserDTO userDto = (UserDTO)session.getAttribute("userCont");
 		String userId = userDto.getUser_id();
 		
 		CartDAO dao = CartDAO.getInstance();
-		int check = dao.deleteAllCart(userId);
 		
+		List<CartDTO> list = dao.getCartList(userId);
+		
+		request.setAttribute("cartList", list);
+		request.setAttribute("userDTO", userDto);
 		ActionForward forward = new ActionForward();
-		PrintWriter out = response.getWriter();
-		
-		if(check > 0) {
-			forward.setRedirect(true);
-			forward.setPath("user_cart_list.do");
-		}else {
-			out.println("<script>");
-			out.println("alert('장바구니 초기화 실패!')");
-			out.println("history.back()");
-			out.println("</script>");
-		}
+		forward.setRedirect(false);
+		forward.setPath("user/user_payment.jsp");
 		
 		return forward;
 	}
-
 }

@@ -8,6 +8,27 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/top.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+	$(function(){
+		const user_name = $("#user_name").text();
+		
+		if(user_name != ''){
+			$("#user_menu1").css("display","block");
+			$("#menu_join").css("display","none");
+			$("#menu_login").css("display","none");
+			
+		}
+		else if(user_name==''){
+			$("#user_menu1").css("display","none");
+			$("#menu_join").css("display","block");
+			$("#menu_login").css("display","block");
+		} 
+		console.log(user_name);
+	});
+
+</script>
+
 </head>
 <body>
 
@@ -15,11 +36,22 @@
 	<div id="header">
 		<div id="userMenu">
 			<ul class="list_menu">
-				<li class="menu_join">
+			<li class="nav-item dropdown" id="user_menu1">
+		          <a class="nav-link dropdown-toggle" href="#" id="userScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		          	  <span id="welcome">웰컴</span> <span id="user_name">${userCont.getUser_name()}</span>님
+		          </a>
+		          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+		            <li><a class="dropdown-item" href="#">주문내역</a></li>
+		            <li><a class="dropdown-item" href="#">개인정보 수정</a></li>
+		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_logout.do">로그아웃</a></li>
+		          </ul>
+			</li> 
+			    
+				<li class="menu_join" id="menu_join">
 					<a href="<%=request.getContextPath()%>/user_Join.do">회원가입 <span>|</span></a>
 				</li>
 				
-				<li class="menu_login">
+				<li class="menu_login" id="menu_login">
 					<a href="<%=request.getContextPath()%>/user_login.do">로그인 <span>|</span></a>
 				</li>
 				
@@ -30,6 +62,7 @@
 		          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_main.jsp">공지사항</a></li>
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_inquiry_list.jsp">1:1문의</a></li>
+		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>">주문내역</a></li>
 		          </ul>
 			    </li>
 			</ul>
@@ -78,14 +111,13 @@
 			      
 			      </ul>
 			      <form class="d-flex" method="post" action="<%=request.getContextPath()%>/user_search.do">
-			        <input id="Serarch_flex" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			        <input id="Serarch_flex" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_product">
 			        <button class="btn btn-outline-success" type="submit">검색</button>
 			        
 			        <span class="main_icon">
 				        <a href="#"><i class="fa-solid fa-heart fa-2x"></i></a>
 				        <a href="<%=request.getContextPath()%>/user_cart_list.do"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
 			        </span>
-			      
 			      </form>
 			      
 			      

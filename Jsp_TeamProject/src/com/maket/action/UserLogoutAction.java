@@ -4,23 +4,24 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
-import com.market.model.ProductDAO;
 
-public class UserSearchAction implements Action {
+public class UserLogoutAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
+		session.invalidate();
 		
-		String find_product = request.getParameter("search_product");
+		ActionForward forward = new ActionForward();
 		
-		ProductDAO dao = ProductDAO.getInstance();
+		forward.setRedirect(false);
+		forward.setPath("main.jsp");
 		
-		
-		
-		
-		return null;
+		return forward;
 	}
+
 }

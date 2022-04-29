@@ -193,7 +193,11 @@ public class UserDAO {
 			sql = "select *from user_market where user_id = ?";
 			
 			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1, id);
 			
+			pstmt.setString(1, id);
+
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {

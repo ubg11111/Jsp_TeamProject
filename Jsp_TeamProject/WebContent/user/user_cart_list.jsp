@@ -1,3 +1,5 @@
+<%@page import="com.market.model.CartDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -34,14 +36,14 @@
 					<c:if test="${!empty list }">
 					<c:forEach items="${list }" var="dto">
 					<c:set var="price" value="${dto.getCart_price() }" />
-					
+						
 						<tr>
 							<td> <img src="<%=request.getContextPath() %>/upload/${dto.getCart_pimage() }"
 								width="50" height="50"> </td>
 							<td> ${dto.getCart_pname() } </td>
 							<td>
 								<c:set var="amount" value="${dto.getCart_pqty() }" />
-								${dto.getCart_pqty() } 개
+								${amount } 개
 							</td>
 							<td>
 								<fmt:formatNumber value="${amount * price }"/> 원
@@ -53,6 +55,14 @@
 							
 							<c:set var="total" value="${total + (price * amount) }" />
 						</tr>
+						
+						<input type="hidden" name="pnum" value="${dto.getCart_pnum() }">
+						<input type="hidden" name="pname" value="${dto.getCart_pname() }">
+						<input type="hidden" name="pimage" value="${dto.getCart_pimage() }">
+						<input type="hidden" name="pqty" value="${dto.getCart_pqty() }">
+						<input type="hidden" name="price" value="${dto.getCart_price() }">
+						<input type="hidden" name="total" value="${price * amount }">
+						
 					</c:forEach>
 					</c:if>
 					

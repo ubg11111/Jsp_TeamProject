@@ -11,6 +11,7 @@ import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
 import com.market.model.CartDAO;
 import com.market.model.CartDTO;
+import com.market.model.UserDTO;
 
 public class UserCartListAction implements Action {
 
@@ -18,11 +19,10 @@ public class UserCartListAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// session으로 id를 받아와서 해당 아이디의 장바구니 목록을 조회하여 view page로 이동
 		
-//		HttpSession session = request.getSession();
-//		String userId = (String)session.getAttribute("userId");
-//		String userAddr = (String)session.getAttribute("userAddress");
-		String userId = "id2";
-		String userAddr = "서초구 청계산로";
+		HttpSession session = request.getSession();
+		UserDTO userDto = (UserDTO)session.getAttribute("userCont");
+		String userId = userDto.getUser_id();
+		String userAddr = userDto.getUser_id();
 		
 		CartDAO dao = CartDAO.getInstance();
 		
