@@ -153,6 +153,70 @@ public class UserDAO {
 		return result;
 	}
 	
+	public int userLogin(String id,String pwd) {
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select *from user_market where user_id = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				if(pwd.equals(rs.getString("user_pwd"))) {
+					result = 1;
+				}else {
+					result = -1;
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return result;
+	}
+	
+	public UserDTO getuserCont(String id) {
+		UserDTO dto = new UserDTO();
+		
+		try {
+			openConn();
+			
+			sql = "select *from user_market where user_id = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setUser_id(id);
+				dto.setUser_pwd(rs.getString("user_pwd"));
+				dto.setUser_name(rs.getString("user_name"));
+				dto.setUser_gender(rs.getString("user_gender"));
+				dto.setUser_email(rs.getString("user_email"));
+				dto.setUser_address(rs.getString("user_address"));
+				dto.setUser_detailaddress(rs.getString("user_detailaddress"));
+				dto.setUser_phone(rs.getString("user_phone"));
+				dto.setUser_date(rs.getString("user_date"));
+				dto.setUser_update(rs.getString("user_update"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		return dto;
+	}
+	
 	
 	
 }
