@@ -194,6 +194,8 @@ public class UserDAO {
 			
 			pstmt = con.prepareStatement(sql);
 			
+			pstmt.setString(1, id);
+			
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
