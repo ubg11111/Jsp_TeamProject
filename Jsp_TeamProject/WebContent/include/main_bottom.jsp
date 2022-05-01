@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <title>마켓컬리</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/bottom.css">
+<script type="text/javascript">
+
+</script>
 </head>
 <body>
 
@@ -40,6 +43,16 @@
 								<dt>24시간접수가능</dt>
 								<dd>고객센터 운영시간에 순차적으로 답변해드리겠습니다.</dd>
 							</dl>
+						</div>
+						
+						<div class="cc_qna">
+							<h3>
+								<button type="button" class="btn btn-light" id="cc_qna_button">
+									<a href="<%=request.getContextPath()%>/admin_login.do" class="tit">
+										관리자페이지
+									</a>
+								</button>
+							</h3>
 						</div>
 				</div>
 					
