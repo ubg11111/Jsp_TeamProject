@@ -9,43 +9,63 @@
 <head>
 <meta charset="UTF-8">
 <title>푸드톡</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/search.css">
 </head>
 <body>
 	
 	<jsp:include page="/include/main_top.jsp"></jsp:include>
 	
+	<c:set var="find" value="${Find}"/>
+	
+	<div class="search-top">
+		<h1>상품검색</h1>
+	</div>
+	
+	
+	<hr width="50%" class="line-hr">
+		<div class="search-middle">
+			<h3>검색조건</h3>
+			<form class="d-flex" method="post" action="<%=request.getContextPath()%>/user_search.do">
+			        <input id="search-input" class="form-control me-2" type="search" aria-label="Search" name="search_product">
+			        <button id="search-button" class="btn btn-outline-success" type="submit">검색하기</button>
+			</form> 
+		</div>
+	<hr width="50%" class="line-hr">
+
+	
+	
 	<div class="search_main">
-		<c:set var="find" value="${Find}"/>
-		
 		<!-- 검색된 제품이 존재하는 경우 -->
 		<c:if test="${!empty find}">
-				
-			<div class="card" style="width: 18rem;">
-				  <a href="#">
-				  	<img src="<%=request.getContextPath()%>/uploadFile/딸기.jpg" class="card-img-top" alt="...">
-				  </a>
-				  
-				  <div class="card-body">
-				    <p class="card-text">
-				    	<span class="nomal_price">${find.getPname()}</span><br><br>
-				    	<span class="sale_price2">${find.getPrice()} 원</span><br>
-				    	<span class="event_price">${find.getPdetails() }</span>
-				    </p>
+			<c:forEach items="${find}" var="dto">
+				<div class="card" style="width: 18rem;" id="card-main">
+					  <a href="#">
+					  	<img src="<%=request.getContextPath()%>/uploadFile/딸기.jpg" class="card-img-top" alt="..." id="card-img">
+					  </a>
+					  <div class="card-body">
+					    <p class="card-text">
+					    	<span class="search_Pname">${dto.getPname()}</span><br><br>
+					    	
+					    	<span class="search_Price">
+					    		<fmt:formatNumber value="${dto.getPrice()}"/>원 
+					    	</span><br>
+					    	
+					    	<span class="search_Pdetails">${dto.getPdetails() }</span>
+					    </p>
+					  </div>
 				</div>
-			</div>
-			
+			</c:forEach>
 		</c:if>
+		
 		
 		<!-- 검색된 제품이 없는경우 -->
 		<c:if test="${empty find}">
 			
-			<div>
+			<div class="not-Search">
 				<h3>검색된 제품이 없습니다.</h3>
 			</div>
 		
 		</c:if>
-		
 		
 	</div>
 	

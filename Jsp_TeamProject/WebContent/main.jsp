@@ -11,10 +11,10 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	
+
+
 	<jsp:include page="/include/main_top.jsp"></jsp:include>
-	<hr width="100%">
-	<br><br>
+	
 
 	<div id="main">
 		<div id="content">
@@ -271,8 +271,6 @@
 	
 	
 	<!-- 하단 인클루드  -->
-	<hr width="100%">
-	<br><br>
 	<jsp:include page="/include/main_bottom.jsp"></jsp:include>
 
 

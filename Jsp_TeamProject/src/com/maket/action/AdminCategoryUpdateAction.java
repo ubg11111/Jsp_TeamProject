@@ -1,35 +1,30 @@
 package com.maket.action;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
-import com.market.model.ProductDAO;
-import com.market.model.ProductDTO;
+import com.market.model.CategoryDAO;
+import com.market.model.CategoryDTO;
 
-public class UserSearchAction implements Action {
+public class AdminCategoryUpdateAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		int category_num = Integer.parseInt(request.getParameter("num").trim());
+		CategoryDAO dao = CategoryDAO.getInstance();
+		CategoryDTO dto = dao.categoryContent(category_num);
 		
-		String find_product = request.getParameter("search_product");
-		
-		ProductDAO dao = ProductDAO.getInstance();
-		
-		List<ProductDTO> find = dao.searchProduct(find_product);
-		
-		request.setAttribute("Find", find);
+		request.setAttribute("Cont", dto);
 		
 		ActionForward forward = new ActionForward();
-		
 		forward.setRedirect(false);
-		forward.setPath("user/user_search.jsp");
-		
+		forward.setPath("admin/admin_category_update.jsp");
 		
 		return forward;
 	}
+
 }

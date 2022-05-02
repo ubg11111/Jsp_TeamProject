@@ -10,11 +10,3 @@ create table cart_market(
 	cart_pspec varchar2(20) not null,	-- 상품 스펙
 	cart_pimage varchar2(500)			-- 상품 이미지
 );
-
-INSERT INTO cart_market VALUES ('1', '1', 'wonbin', 'top', '3', '3000', 'new', 'coffee.jpg');
-INSERT INTO cart_market VALUES ('2', '1', 'wonbin', 'top', '3', '3000', 'new', 'coffee.jpg');
-INSERT INTO cart_market VALUES ('3', '1', 'wonbin', 'top', '3', '3000', 'new', 'coffee.jpg');
-INSERT INTO cart_market VALUES ('4', '1', 'wonbin', 'top', '3', '3000', 'new', 'coffee.jpg');
-INSERT INTO cart_market VALUES ('5', '1', 'wonbin', 'top', '3', '3000', 'new', 'coffee.jpg');
-INSERT INTO cart_market VALUES ('6', '1', 'wonbin', 'top', '3', '3000', 'new', 'coffee.jpg');
-INSERT INTO cart_market VALUES ('7', '1', 'wonbin', 'top', '3', '3000', 'new', 'coffee.jpg');

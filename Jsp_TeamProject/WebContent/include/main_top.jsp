@@ -130,8 +130,9 @@
 			</nav>
 		</div>
 	</div>
-
-
+	
+	
+	<hr width="100%">
 
 
 <script src="https://kit.fontawesome.com/27a0dd965d.js" crossorigin="anonymous"></script>

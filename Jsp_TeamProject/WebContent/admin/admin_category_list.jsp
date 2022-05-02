@@ -5,29 +5,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin Category List Page</title>
-<script type="text/javascript">
-	function deleteConfirm(num){
-		let res = confirm("정말로 삭제하시겠습니까?");
-		if(res){
-			alert(num + "번 카테고리의 삭제 시도가 성공했습니다. ※ 아직 삭제 안 만듦");
-			/* location.href = "delete.do?넘버="+받은숫자 */
-		}
-	}
-</script>
+<title>Admin Category List Page</title><style type="text/css">
+.admin_main_container{
+	display: flex;
+	flex-direction: row;
+	width: 1150px;
+	height: 100%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	background-color: lightgray;
+}
+.admin_right_container{
+	display: block;
+}
+</style>
 </head>
 <body>
-	<!-- admin_top.jsp include 할 것 -->
-	<div align="center">
-		<h3>임시 admin_top.jsp</h3>
-	</div>
-	<div align="center">
-		<table border="1" cellspacing="0" width="500">
-			<tr bgcolor="lightgray">
-				<th>카테고리 번호</th>
-				<th>카테고리 코드</th>
-				<th>카테고리 이름</th>
-				<th>삭제</th>
+	<jsp:include page="/include/admin_top.jsp"></jsp:include>
+
+	<div class="admin_main_container">
+	<jsp:include page="/include/admin_sidebar.jsp"></jsp:include>
+
+	<div class="admin_right_container" style="padding:50px;">
+		<table border="3" cellspacing="0" width="600" bgcolor="white">
+			<tr bgcolor="lightpink">
+				<th>카테고리 번호     </th>
+				<th>카테고리 코드     </th>
+				<th>카테고리 이름     </th>
+				<th></th>
+				<th></th>
 			</tr>
 			<c:set var="list" value="${categoryList }" />
 			<c:if test="${!empty list }">
@@ -36,85 +42,22 @@
 							<td>${dto.getCategory_num() }</td>
 							<td>${dto.getCategory_code() }</td>
 							<td>${dto.getCategory_name() }</td>
-							<td><input type="button" value="삭제" onclick="check(${dto.getCategory_num() })"></td>
+							<td><input type="button" value="수정" onclick="location.href='<%=request.getContextPath() %>/admin_category_update.do?num=${dto.getCategory_num() }'"></td>
+							<td><input type="button" value="삭제" onclick="deleteCategory(${dto.getCategory_num() })"></td>
 						</tr>
 					</c:forEach>
 			</c:if>
-			<!-- <tr>
-				<td>01</td>
-				<td>A0010001</td>
-				<td>농작물</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(01)"></td>
-			</tr>
-			<tr>
-				<td>02</td>
-				<td>A0010002</td>
-				<td>해산물</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(02)"></td>
-			</tr>
-			<tr>
-				<td>03</td>
-				<td>A0010003</td>
-				<td>육류</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(03)"></td>
-			</tr>
-			<tr>
-				<td>04</td>
-				<td>A0020001</td>
-				<td>면</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(04)"></td>
-			</tr>
-			<tr>
-				<td>05</td>
-				<td>B0010001</td>
-				<td>탄산음료</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(05)"></td>
-			</tr>
-			<tr>
-				<td>06</td>
-				<td>B0010002</td>
-				<td>카페인음료</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(06)"></td>
-			</tr>
-			<tr>
-				<td>07</td>
-				<td>B0020001</td>
-				<td>술</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(07)"></td>
-			</tr>
-			<tr>
-				<td>08</td>
-				<td>C0010001</td>
-				<td>화장품</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(08)"></td>
-			</tr>
-			<tr>
-				<td>09</td>
-				<td>D0010001</td>
-				<td>주방용품</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(09)"></td>
-			</tr>
-			<tr>
-				<td>10</td>
-				<td>D0010002</td>
-				<td>가전제품</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(10)"></td>
-			</tr>
-			<tr>
-				<td>11</td>
-				<td>D0010003</td>
-				<td>육아용품</td>
-				<td align="center"><input type="button" value="삭제" onclick="deleteConfirm(11)"></td>
-			</tr> -->
 			<c:if test="${empty list }">
 				<tr>
-					<td colspan="4" align="center"> 아직 입력된 카테고리 리스트가 없습니다 </td>
+					<td colspan="5" align="center"> 아직 입력된 카테고리 리스트가 없습니다 </td>
 				</tr>
 			</c:if>
-			<td colspan="4" align="right">
+			<tr></tr>
+			<td colspan="5" align="center" bgcolor=#EEEEEE>
 			<input type="button" value="카테고리 추가" onclick="location.href='admin_category_input.do'"></td>
 		</table>
 	</div>
 	<!-- admin_bottom.jsp include 할 것 -->
+<script src="<%=request.getContextPath()%>/js/category_manage.js"></script>
 </body>
 </html>
