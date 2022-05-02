@@ -30,7 +30,7 @@ public class AdminCategoryInputOkAction implements Action {
 		
 		if(check > 0) {
 			out.println("alert('카테고리 등록 성공')");
-			forward.setRedirect(true);
+			forward.setRedirect(false);
 			forward.setPath("admin_category_list.do");
 		} else {
 			out.println("<script>");

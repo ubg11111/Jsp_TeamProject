@@ -11,17 +11,6 @@
 <title>Payment</title>
 <link rel="stylesheet" type="text/css" href="css/top.css">
 <link rel="stylesheet" type="text/css" href="css/bottom.css">
-<script type="text/javascript">
-	function check(pwd) {
-		var test = prompt("비밀번호를 입력하세요.");
-		
-		if(test == pwd) {
-			location.href="user_order.do";
-		} else {
-			alert("비밀번호가 틀렸습니다.");
-		}
-	}
-</script>
 </head>
 <body>
 	<jsp:include page="../include/main_top.jsp" />
@@ -138,7 +127,9 @@
 		</table>
 	</div>
 	
-	<button onclick="check(${dto.getUser_pwd() })">주문하기</button>
+	<form action="" method="post">
+		<input type="submit" value="결제하기">
+	</form>
 	<jsp:include page="../include/main_bottom.jsp" />
 </body>
 </html>
