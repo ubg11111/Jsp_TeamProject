@@ -110,15 +110,18 @@
 			        </li>
 			      
 			      </ul>
-			      <form class="d-flex" method="post" action="<%=request.getContextPath()%>/user_search.do">
+			     
+			     <form class="d-flex" method="post" action="<%=request.getContextPath()%>/user_search.do">
 			        <input id="Serarch_flex" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_product">
 			        <button class="btn btn-outline-success" type="submit">검색</button>
-			        
-			        <span class="main_icon">
-				        <a href="#"><i class="fa-solid fa-heart fa-2x"></i></a>
-				        <a href="<%=request.getContextPath()%>/user_cart_list.do"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
-			        </span>
-			      </form>
+			     </form> 
+		        
+		        
+		        <span class="main_icon">
+			        <a href="#"><i class="fa-solid fa-heart fa-2x"></i></a>
+			        <a href="<%=request.getContextPath()%>/user_cart_list.do"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+		        </span>
+			      
 			      
 			      
 			    </div>

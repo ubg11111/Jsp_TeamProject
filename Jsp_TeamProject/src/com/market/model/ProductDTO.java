@@ -13,9 +13,6 @@ public class ProductDTO {
 	private String pdetails;
 	private String pinputdate;
 	private String pdiscount;
-	private String pdelivery;
-	private String packages;
-	
 	
 	
 	
@@ -85,19 +82,5 @@ public class ProductDTO {
 	public void setPdiscount(String pdiscount) {
 		this.pdiscount = pdiscount;
 	}
-	public String getPdelivery() {
-		return pdelivery;
-	}
-	public void setPdelivery(String pdelivery) {
-		this.pdelivery = pdelivery;
-	}
-	public String getPackages() {
-		return packages;
-	}
-	public void setPackages(String packages) {
-		this.packages = packages;
-	}
-	
-	
-	
+
 }
