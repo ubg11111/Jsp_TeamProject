@@ -75,7 +75,35 @@ public class ProductDAO {
 		}
 	}	// closeConn() 메서드 end
 	
+	// 검색을 눌렀을때 인풋에서넘어오는 자료를 DB와 연동하기
 	
+	public ProductDTO searchProduct(String name) {
+		
+		ProductDTO dto = new ProductDTO();
+
+		try {
+			openConn();
+			sql = "select * from product_market where pname like ? order by pnum desc";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, "%"+name+"%");
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				dto.setPname(rs.getString("pname"));
+				dto.setPimage(rs.getString("pimage"));
+				dto.setPrice(rs.getInt("price"));
+				dto.setPdetails(rs.getString("pdetails"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		return dto;
+	} // searchProduct 메서드 end
 	
+	//안녕하세요
 	
 }

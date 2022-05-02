@@ -125,23 +125,33 @@ public class UserDAO {
 	}
 	
 	public int insertUser(UserDTO dto) {
-		int result = 0;
+		int result = 0, count = 0;
 		
 		try {
 			openConn();
-			
-			sql = "insert into user_market values(?, ?, ?, ?, ?, ?, ?, ? ,sysdate,'')";
+			sql = "select max(user_no) from user_market";
 			
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setString(1, dto.getUser_id());
-			pstmt.setString(2, dto.getUser_pwd());
-			pstmt.setString(3, dto.getUser_name());
-			pstmt.setString(4, dto.getUser_gender());
-			pstmt.setString(5, dto.getUser_email());
-			pstmt.setString(6, dto.getUser_address());
-			pstmt.setString(7, dto.getUser_detailaddress());
-			pstmt.setString(8, dto.getUser_phone());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1)+1;
+			}
+			
+			sql = "insert into user_market values(?, ?, ?, ?, ?, ?, ?, ?, ? ,sysdate,'')";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, count);
+			pstmt.setString(2, dto.getUser_id());
+			pstmt.setString(3, dto.getUser_pwd());
+			pstmt.setString(4, dto.getUser_name());
+			pstmt.setString(5, dto.getUser_gender());
+			pstmt.setString(6, dto.getUser_email());
+			pstmt.setString(7, dto.getUser_address());
+			pstmt.setString(8, dto.getUser_detailaddress());
+			pstmt.setString(9, dto.getUser_phone());
 			
 			result = pstmt.executeUpdate();
 	
@@ -201,6 +211,7 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
+				dto.setUser_no(rs.getInt("user_no"));
 				dto.setUser_id(id);
 				dto.setUser_pwd(rs.getString("user_pwd"));
 				dto.setUser_name(rs.getString("user_name"));
@@ -220,7 +231,6 @@ public class UserDAO {
 		}
 		return dto;
 	}
-	
 	
 	
 }
