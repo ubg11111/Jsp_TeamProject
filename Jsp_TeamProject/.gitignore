@@ -1,10 +1,11 @@
-/build/
 # Created by https://www.toptal.com/developers/gitignore/api/windows,java,eclipse
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,java,eclipse
 
 ### Eclipse ###
 .metadata
+/build/
 bin/
+classes/
 tmp/
 *.tmp
 *.bak
@@ -14,8 +15,9 @@ local.properties
 .loadpath
 .recommenders
 
+
+
 # 특정 파일 제외
-src/com.maket.controller/FrontController.java
 
 
 # External tool builders

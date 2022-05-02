@@ -10,7 +10,6 @@ create table product_market(
    pdetails varchar2(1000),					-- 설명
    pinputdate date,							-- 입고일
    pdiscount varchar2(5) default 0,			-- 할인율
-   pdelivery varchar2(10),					-- 배송형태
-   package varchar2(10)   					-- 포장타입
 );
 
+insert into product_market values(1,'딸기','010001','국산','',1,3500,'삼성식품','국산딸기입니다.',sysdate, default);
