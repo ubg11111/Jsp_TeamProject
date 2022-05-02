@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
+	<!-- 수정 -->
 	<jsp:include page="/include/main_top.jsp"></jsp:include>
 	
 
