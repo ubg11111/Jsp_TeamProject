@@ -9,36 +9,37 @@ import javax.servlet.http.HttpServletResponse;
 import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
 import com.market.model.CategoryDAO;
+import com.market.model.CategoryDTO;
 
-public class AdminCategoryInputOkAction implements Action {
+public class AdminCategoryUpdateOkAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String category_code_head = request.getParameter("category_code_head").trim();
-		String category_code_tail = request.getParameter("category_code_tail").trim();
-		String category_code = category_code_head + category_code_tail.substring(0,3);
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		
 		String category_name = request.getParameter("category_name").trim();
+		int category_num = Integer.parseInt(request.getParameter("category_num").trim());
 		
+		CategoryDTO dto = new CategoryDTO();
+		dto.setCategory_name(category_name);
+		dto.setCategory_num(category_num);
 		CategoryDAO dao = CategoryDAO.getInstance();
 		
-		int check = dao.insertCategory(category_code, category_name);
-
-		ActionForward forward = new ActionForward();
+		int check = dao.updateCategory(dto);
 		
+		ActionForward forward = new ActionForward();
 		PrintWriter out = response.getWriter();
 		
 		if(check > 0) {
-			out.println("alert('카테고리 등록 성공')");
 			forward.setRedirect(true);
 			forward.setPath("admin_category_list.do");
 		} else {
 			out.println("<script>");
-			out.println("alert('카테고리 등록 실패')");
+			out.println("alert('카테고리 수정 실패')");
 			out.println("history.back()");
 			out.println("</script>");
 		}
 		return forward;
 	}
-
 }
