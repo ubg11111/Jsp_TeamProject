@@ -1,6 +1,7 @@
 package com.maket.action;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +20,7 @@ public class UserSearchAction implements Action {
 		
 		ProductDAO dao = ProductDAO.getInstance();
 		
-		ProductDTO find = dao.searchProduct(find_product);
+		List<ProductDTO> find = dao.searchProduct(find_product);
 		
 		request.setAttribute("Find", find);
 		

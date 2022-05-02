@@ -13,3 +13,9 @@ create table product_market(
 );
 
 insert into product_market values(1,'딸기','010001','국산','',1,3500,'삼성식품','국산딸기입니다.',sysdate, default);
+
+insert into product_market values(2,'양파','010002','국산','',1,5500,'삼성식품','국산양파입니다.',sysdate, default);
+
+insert into product_market values(3,'유기농딸기','010003','국산','',1,3500,'인정식품','유기농 딸기 입니다.',sysdate, default);
+
+insert into product_market values(4,'양파','010004','호주산','',1,5500,'삼성식품','호주산 양파입니다.',sysdate, default);
