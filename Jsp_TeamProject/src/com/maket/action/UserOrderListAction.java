@@ -9,32 +9,29 @@ import javax.servlet.http.HttpSession;
 
 import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
-import com.market.model.CartDAO;
-import com.market.model.CartDTO;
+import com.market.model.OrderDAO;
+import com.market.model.OrderDTO;
 import com.market.model.UserDTO;
 
-public class UserCartListAction implements Action {
+public class UserOrderListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		// session으로 id를 받아와서 해당 아이디의 장바구니 목록을 조회하여 view page로 이동
+		// 주문리스트 불러와서 뷰 페이지로 넘기기
 		
 		HttpSession session = request.getSession();
 		UserDTO userDto = (UserDTO)session.getAttribute("userCont");
 		String userId = userDto.getUser_id();
-		String userAddr = userDto.getUser_address();
-		String userDAddr = userDto.getUser_detailaddress();
 		
-		CartDAO dao = CartDAO.getInstance();
+		OrderDAO dao = OrderDAO.getInstance();
+		List<OrderDTO> list = dao.getOrderList(userId);
 		
-		List<CartDTO> list = dao.getCartList(userId);
+		request.setAttribute("userDTO", userDto);
+		request.setAttribute("orderList", list);
 		
-		request.setAttribute("cartList", list);
-		request.setAttribute("userAddr", userAddr);
-		request.setAttribute("userDAddr", userDAddr);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("user/user_cart_list.jsp");
+		forward.setPath("user/user_order_list.jsp");
 		
 		return forward;
 	}

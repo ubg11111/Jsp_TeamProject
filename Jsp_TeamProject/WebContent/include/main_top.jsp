@@ -62,7 +62,7 @@
 		          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_main.jsp">공지사항</a></li>
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_inquiry_list.jsp">1:1문의</a></li>
-		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>">주문내역</a></li>
+		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_order_list.do">주문내역</a></li>
 		          </ul>
 			    </li>
 			</ul>
