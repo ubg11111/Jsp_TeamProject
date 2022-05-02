@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>1:1문의</title>
-<link rel="stylesheet" type="text/css" href="../css/notice_inquiry_form.css">
+<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_form.css">
 </head>
 <body>
 	<header>
