@@ -82,7 +82,7 @@
 
         <tr>
             <td colspan="2" align="center">
-                <input type="button" id="btn_joinok" value="메인페이지로이동"
+                <input type="button" id="btn_joinok" value="마이페이지로이동"
                 	onclick="location.href='main.jsp'">
             </td>
         </tr>
