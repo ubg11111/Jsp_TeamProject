@@ -14,3 +14,7 @@ create table product_market(
    package varchar2(10)   					-- 포장타입
 );
 
+<<<<<<< develop
+=======
+insert into product_market values(1,'딸기','010001','국산','',1,3500,'삼성식품','국산딸기입니다.',sysdate, default);
+>>>>>>> 5043c44 검색기능 테스트 및 수정사항 적용
