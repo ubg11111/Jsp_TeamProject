@@ -5,6 +5,7 @@ public class OrderDTO {
 	private int order_group;
 	private String order_userId;
 	private String order_userAddr;
+	private String order_detailAddr;
 	private int order_pnum;
 	private String order_pname;
 	private String order_image;
@@ -78,6 +79,12 @@ public class OrderDTO {
 	}
 	public void setOrder_date(String order_date) {
 		this.order_date = order_date;
+	}
+	public String getOrder_detailAddr() {
+		return order_detailAddr;
+	}
+	public void setOrder_detailAddr(String order_detailAddr) {
+		this.order_detailAddr = order_detailAddr;
 	}
 	
 }
