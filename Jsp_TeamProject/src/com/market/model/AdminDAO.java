@@ -127,7 +127,7 @@ public class AdminDAO {
 				dto.setAdmin_id(id);
 				dto.setAdmin_pwd(rs.getString("admin_pwd"));
 				dto.setAdmin_name(rs.getString("admin_name"));
-				dto.setAdmin_email(rs.getString("admin_eamil"));
+				dto.setAdmin_email(rs.getString("admin_email"));
 				dto.setAdmin_date(rs.getString("admin_date"));
 			}
 		} catch (SQLException e) {
