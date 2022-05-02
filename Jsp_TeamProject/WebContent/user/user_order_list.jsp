@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="css/bottom.css">
 </head>
 <body>
-	
+
 	<jsp:include page="../include/main_top.jsp" />
 	
 	<h1>주문내역</h1>

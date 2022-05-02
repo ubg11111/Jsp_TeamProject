@@ -1,7 +1,6 @@
 package com.maket.action;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +11,6 @@ import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
 import com.market.model.CartDAO;
 import com.market.model.CartDTO;
-import com.market.model.OrderDTO;
 import com.market.model.UserDTO;
 
 public class UserOrderMaybeAction implements Action{
