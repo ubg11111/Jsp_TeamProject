@@ -12,66 +12,10 @@
 <body>
 
 	<div id="header">
-			<a href="#">
+			<a href="<%=request.getContextPath()%>/main.jsp">
 				<img class="logo_img" src="<%=request.getContextPath()%>/uploadFile/logo.png">
 			</a>
 	</div>
 
-	<div id="admin_menu">
-        <nav class="navbar navbar-expand-lg navbar-light">
-        
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">${adminCont.getAdmin_name()}님</a>
-              
-				<div class="collapse navbar-collapse" id="navbarNavDropdown">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-						<a class="nav-link active"aria-current="page" href="<%=request.getContextPath()%>/admin/admin_main.jsp">관리자 홈</a>
-						</li>
-
-						<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						 회원관리 
-						</a>
-							<ul class="dropdown-menu"
-								aria-labelley="navbarDropdownMenuLink">
-								<li><a class="dropdown-item" href="#">회원목록 & 수정</a></li>
-								<li><a class="dropdown-item" href="#">1:1문의 현황 & 답변</a></li>
-								<li><a class="dropdown-item" href="#">메일문의 현황 & 답변</a></li>
-							</ul>
-						</li>
-
-						<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						 매출관리 
-						</a>
-						
-							<ul class="dropdown-menu"
-								aria-labelledby="navbarDropdownMenuLink">
-								<li><a class="dropdown-item" href="#">매출현황</a></li>
-								<li><a class="dropdown-item" href="#">거래내역</a></li>
-							</ul>
-						</li>
-						
-						<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						 제품관리
-						</a>
-							<ul class="dropdown-menu"
-								aria-labelledby="navbarDropdownMenuLink">
-								<li><a class="dropdown-item" href="#">카테고리등록</a></li>
-								<li><a class="dropdown-item" href="#">제품등록</a></li>
-							</ul>
-						</li>
-						
-						<li class="nav-item">
-						<a class="nav-link active"aria-current="page" href="<%=request.getContextPath()%>/admin_logout.do">관리자 로그아웃</a>
-						</li>
-						
-					</ul>
-				</div>
-			</div>
-          </nav>
-    </div>
 </body>
 </html>
