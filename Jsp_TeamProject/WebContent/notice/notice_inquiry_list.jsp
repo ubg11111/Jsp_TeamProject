@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>1:1문의</title>
-<link rel="stylesheet" type="text/css" href="../css/notice_inquiry_list.css">
+<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_list.css?2">
 </head>
 <body>
 	<header>
@@ -23,23 +23,22 @@
 		</aside>
 
 		<main id="main">
-			<section>
+			<%-- 문의 내용이 있는 경우 --%>
+			<!-- <section>
 				<h1>1:1 문의</h1>
 				<hr>
-				<form action="">
-					<table class="table table-sm">
-						<tr>
-							<th class="notice_title">제목</th>
-							<th>작성일</th>
-							<th>답변상태</th>
-						</tr>
-						<tr>
-							<td class="notice_title"><a href="">문의제목</a></td>
-							<td>2022-04-27</td>
-							<td>처리중</td>
-						</tr>
-					</table>
-				</form>
+				<table class="table table-sm">
+					<tr>
+						<th class="notice_title">제목</th>
+						<th>작성일</th>
+						<th>답변상태</th>
+					</tr>
+					<tr>
+						<td class="notice_title"><a href="">문의제목</a></td>
+						<td>2022-04-27</td>
+						<td>처리중</td>
+					</tr>
+				</table>
 			</section>
 
 			<section>
@@ -62,7 +61,23 @@
 					</ul>
 				</nav>
 				<hr>
-			</section>
+			</section> -->
+			
+			<%-- 문의 내용이 없는 경우 --%>
+			<div>
+				<h1>1:1 문의</h1>
+				<hr>
+				<table class="table table-sm">
+					<tr>
+						<th class="notice_title">제목</th>
+						<th>작성일</th>
+						<th>답변상태</th>
+					</tr>
+				</table>
+			</div>
+			<div class="inquiry_empty">
+				<span>작성한 1:1 문의가 없습니다.</span>
+			</div>
 
 			<div class="inquiry_btn">
 				<input type="button" class="btn btn-secondary btn-lg" value="문의하기" onclick="location.href='notice_inquiry_form.jsp'"> 
