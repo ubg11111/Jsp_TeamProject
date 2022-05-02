@@ -12,6 +12,7 @@
 </head>
 <body>
 
+
 	<jsp:include page="/include/main_top.jsp"></jsp:include>
 	
 
@@ -211,7 +212,7 @@
 				<!-- 메인박스 3번째 -->
 				<div class="main-box3" id="main4">
 					<div class="main_content">
-							<h3>오늘 저녁은 이거면 끝!</h3>
+							<h3>오늘 저녁은 이걸면 끝!</h3>
 					</div>
 					<div class="main-img1">
 						<div class="card" style="width: 18rem;">
