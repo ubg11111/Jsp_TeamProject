@@ -154,7 +154,7 @@ public class CartDAO {
 		try {
 			openConn();
 			
-			sql = "select max(cart_num) from cart_market";
+			sql = "select mac(cart_num) from cart_market";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			

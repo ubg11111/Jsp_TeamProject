@@ -1,7 +1,6 @@
 package com.maket.action;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +19,7 @@ public class UserSearchAction implements Action {
 		
 		ProductDAO dao = ProductDAO.getInstance();
 		
-		List<ProductDTO> find = dao.searchProduct(find_product);
+		ProductDTO find = dao.searchProduct(find_product);
 		
 		request.setAttribute("Find", find);
 		
@@ -30,6 +29,7 @@ public class UserSearchAction implements Action {
 		forward.setPath("user/user_search.jsp");
 		
 		
-		return forward;
+		
+		return null;
 	}
 }

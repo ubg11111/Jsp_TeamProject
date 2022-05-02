@@ -8,13 +8,11 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/bottom.css">
 </head>
 <body>
-	<hr width="100%">
-	
+
 	<div id="footer">
 		<div class="footer-top">
 			<div class="inner_footer">
 				<div class="footer_cc">
-						
 						<h2 class="title_cc">고객행복센터</h2>
 						
 						<div class="cc_view">
@@ -43,17 +41,6 @@
 								<dd>고객센터 운영시간에 순차적으로 답변해드리겠습니다.</dd>
 							</dl>
 						</div>
-						
-						<div class="cc_qna">
-							<h3>
-								<button type="button" class="btn btn-light" id="cc_qna_button">
-									<a href="<%=request.getContextPath()%>/admin_login.do" class="tit">
-										관리자페이지
-									</a>
-								</button>
-							</h3>
-						</div>
-						
 				</div>
 					
 				<div class="company">

@@ -42,7 +42,7 @@
           </button>
           <div class="collapse" id="orders-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="admin_category_list.do" class="link-dark rounded">카테고리 관리</a></li>
+              <li><a href="#" class="link-dark rounded">카테고리등록</a></li>
               <li><a href="#" class="link-dark rounded">제품등록</a></li>
             </ul>
           </div>

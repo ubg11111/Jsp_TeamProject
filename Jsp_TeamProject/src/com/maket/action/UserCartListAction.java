@@ -22,8 +22,7 @@ public class UserCartListAction implements Action {
 		HttpSession session = request.getSession();
 		UserDTO userDto = (UserDTO)session.getAttribute("userCont");
 		String userId = userDto.getUser_id();
-		String userAddr = userDto.getUser_address();
-		String userDAddr = userDto.getUser_detailaddress();
+		String userAddr = userDto.getUser_id();
 		
 		CartDAO dao = CartDAO.getInstance();
 		
@@ -31,7 +30,6 @@ public class UserCartListAction implements Action {
 		
 		request.setAttribute("cartList", list);
 		request.setAttribute("userAddr", userAddr);
-		request.setAttribute("userDAddr", userDAddr);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("user/user_cart_list.jsp");
