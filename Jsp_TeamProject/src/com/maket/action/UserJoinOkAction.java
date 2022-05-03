@@ -10,7 +10,6 @@ import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
 import com.market.model.UserDAO;
 import com.market.model.UserDTO;
-
 public class UserJoinOkAction implements Action {
 
 	@Override

@@ -4,16 +4,14 @@ public class ProductDTO {
 
 	private int pnum;
 	private String pname;
-	private String pcategory;
-	private String pspec;
+	private String  pcategory_fk;
+	private String pcompany;
 	private String pimage;
 	private int pqty;
 	private int price;
-	private String pcompany;
+	private String pspec;
 	private String pdetails;
 	private String pinputdate;
-	private String pdiscount;
-	
 	
 	
 	public int getPnum() {
@@ -28,17 +26,17 @@ public class ProductDTO {
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	public String getPcategory() {
-		return pcategory;
+	public String getPcategory_fk() {
+		return pcategory_fk;
 	}
-	public void setPcategory(String pcategory) {
-		this.pcategory = pcategory;
+	public void setPcategory_fk(String pcategory_fk) {
+		this.pcategory_fk = pcategory_fk;
 	}
-	public String getPspec() {
-		return pspec;
+	public String getPcompany() {
+		return pcompany;
 	}
-	public void setPspec(String pspec) {
-		this.pspec = pspec;
+	public void setPcompany(String pcompany) {
+		this.pcompany = pcompany;
 	}
 	public String getPimage() {
 		return pimage;
@@ -58,11 +56,11 @@ public class ProductDTO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getPcompany() {
-		return pcompany;
+	public String getPspec() {
+		return pspec;
 	}
-	public void setPcompany(String pcompany) {
-		this.pcompany = pcompany;
+	public void setPspec(String pspec) {
+		this.pspec = pspec;
 	}
 	public String getPdetails() {
 		return pdetails;
@@ -76,11 +74,4 @@ public class ProductDTO {
 	public void setPinputdate(String pinputdate) {
 		this.pinputdate = pinputdate;
 	}
-	public String getPdiscount() {
-		return pdiscount;
-	}
-	public void setPdiscount(String pdiscount) {
-		this.pdiscount = pdiscount;
-	}
-
 }
