@@ -37,7 +37,11 @@
                           </div>
                     </td>
                     <td>
-                        <div id="search"> <a href="#">아이디 찾기</a> | <a href="#">비밀번호찾기</a> </div>
+                        <div id="search">
+                         <a href="<%=request.getContextPath()%>/user_idsearch.do">아이디 찾기</a>
+                         | 
+                         <a href="<%=request.getContextPath()%>/user_pwdsearch.do">비밀번호찾기</a>
+                         </div>
                     </td>
                 </tr>
 
