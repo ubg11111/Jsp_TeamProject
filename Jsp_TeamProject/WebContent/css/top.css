@@ -91,6 +91,7 @@
 #user_menu1{
 	display: none;
 }
+
 #welcome{
    font-family: noto sans;
    font-weight: 400;
@@ -109,5 +110,35 @@ font-size:15px;
 color: black;
 }
 
+.product-select:hover{
+	
+	text-decoration: underline;
+	color: purple;
+	font-weight: bold;
+	
+}
+
+/* 이모티콘 커스텀 */
+
+.fa-heart {
+	
+	color: purple;
+	
+}
+
+.fa-heart:hover{
+	
+	color: black;
+	
+}
 
 
+.fa-cart-shopping{
+	
+	color: purple;
+}
+
+.fa-cart-shopping:hover{
+	
+	color: black;
+}

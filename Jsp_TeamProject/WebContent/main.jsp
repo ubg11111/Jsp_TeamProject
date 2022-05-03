@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마켓컬리</title>
+<title>푸드톡</title>
 <link rel="stylesheet" type="text/css" href="css/top.css">
 <link rel="stylesheet" type="text/css" href="css/bottom.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
