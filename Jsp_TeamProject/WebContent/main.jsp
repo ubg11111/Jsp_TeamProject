@@ -12,7 +12,7 @@
 </head>
 <body>
 
-
+	
 	<jsp:include page="/include/main_top.jsp"></jsp:include>
 	
 
@@ -21,7 +21,7 @@
 			<div id="TalkMain" class="page_main">
 				<div class="bannaer">
 					<div class="bannaer_content">
-					<!-- 메인컨텐트 첫번째 -->
+					<!-- 메인컨텐트 첫번째  -->
 					<div class="main_content" >
 							<h3>이 상품 어때요?</h3>
 					</div>
