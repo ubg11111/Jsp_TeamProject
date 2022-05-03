@@ -25,10 +25,12 @@
 }
 
 .admin_right_container h1{
+	width: 1500px;
 	text-align:center;
 }
 
 .input_button{
+	width: 1500px;
 	text-align: center;
 	margin-top: 50px;
 }
@@ -109,8 +111,6 @@
 				<input type="button" value="제품등록"
 					onclick="location.href='admin_product_input.do'">
 			</div>
-			
-			
 			
 		</div>
 	</div>
