@@ -51,14 +51,10 @@ public class AdminProductUpdateOkAction implements Action {
 		
 		String p_details = multi.getParameter("p_details").trim();
 		
-		
-		// 히든으로 넘어온 데이터를 받아오기
 		int p_num = Integer.parseInt(multi.getParameter("p_num").trim());
 		
-		// 이미지 파일이 새로운 파일인경우 새로운파일로 적용
 		String p_image_new = multi.getFilesystemName("p_image_new");
 		
-
 		if(p_image_new == null) {  // 수정할 첨부파일 이미지가 없는 경우
 			p_image_new = multi.getParameter("p_image_old");
 		}

@@ -1,86 +1,146 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>1:1문의</title>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_list.css?2">
+<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_list.css?1">
+<link rel="stylesheet" href="/Jsp_TeamProject/css/fontello/css/fontello.css">
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	
+	$(function() {
+		$(".notice_title").click(function() {
+			var currentRow = $(this).closest('tr');
+			var detail = currentRow.next('tr');
+			
+			if(detail.is(":visible")) {
+				detail.hide();
+			} else {
+				detail.show();
+			}
+		});
+	});
+	
+</script>
 </head>
 <body>
 	<header>
 		<jsp:include page="../include/main_top.jsp" />
 	</header>
-
+	
 	<div id="body">
 		<aside id="aside">
 			<h1 class="fw-bolder">고객센터</h1>
 				<ul class="list-group list-group-flush fw-bold">
-					<li class="list-group-item"><a href="notice_main.jsp">공지사항</a></li>
-					<li class="list-group-item"><a href="#">1:1문의</a></li>
+					<li class="list-group-item"><a href="<%=request.getContextPath() %>/notice_main_list.do">공지사항</a></li>
+					<li class="list-group-item"><a href="<%=request.getContextPath() %>/notice_inquiry_list.do">1:1문의</a></li>
 					<li class="list-group-item"><a href="#">메일문의</a></li>
 				</ul>
 		</aside>
 
 		<main id="main">
-			<%-- 문의 내용이 있는 경우 --%>
-			<!-- <section>
-				<h1>1:1 문의</h1>
-				<hr>
-				<table class="table table-sm">
-					<tr>
-						<th class="notice_title">제목</th>
-						<th>작성일</th>
-						<th>답변상태</th>
-					</tr>
-					<tr>
-						<td class="notice_title"><a href="">문의제목</a></td>
-						<td>2022-04-27</td>
-						<td>처리중</td>
-					</tr>
-				</table>
+			<section>
+			<c:set var="list" value="${inquiryList }" />
+				<h1>1:1 문의</h1> <hr>
+				
+				<%-- 문의 내용이 없는 경우 --%>
+				<c:if test="${empty list }">
+					<div class="inquiry_empty">
+						작성한 1:1 문의가 없습니다.
+					</div>
+				</c:if>
+					
+				<%-- 문의 내용이 있는 경우 --%>
+				<c:if test="${!empty list }">
+					<table class="table table-sm">
+						<tr>
+							<th class="notice_title">제목</th>
+							<th>작성일</th>
+							<th>답변상태</th>
+						</tr>
+						<c:forEach items="${list }" var="dto">
+							<tr class="notice_main">
+								<td class="notice_title">${dto.getAsk_title() }</td>
+								<td>${dto.getAsk_date().substring(0, 10) }</td>
+								<td><c:if test="${dto.getAsk_status() eq 0}">
+										<span style="color:#808080;">처리중</span>
+									</c:if> 
+									<c:if test="${dto.getAsk_status() eq 1}">
+										<span style="color:#ea7500;">답변완료</span>
+									</c:if>
+								</td>
+							</tr>
+							
+						<%-- 답변이 없는 경우 --%>
+						<c:if test="${empty dto.getAsk_reply() }" >
+							<tr class="replyRow">
+								<td colspan="3">
+									<div class="reply_main">
+										<div class="reply_img_content">
+											<span class="reply_img icon-help"></span>
+											<div class="reply_content">
+												${dto.getAsk_content() }
+											</div>
+										</div>
+										<div class="reply_img">
+											<img src="<%=request.getContextPath() %>/uploadFile${dto.getAsk_image() }" onerror="this.style.display='none'"
+												width="300px" height="300px"/>
+										</div>
+										<div class="reply_btn">
+											<input type="button" value="수정"
+												onclick="location.href='notice_inquiry_update.do?no=${dto.getAsk_no() }'">
+											<input type="button" value="삭제" 
+												onclick="location.href='notice_inquiry_delete.do?no=${dto.getAsk_no() }'">
+										</div>
+									</div>
+								</td>
+							</tr>
+						</c:if>
+						
+						<%-- 답변이 있는 경우 --%>
+						<c:if test="${!empty dto.getAsk_reply() }" >
+							<tr class="replyRow">
+								<td colspan="3">
+									<div class="reply_main">
+										<div>
+											<div class="reply_img_content">
+												<span class="icon-help"></span>
+												<div class="reply_content">
+													${dto.getAsk_content() }
+												</div>
+											</div>
+											<div class="reply_img">
+												<img src="<%=request.getContextPath() %>/upload/${dto.getAsk_image() }" onerror="this.style.display='none'"
+													width="300px" height="300px"/>
+											</div>
+										</div>
+										<div>
+											<div class="reply_img_content reply_admin">
+												<span class="icon-wechat"></span>
+												<div class="reply_content">
+													${dto.getAsk_reply() }
+												</div>
+											</div>
+											<div>
+												<%-- ${dto.getAsk_replyDate() } --%>
+												2022-05-03
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</c:if>
+						</c:forEach>
+					</table>
+				</c:if>
 			</section>
 
-			<section>
-				<nav aria-label="Page navigation example">
-					<ul class="pagination justify-content-center">
-						<li class="page-item"><a class="page-link" href="#">«</a></li>
-						<li class="page-item"><a class="page-link" href="#">‹</a></li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item"><a class="page-link" href="#">5</a></li>
-						<li class="page-item"><a class="page-link" href="#">6</a></li>
-						<li class="page-item"><a class="page-link" href="#">7</a></li>
-						<li class="page-item"><a class="page-link" href="#">8</a></li>
-						<li class="page-item"><a class="page-link" href="#">9</a></li>
-						<li class="page-item"><a class="page-link" href="#">10</a></li>
-						<li class="page-item"><a class="page-link" href="#">›</a></li>
-						<li class="page-item"><a class="page-link" href="#">»</a></li>
-					</ul>
-				</nav>
-				<hr>
-			</section> -->
-			
-			<%-- 문의 내용이 없는 경우 --%>
-			<div>
-				<h1>1:1 문의</h1>
-				<hr>
-				<table class="table table-sm">
-					<tr>
-						<th class="notice_title">제목</th>
-						<th>작성일</th>
-						<th>답변상태</th>
-					</tr>
-				</table>
-			</div>
-			<div class="inquiry_empty">
-				<span>작성한 1:1 문의가 없습니다.</span>
-			</div>
-
 			<div class="inquiry_btn">
-				<input type="button" class="btn btn-secondary btn-lg" value="문의하기" onclick="location.href='notice_inquiry_form.jsp'"> 
+				<input type="button" class="btn btn-secondary btn-lg" value="문의하기" 
+					onclick="location.href='notice/notice_inquiry_form.jsp'">
 			</div>
 		</main>
 	</div>
@@ -88,5 +148,7 @@
 	<footer>
 		<jsp:include page="../include/main_bottom.jsp" />
 	</footer>
+	
+
 </body>
 </html>

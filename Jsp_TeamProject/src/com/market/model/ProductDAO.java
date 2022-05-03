@@ -272,7 +272,7 @@ public class ProductDAO {
 			
 			pstmt.setString(5, dto.getPdetails());
 			
-			pstmt.setInt(6, dto.getPnum());
+			pstmt.setInt(7, dto.getPnum());
 			
 			result = pstmt.executeUpdate();
 			
@@ -316,6 +316,7 @@ public class ProductDAO {
 			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			closeConn(rs, pstmt, con);
