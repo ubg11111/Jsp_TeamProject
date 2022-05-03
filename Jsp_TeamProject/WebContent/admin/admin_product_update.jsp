@@ -8,10 +8,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+	.update_page{
+		margin-top: 100px;
+	}
+	
+	.update_page h3{
+		font-size: 28px;
+		font-weight: bold;
+		border: 3px solid gray;
+		width: 30%;
+		margin: 0 auto;
+		padding: 20px 0px;
+		border-radius: 10px;
+	}
+	
+	.update_page td{
+		line-height: 45px;
+		padding-left: 10px;
+	}
+	
+	.update_page textarea{
+		font-size: 18px;
+	}
+	
+	.update_page img{
+		margin-top: 10px;
+	}
+	
+	.button_input input{
+		font-weight: bold;
+		width: 100px;
+		height: 40px;
+		margin-left: 20px;
+		border: none;
+		border-radius: 15px;
+		background-color: gray;
+	}
+	
+	.button_input input:hover{
+		cursor: pointer;
+	}
+
+</style>
 </head>
 <body>
 
-	<div align="center">
+	<div align="center" class="update_page">
 		<h3>Product 제품 수정 페이지</h3>	
 	
 		<br>
@@ -86,7 +130,7 @@
 				</tr>
 				
 				<tr>
-					<td colspan="2" align="center">
+					<td colspan="2" align="center" class="button_input">
 						<input type="submit" value="상품수정">&nbsp;&nbsp;&nbsp;
 						<input type="reset" value="다시작성">
 					</td>
