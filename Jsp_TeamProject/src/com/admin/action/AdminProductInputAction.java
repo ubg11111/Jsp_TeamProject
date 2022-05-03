@@ -34,7 +34,5 @@ public class AdminProductInputAction implements Action {
 		
 		return forward;
 		
-		
 	}
-
 }

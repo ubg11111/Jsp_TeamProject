@@ -22,7 +22,7 @@ public class AdminProductInputOkAction implements Action {
 		
 		// 첨부파일 저장위치
 		String saveFolder = 
-		"C:\\NCS\\workspace(jsp)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\Jsp_TeamProject\\upload";	;
+		"C:\\Users\\ubg11\\git\\Jsp_TeamProject\\Jsp_TeamProject\\WebContent\\upload";
 		
 		// 첨부파일 용량(크기) 제한 - 파일 업로드 최대 크기
 		int fileSize = 10 * 1024 * 1024;  // 10MB	
@@ -39,21 +39,20 @@ public class AdminProductInputOkAction implements Action {
 		// 상품등록 폼 페이지에서 넘어온 데이터들을 받아 주자.
 		String p_category = multi.getParameter("p_category").trim();
 		
-		String p_name = multi.getParameter("p_name").trim();
+		String p_name = multi.getParameter("pname").trim();
 		
-		String p_company = multi.getParameter("p_company").trim();
+		String p_spec = multi.getParameter("pspec").trim();
+		
+		String p_company = multi.getParameter("pcompany").trim();
 		
 		int p_qty = Integer.parseInt(multi.getParameter("p_qty").trim());
 		
 		int p_price = Integer.parseInt(multi.getParameter("p_price").trim());
 		
-		String p_spec = multi.getParameter("p_spec").trim();
-		
 		String p_details = multi.getParameter("p_details").trim();
 		
-		
 		// getFilesystemName() : 서버 상에 실제로 업로드될 파일의 이름을 문자열로 반환해 주는 메서드.
-		String p_image = multi.getFilesystemName("p_image");
+		String p_image = multi.getFilesystemName("pimage");
 		
 		ProductDTO dto = new ProductDTO();
 		
