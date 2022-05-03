@@ -98,15 +98,15 @@
 			    <div class="collapse navbar-collapse" id="navbarScroll">
 			      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 			        <li>
-			          <a href="#">상품</a>
+			          <a href="#"><span class="product-select">상품</span></a>
 			        </li>
 			        
 			        <li>
-			          <a href="#">베스트상품</a>
+			          <a href="#" class="product-select"><span class="product-select">베스트 상품</span></a>
 			        </li>
 			        
 			        <li>
-			          <a href="#">특가상품</a>
+			          <a href="#" class="product-select"><span class="product-select">특가 상품</span></a>
 			        </li>
 			      
 			      </ul>
