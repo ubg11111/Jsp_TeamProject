@@ -29,7 +29,7 @@
 				<tr>
 					<th>카테고리 코드</th>
 					<td>
-						<input name="p_category" value="${dto.getPcategory() }">
+						<input name="p_category" value="${dto.getPcategory_fk() }">
 					</td>
 				</tr>
 				
@@ -65,14 +65,14 @@
 				<tr>
 					<th>상품가격</th>
 					<td>
-						<input name="p_price" maxlength="8">
+						<input name="p_price" maxlength="8" value="${dto.getPrice() }">
 					</td>			
 				</tr>
 				
 				<tr>
 					<th>상품제조사</th>
 					<td>
-						<input name="p_company" value="${dto.Pcompany() }">
+						<input name="p_company" value="${dto.getPcompany() }">
 					</td>				
 				</tr>
 				
