@@ -125,23 +125,33 @@ public class UserDAO {
 	}
 	
 	public int insertUser(UserDTO dto) {
-		int result = 0;
+		int result = 0, count = 0;
 		
 		try {
 			openConn();
-			
-			sql = "insert into user_market values(?, ?, ?, ?, ?, ?, ?, ? ,sysdate,'')";
+			sql = "select max(user_no) from user_market";
 			
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setString(1, dto.getUser_id());
-			pstmt.setString(2, dto.getUser_pwd());
-			pstmt.setString(3, dto.getUser_name());
-			pstmt.setString(4, dto.getUser_gender());
-			pstmt.setString(5, dto.getUser_email());
-			pstmt.setString(6, dto.getUser_address());
-			pstmt.setString(7, dto.getUser_detailaddress());
-			pstmt.setString(8, dto.getUser_phone());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1)+1;
+			}
+			
+			sql = "insert into user_market values(?, ?, ?, ?, ?, ?, ?, ?, ? ,sysdate,'')";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, count);
+			pstmt.setString(2, dto.getUser_id());
+			pstmt.setString(3, dto.getUser_pwd());
+			pstmt.setString(4, dto.getUser_name());
+			pstmt.setString(5, dto.getUser_gender());
+			pstmt.setString(6, dto.getUser_email());
+			pstmt.setString(7, dto.getUser_address());
+			pstmt.setString(8, dto.getUser_detailaddress());
+			pstmt.setString(9, dto.getUser_phone());
 			
 			result = pstmt.executeUpdate();
 	
@@ -153,6 +163,74 @@ public class UserDAO {
 		return result;
 	}
 	
+	public int userLogin(String id,String pwd) {
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select *from user_market where user_id = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				if(pwd.equals(rs.getString("user_pwd"))) {
+					result = 1;
+				}else {
+					result = -1;
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return result;
+	}
+	
+	public UserDTO getuserCont(String id) {
+		UserDTO dto = new UserDTO();
+		
+		try {
+			openConn();
+			
+			sql = "select *from user_market where user_id = ?";
+			
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1, id);
+			
+			pstmt.setString(1, id);
+
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setUser_no(rs.getInt("user_no"));
+				dto.setUser_id(id);
+				dto.setUser_pwd(rs.getString("user_pwd"));
+				dto.setUser_name(rs.getString("user_name"));
+				dto.setUser_gender(rs.getString("user_gender"));
+				dto.setUser_email(rs.getString("user_email"));
+				dto.setUser_address(rs.getString("user_address"));
+				dto.setUser_detailaddress(rs.getString("user_detailaddress"));
+				dto.setUser_phone(rs.getString("user_phone"));
+				dto.setUser_date(rs.getString("user_date"));
+				dto.setUser_update(rs.getString("user_update"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		return dto;
+	}
 	
 	
 }

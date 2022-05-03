@@ -29,53 +29,64 @@
 			
 			<hr>
 			
-				<div class="cartList">
-					<table>
-					<c:if test="${!empty list }">
-					<c:forEach items="${list }" var="dto">
-					<c:set var="price" value="${dto.getCart_price() }" />
+			<div class="cartList">
+				<table>
+				<c:if test="${!empty list }">
+				<c:forEach items="${list }" var="dto">
+				<c:set var="price" value="${dto.getCart_price() }" />
 					
-						<tr>
-							<td> <img src="<%=request.getContextPath() %>/upload/${dto.getCart_pimage() }"
-								width="50" height="50"> </td>
-							<td> ${dto.getCart_pname() } </td>
-							<td>
-								<c:set var="amount" value="${dto.getCart_pqty() }" />
-								${dto.getCart_pqty() } 개
-							</td>
-							<td>
-								<fmt:formatNumber value="${amount * price }"/> 원
-							</td>
-							<td> 
+					<tr>
+						<td> <img src="<%=request.getContextPath() %>/upload/${dto.getCart_pimage() }"
+							width="50" height="50"> </td>
+						<td> ${dto.getCart_pname() } </td>
+						<td>
+							<c:set var="amount" value="${dto.getCart_pqty() }" />
+							${amount } 개
+						</td>
+						<td>
+							<fmt:formatNumber value="${amount * price }"/> 원
+						</td>
+						<td> 
 							<a href="<%=request.getContextPath() %>
 							/user_cart_delete.do?num=${dto.getCart_num() }">X</a>
-							</td>
-							
-							<c:set var="total" value="${total + (price * amount) }" />
-						</tr>
-					</c:forEach>
-					</c:if>
+						</td>
+						
+						<c:set var="total" value="${total + (price * amount) }" />
+					</tr>
 					
-					<c:if test="${empty list }">
-						<tr>
-							<td colspan="5">
-								<h3>장바구니에 담긴 상품이 없습니다</h3>
-							</td>
-						</tr>
-					</c:if>
-					</table>
-				</div>
+					<input type="hidden" name="pnum" value="${dto.getCart_pnum() }">
+					<input type="hidden" name="pname" value="${dto.getCart_pname() }">
+					<input type="hidden" name="pimage" value="${dto.getCart_pimage() }">
+					<input type="hidden" name="pqty" value="${dto.getCart_pqty() }">
+					<input type="hidden" name="price" value="${dto.getCart_price() }">
+					<input type="hidden" name="total" value="${price * amount }">
+					
+				</c:forEach>
+				</c:if>
+				
+				<c:if test="${empty list }">
+					<tr>
+						<td colspan="5">
+							<h3>장바구니에 담긴 상품이 없습니다</h3>
+						</td>
+					</tr>
+				</c:if>
+				</table>
+			</div>
 				
 			<hr>
 			
 			<div class="cartResult">
 				<div class="cart_delivery">
-				<c:set var="userAddr" value="${userAddr }"></c:set>
+				<c:set var="userAddr" value="${userAddr }" />
+				<c:set var="userDAddr" value="${userDAddr }" />
 					<h4>배송지</h4>
-					<p> ${userAddr } </p>
+					<p> ${userAddr } </p><br>
+					<p> ${userDAddr } </p>
 				</div>
 				
 				<div class="cart_amount">
+				<c:if test="${!empty list }">
 					<dl>
 						<dt>상품금액</dt>
 						<dd>
@@ -97,12 +108,37 @@
 							</span>
 						</dd>
 					</dl>
+					<div class="cart_submit">
+						<input type="submit" value="주문하기">
+					</div>
+				</c:if>
+				<c:if test="${empty list }">
+					<dl>
+						<dt>상품금액</dt>
+						<dd>
+							<span>
+								0 원
+							</span>
+						</dd>
+						
+						<dt>배송비</dt>
+						<dd>
+							<span>
+								0 원
+							</span>
+						</dd>
+						<dt>결제예정금액</dt>
+						<dd>
+							<span>
+								0 원
+							</span>
+						</dd>
+					</dl>
+					<div class="cart_submit">
+						<input type="submit" value="주문하기" disabled="disabled">
+					</div>
+				</c:if>
 				</div>
-				
-				<div class="cart_submit">
-					<input type="submit" value="주문하기">
-				</div>
-				
 			</div>
 		</div>
 	</form>

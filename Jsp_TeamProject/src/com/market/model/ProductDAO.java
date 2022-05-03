@@ -383,7 +383,57 @@ public class ProductDAO {
 		
 	}  // getProductList() 메서드 end
 	
+  // 검색을 눌렀을때 인풋에서넘어오는 자료를 DB와 연동하기
+	
+	public List<ProductDTO> searchProduct(String name) {
+		
+		List<ProductDTO> list = new ArrayList<ProductDTO>();
+
+		try {
+			openConn();
+			sql = "select * from product_market where pname like ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, "%"+name+"%");
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				ProductDTO dto = new ProductDTO();
+				
+				dto.setPnum(rs.getInt("pnum"));
+				
+				dto.setPname(rs.getString("pname"));
+				
+				dto.setPcategory_fk(rs.getString("pcategory_fk"));
+				
+				dto.setPcompany(rs.getString("pcompany"));
+				
+				dto.setPimage(rs.getString("pimage"));
+				
+				dto.setPqty(rs.getInt("pqty"));
+				
+				dto.setPrice(rs.getInt("price"));
+				
+				dto.setPspec(rs.getString("pspec"));
+				
+				dto.setPdetails(rs.getString("pdetails"));
+				
+				dto.setPinputdate(rs.getString("pinputdate"));
+				
+				
+				list.add(dto);
+			
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		return list;
+	} // searchProduct 메서드 end
+  
 	
 }
 
-	
+

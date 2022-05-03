@@ -74,5 +74,4 @@ public class ProductDTO {
 	public void setPinputdate(String pinputdate) {
 		this.pinputdate = pinputdate;
 	}
-	
 }

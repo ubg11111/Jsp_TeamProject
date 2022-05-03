@@ -5,39 +5,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Admin Category Input</title>
-<script type="text/javascript">
-	function choosingTail(head){
-		var a_var = ['001[농작물]', '002[수산물]', '003[축산물]', '004[간식]'];
-		var b_var = ['001[탄산음료]', '002[커피·차]', '003[주류]'];
-		var c_var = ['001[화장품]', '002[세면도구]'];
-		var d_var = ['001[주방용품]', '002[가전제품]'];
-		
-		var target = document.getElementById("tail");
-
-		if(head.value=="A") { var tail = a_var; }
-		else if(head.value == "B") { var tail = b_var; }
-		else if(head.value == "C") { var tail = c_var; }
-		else if(head.value == "D") { var tail = d_var; }
-		
-		target.options.length = 0;
-		
-		for (i in tail){
-			var opt = document.createElement("option");
-			opt.value = tail[i];
-			opt.innerHTML = tail[i];
-			target.appendChild(opt);
-		}
-	}
-</script>
+<style type="text/css">
+.admin_main_container{
+	display: flex;
+	flex-direction: row;
+	width: 1150px;
+	height: 100%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	background-color: lightgray;
+}
+.admin_right_container{
+	display: block;
+}
+</style>
 </head>
 <body onload='choosingTail(head);'>
-	<!-- admin_top.jsp include 할 것 -->
-	<div align="center">
-		<h3>임시 admin_top.jsp</h3>
-	</div>
-	<div align="center">
-		<form method="post" action="<%=request.getContextPath() %>/admin/admin_category_list.jsp">
-			<table border="1" cellspacing="0" width="350">
+	<jsp:include page="/include/admin_top.jsp"></jsp:include>
+
+	<div class="admin_main_container">
+	<jsp:include page="/include/admin_sidebar.jsp"></jsp:include>
+
+
+	<div class="admin_right_container" style="padding:50px;">
+		<form method="post" action="<%=request.getContextPath() %>/admin_category_input_ok.do">
+			<table border="2" cellspacing="0" width="350" bgcolor="white">
 				<tr>
 					<th>카테고리 코드</th>
 					<td>
@@ -46,6 +38,7 @@
 							<option value="B">B[음료]</option>
 							<option value="C">C[화장]</option>
 							<option value="D">D[가전]</option>
+							<option value="Z">Z[기타]</option>
 						</select>&nbsp;
 						<select id="tail" name="category_code_tail" style="width:134px;"></select>
 					</td>
@@ -56,12 +49,13 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
-						<input type="submit" value="등록">&nbsp;&nbsp;&nbsp;
-						<input type="reset" value="취소">
+						<input type="submit" value="등록">
+						<input type="button" value="취소" onclick="history.back()">
 				</tr>
 			</table>
 		</form>
 	</div>
 	<!-- admin_bottom.jsp include 할 것 -->
+<script src="<%=request.getContextPath()%>/js/category_manage.js"></script>
 </body>
 </html>
