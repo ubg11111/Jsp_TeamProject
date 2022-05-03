@@ -205,8 +205,6 @@ public class UserDAO {
 			pstmt = con.prepareStatement(sql);
 
 			pstmt.setString(1, id);
-			
-			pstmt.setString(1, id);
 
 			rs = pstmt.executeQuery();
 			
@@ -230,6 +228,103 @@ public class UserDAO {
 			closeConn(rs, pstmt, con);
 		}
 		return dto;
+	}
+	
+	public UserDTO getuserCont2(String name) {
+		UserDTO dto = new UserDTO();
+		
+		try {
+			openConn();
+			
+			sql = "select *from user_market where user_name = ?";
+			
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1, name);
+
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setUser_no(rs.getInt("user_no"));
+				dto.setUser_id(rs.getString("user_id"));
+				dto.setUser_pwd(rs.getString("user_pwd"));
+				dto.setUser_name(rs.getString("user_name"));
+				dto.setUser_gender(rs.getString("user_gender"));
+				dto.setUser_email(rs.getString("user_email"));
+				dto.setUser_address(rs.getString("user_address"));
+				dto.setUser_detailaddress(rs.getString("user_detailaddress"));
+				dto.setUser_phone(rs.getString("user_phone"));
+				dto.setUser_date(rs.getString("user_date"));
+				dto.setUser_update(rs.getString("user_update"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		return dto;
+	}
+	
+	
+	public int userIdsearch1(String name,String phone) {
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select *from user_market where user_name = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, name);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				if(phone.equals(rs.getString("user_phone"))) {
+					result = 1;
+				}else {
+					result = -1;
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return result;
+	}
+	
+	public int userIdsearch2(String name,String email) {
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select *from user_market where user_name = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, name);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				if(email.equals(rs.getString("user_email"))) {
+					result = 1;
+				}else {
+					result = -1;
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return result;
 	}
 	
 	
