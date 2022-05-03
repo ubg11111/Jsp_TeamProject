@@ -110,6 +110,8 @@ font-size:15px;
 color: black;
 }
 
+
+/* 상품 메뉴 마우스 이동시 효과 */
 .product-select:hover{
 	
 	text-decoration: underline;
@@ -119,26 +121,18 @@ color: black;
 }
 
 /* 이모티콘 커스텀 */
-
 .fa-heart {
-	
 	color: purple;
-	
 }
 
 .fa-heart:hover{
-	
 	color: black;
-	
 }
 
-
 .fa-cart-shopping{
-	
 	color: purple;
 }
 
 .fa-cart-shopping:hover{
-	
 	color: black;
 }

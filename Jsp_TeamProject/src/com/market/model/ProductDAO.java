@@ -293,7 +293,6 @@ public class ProductDAO {
 		
 		int result = 0;
 		
-		
 		try {
 			openConn();
 			
