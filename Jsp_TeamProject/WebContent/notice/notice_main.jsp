@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_main.css?2">
+<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_main.css?1">
 </head>
 <body>
 	<header>
@@ -18,7 +18,7 @@
 			<h1 class="fw-bolder">고객센터</h1>
 				<ul class="list-group list-group-flush fw-bold">
 					<li class="list-group-item"><a href="<%=request.getContextPath() %>/notice_main_list.do">공지사항</a></li>
-					<li class="list-group-item"><a href="<%=request.getContextPath() %>/notice_inquiry_list.do">1:1문의</a></li>
+					<li class="list-group-item"><a href="#">1:1문의</a></li>
 					<li class="list-group-item"><a href="#">메일문의</a></li>
 				</ul>
 		</aside>
