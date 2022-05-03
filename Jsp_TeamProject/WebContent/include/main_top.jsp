@@ -41,7 +41,7 @@
 		          	  <span id="welcome">웰컴</span> <span id="user_name">${userCont.getUser_name()}</span>님
 		          </a>
 		          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-		            <li><a class="dropdown-item" href="#">주문내역</a></li>
+		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_order_list.do">주문내역</a></li>
 		            <li><a class="dropdown-item" href="#">개인정보 수정</a></li>
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_logout.do">로그아웃</a></li>
 		          </ul>
@@ -62,7 +62,6 @@
 		          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_main.jsp">공지사항</a></li>
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_inquiry_list.jsp">1:1문의</a></li>
-		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_order_list.do">주문내역</a></li>
 		          </ul>
 			    </li>
 			</ul>
