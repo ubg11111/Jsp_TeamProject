@@ -7,6 +7,17 @@
 <meta charset="UTF-8">
 <title>1:1문의</title>
 <link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_form.css">
+<script type="text/javascript">
+
+	function PreviewImage() {
+		var preview = new FileReader();
+		preview.onload = function(e) {
+			document.getElementById("PreImg").src = e.target.result;
+		};
+		preview.readAsDataURL(document.getElementById("inquiry_img").files[0]);
+	};
+
+</script>
 </head>
 <body>
 	<header>
@@ -41,9 +52,10 @@
 							</textarea>
 						</div>
 						<div class="filebox">
+							<img id="PreImg" src="" />
 							<label class="btn btn-outline-secondary" for="inquiry_img">
 								<span class="inquiry_img"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxwYXRoIGQ9Ik0wIDBoMzB2MzBIMHoiLz4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0Ljc3OSA2LjExMSkiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIxLjMiPgogICAgICAgICAgICA8cGF0aCBkPSJNMTEuNzkyIDBjLjM5OSAwIC43MTcuMDU2Ljk1NS4xNy4xNzkuMDg0LjM0Ni4xOTkuNTAzLjM0NGwuMTUzLjE1NS42MzEuNzAzYy4xMjIuMTMuMjM0LjIzMy4zMzcuMzFhLjk1Ljk1IDAgMCAwIC4zNC4xNmMuMTI1LjAzMS4yOTIuMDQ3LjUwMy4wNDdsMi45MDYtLjAwM2MxLjI4NCAwIDIuMzI0IDEuMDYyIDIuMzI0IDIuMzd2MTEuMTUxYzAgMS4zMS0xLjA0IDIuMzctMi4zMjQgMi4zN0gyLjMyNGMtMS4yODMgMC0yLjMyNC0xLjA2LTIuMzI0LTIuMzdWNC4yNTdjMC0xLjMxIDEuMDQtMi4zNyAyLjMyNC0yLjM3aDIuOTgzYy4yNDUtLjAwOS40MzItLjA0NS41NTktLjEwOC4xMS0uMDU1LjIzLS4xNDUuMzYtLjI3bC4xMzQtLjEzNy42MzEtLjcwM2MuMi0uMjIuNDE4LS4zODcuNjU3LS41LjE5LS4wOS40MzItLjE0NC43MjUtLjE2Mkw4LjYwMyAwaDMuMTg5eiIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMC4xNDIiIGN5PSI5LjUyOSIgcj0iMy41NTYiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo="></span>
-								<input type="file" id="inquiry_img" name="inquiry_newImg" />
+								<input type="file" id="inquiry_img" name="inquiry_newImg" onchange="PreviewImage();"/>
 								<input type="hidden" name="inquiry_oldImg" value="${dto.getAsk_image() }" />
 							</label>
 						</div> 

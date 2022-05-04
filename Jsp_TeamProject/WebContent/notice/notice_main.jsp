@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_main.css?2">
+<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_main.css?7">
 </head>
 <body>
 	<header>
@@ -39,7 +39,8 @@
 						<tr class="table_content">
 							<td>${dto.getNotice_no() }</td>
 							<td>
-							<a href="<%=request.getContextPath() %>/notice_detail.do?no=${dto.getNotice_no() }">${dto.getNotice_title() }</a>
+							<a href="<%=request.getContextPath() %>/notice_detail.do?no=${dto.getNotice_no() }">
+								${dto.getNotice_title() }</a>
 							</td>
 							<td>${dto.getNotice_writer() }</td>
 							<td>${dto.getNotice_date().substring(0, 10) }</td>

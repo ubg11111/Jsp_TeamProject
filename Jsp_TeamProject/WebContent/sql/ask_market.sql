@@ -10,4 +10,4 @@ CREATE TABLE ASK_MARKET (
     ASK_REPLYDATE DATE -- 답변일자
 );
 
-INSERT INTO ASK_MARKET VALUES(1, 'wonbin', 'test_제목1', 'test_내용1', '', SYSDATE, 1, '해당 문의의 답변 내용입니다.', NULL);
+INSERT INTO ASK_MARKET VALUES(1, 'wonbin', 'test_제목1', 'test_내용1', '', SYSDATE, 1, '해당 문의의 답변 내용입니다.', SYSDATE);

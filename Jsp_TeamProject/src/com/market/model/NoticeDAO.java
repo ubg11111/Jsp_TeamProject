@@ -277,7 +277,6 @@ public class NoticeDAO {
 				dto.setNotice_writer(rs.getString("NOTICE_WRITER"));
 				dto.setNotice_title(rs.getString("NOTICE_TITLE"));
 				dto.setNotice_content(rs.getString("NOTICE_CONTENT"));
-				dto.setNotice_pwd(rs.getString("NOTICE_PWD"));
 				dto.setNotice_hit(rs.getInt("NOTICE_HIT"));
 				dto.setNotice_date(rs.getString("NOTICE_DATE"));
 				dto.setNotice_update(rs.getString("NOTICE_UPDATE"));

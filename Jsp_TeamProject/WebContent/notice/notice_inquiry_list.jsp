@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>1:1문의</title>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_list.css?1">
+<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_list.css?2">
 <link rel="stylesheet" href="/Jsp_TeamProject/css/fontello/css/fontello.css">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
@@ -86,8 +86,8 @@
 											</div>
 										</div>
 										<div class="reply_img">
-											<img src="<%=request.getContextPath() %>/uploadFile${dto.getAsk_image() }" onerror="this.style.display='none'"
-												width="300px" height="300px"/>
+											<img src="<%=request.getContextPath() %>/uploadFile${dto.getAsk_image() }" 
+												onerror="this.style.display='none'"/>
 										</div>
 										<div class="reply_btn">
 											<input type="button" value="수정"
@@ -113,8 +113,8 @@
 												</div>
 											</div>
 											<div class="reply_img">
-												<img src="<%=request.getContextPath() %>/upload/${dto.getAsk_image() }" onerror="this.style.display='none'"
-													width="300px" height="300px"/>
+												<img src="<%=request.getContextPath() %>/upload/${dto.getAsk_image() }" 
+													onerror="this.style.display='none'"/>
 											</div>
 										</div>
 										<div>
@@ -124,9 +124,8 @@
 													${dto.getAsk_reply() }
 												</div>
 											</div>
-											<div>
-												<%-- ${dto.getAsk_replyDate() } --%>
-												2022-05-03
+											<div class="reply_content">
+												${dto.getAsk_replyDate().substring(0, 10) }
 											</div>
 										</div>
 									</div>
