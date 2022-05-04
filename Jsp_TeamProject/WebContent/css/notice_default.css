@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gugi&display=swap');
 
 #body {
@@ -28,6 +27,11 @@
 	
 #aside {
 	margin-right: 50px;
+}
+
+#aside ul .lg a:hover {
+	text-decoration: underline;
+	color: #ff8040;
 }
 
 #main {

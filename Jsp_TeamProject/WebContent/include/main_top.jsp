@@ -60,8 +60,8 @@
 		          	  고객센터
 		          </a>
 		          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_main.jsp">공지사항</a></li>
-		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_inquiry_list.jsp">1:1문의</a></li>
+		            <li><a class="dropdown-item lg" href="<%=request.getContextPath()%>/notice_main_list.do">공지사항</a></li>
+		            <li><a class="dropdown-item lg" href="<%=request.getContextPath()%>/notice_inquiry_list.do">1:1문의</a></li>
 		          </ul>
 			    </li>
 			</ul>
