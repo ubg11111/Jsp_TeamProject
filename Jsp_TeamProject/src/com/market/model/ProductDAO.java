@@ -471,6 +471,87 @@ public class ProductDAO {
 		
 	} // getNewProduct 메서드 end
 	
+	
+	// 베스트상품을 클릭하는 경우 DB에서 값을 가져온 후 페이지에 보여주는 메서드
+	
+	public List<ProductDTO> getBestProduct(){
+		
+		List<ProductDTO> list = new ArrayList<ProductDTO>();
+		
+		try {
+			openConn();
+			sql = "select * from product_market";
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				ProductDTO dto = new ProductDTO();
+				dto.setPnum(rs.getInt("pnum"));
+				dto.setPname(rs.getString("pname"));
+				dto.setPcategory_fk(rs.getString("pcategory_fk"));
+				dto.setPcompany(rs.getString("pcompany"));
+				dto.setPimage(rs.getString("pimage"));
+				dto.setPqty(rs.getInt("pqty"));
+				dto.setPrice(rs.getInt("price"));
+				dto.setPspec(rs.getString("pspec"));
+				dto.setPdetails(rs.getString("pdetails"));
+				dto.setPinputdate(rs.getString("pinputdate"));
+				
+				list.add(dto);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return list;
+		
+	} // getNewProduct 메서드 end
+	
+	// 인기상품을 클릭하는 경우 DB에 값을 저장한 후 페이지로 불러오는 메서드
+	
+	public List<ProductDTO> getFamousProduct(){
+		
+		List<ProductDTO> list = new ArrayList<ProductDTO>();
+		
+		try {
+			openConn();
+			sql = "select * from product_market";
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				ProductDTO dto = new ProductDTO();
+				dto.setPnum(rs.getInt("pnum"));
+				dto.setPname(rs.getString("pname"));
+				dto.setPcategory_fk(rs.getString("pcategory_fk"));
+				dto.setPcompany(rs.getString("pcompany"));
+				dto.setPimage(rs.getString("pimage"));
+				dto.setPqty(rs.getInt("pqty"));
+				dto.setPrice(rs.getInt("price"));
+				dto.setPspec(rs.getString("pspec"));
+				dto.setPdetails(rs.getString("pdetails"));
+				dto.setPinputdate(rs.getString("pinputdate"));
+				
+				list.add(dto);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return list;
+		
+	} // getNewProduct 메서드 end
+	
 }
 
 
