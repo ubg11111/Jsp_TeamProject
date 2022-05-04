@@ -26,9 +26,9 @@
 							<h3>이 상품 어때요?</h3>
 					</div>
 					<div class="main-img1">
-						<div class="card" style="width: 18rem;">
+						<div class="card" style="width: 18rem;" class="card-main">
 							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/딸기.jpg" class="card-img-top" alt="...">
+							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/딸기.jpg" class="card-img-top" alt="...">
 							  </a>
 							  
 							  <div class="card-body">
@@ -39,9 +39,10 @@
 							    </p>
 							  </div>
 						</div>
-						<div class="card" style="width: 18rem;">
+						
+						<div class="card" style="width: 18rem;" class="card-main">
 							<a href="#">
-							  <img src="<%=request.getContextPath()%>/uploadFile/양파.jpg" class="card-img-top" alt="...">
+							  <img class="card-img" src="<%=request.getContextPath()%>/uploadFile/양파.jpg" class="card-img-top" alt="...">
 							</a> 
 							  
 							  
@@ -53,9 +54,9 @@
 							    </p>
 							  </div>
 						</div>
-						<div class="card" style="width: 20rem;">
+						<div class="card" style="width: 20rem;" class="card-main">
 							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/송이버섯.jpg" class="card-img-top" alt="...">
+							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/송이버섯.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
 							  <div class="card-body">
@@ -79,9 +80,9 @@
 						</div>
 						
 						<div class="main_img2">
-							<div class="card" style="width: 20rem;">
+							<div class="card" style="width: 20rem;" class="card-main">
 							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/소세지.jpg" class="card-img-top" alt="...">
+							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/소세지.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
 							  <div class="card-body">
@@ -93,9 +94,9 @@
 							 </div>
 							</div>
 							
-							<div class="card" style="width: 18rem;">
+							<div class="card" style="width: 18rem;" class="card-main">
 							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/연어스테이크.jpg" class="card-img-top" alt="...">
+							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/연어스테이크.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
 							  <div class="card-body">
@@ -119,9 +120,9 @@
 							<h3>현재 인기있는 상품</h3>
 					</div>
 					<div class="main-img1" >
-						<div class="card" style="width: 18rem;">
+						<div class="card" style="width: 18rem;" class="card-main">
 							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/바게트.png" class="card-img-top" alt="...">
+							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/바게트.png" class="card-img-top" alt="...">
 							  </a>
 							  
 							  <div class="card-body">
@@ -132,9 +133,9 @@
 							  </div>
 						</div>
 						
-						<div class="card" style="width: 18rem;">
+						<div class="card" style="width: 18rem;" class="card-main">
 							<a href="#">
-							  <img src="<%=request.getContextPath()%>/uploadFile/치즈케이크.jpg" class="card-img-top" alt="...">
+							  <img class="card-img" src="<%=request.getContextPath()%>/uploadFile/치즈케이크.jpg" class="card-img-top" alt="...">
 							</a> 
 							  
 							  
@@ -145,9 +146,9 @@
 							    </p>
 							  </div>
 						</div>
-						<div class="card" style="width: 18rem;">
+						<div class="card" style="width: 18rem;" class="card-main">
 							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/크로아상.jpg" class="card-img-top" alt="...">
+							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/크로아상.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
 							  <div class="card-body">
@@ -167,9 +168,9 @@
 							<h3>호불호 없는 맛잘알 상품</h3>
 					</div>
 					<div class="main-img1">
-						<div class="card" style="width: 18rem;">
+						<div class="card" style="width: 18rem;" class="card-main">
 							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/햄버거.jpg" class="card-img-top" alt="...">
+							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/햄버거.jpg" class="card-img-top" alt="...">
 							  </a>
 							  
 							  <div class="card-body">
@@ -180,9 +181,9 @@
 							    </p>
 							  </div>
 						</div>
-						<div class="card" style="width: 20rem;">
+						<div class="card" style="width: 20rem;" class="card-main">
 							<a href="#">
-							  <img src="<%=request.getContextPath()%>/uploadFile/마카롱.jpg" class="card-img-top" alt="...">
+							  <img class="card-img" src="<%=request.getContextPath()%>/uploadFile/마카롱.jpg" class="card-img-top" alt="...">
 							</a> 
 							  
 							  
@@ -193,9 +194,9 @@
 							    </p>
 							  </div>
 						</div>
-						<div class="card" style="width: 20rem;">
+						<div class="card" style="width: 20rem;" class="card-main">
 							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/피자.jpg" class="card-img-top" alt="...">
+							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/피자.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
 							  <div class="card-body">
@@ -215,9 +216,9 @@
 							<h3>오늘 저녁은 이걸면 끝!</h3>
 					</div>
 					<div class="main-img1">
-						<div class="card" style="width: 18rem;">
+						<div class="card" style="width: 18rem;" class="card-main">
 							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/스테이크.jpg" class="card-img-top" alt="...">
+							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/스테이크.jpg" class="card-img-top" alt="...">
 							  </a>
 							  
 							  <div class="card-body">
@@ -227,9 +228,9 @@
 							    </p>
 							  </div>
 						</div>
-						<div class="card" style="width: 19.5rem;">
+						<div class="card" style="width: 19.5rem;" class="card-main">
 							<a href="#">
-							  <img src="<%=request.getContextPath()%>/uploadFile/연어롤스시.jpg" class="card-img-top" alt="...">
+							  <img class="card-img" src="<%=request.getContextPath()%>/uploadFile/연어롤스시.jpg" class="card-img-top" alt="...">
 							</a> 
 							  
 							  
@@ -240,9 +241,9 @@
 							    </p>
 							  </div>
 						</div>
-						<div class="card" style="width:20rem;">
+						<div class="card" style="width:20rem;" class="card-main">
 							  <a href="#">
-							  	<img src="<%=request.getContextPath()%>/uploadFile/감자튀김.jpg" class="card-img-top" alt="...">
+							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/감자튀김.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
 							  <div class="card-body" style="margin-top: 5px;">

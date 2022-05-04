@@ -4,7 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.naming.Context;
@@ -437,10 +442,19 @@ public class ProductDAO {
 		
 		List<ProductDTO> list = new ArrayList<ProductDTO>();
 		
+		// 오늘의 시간을 가져오는 변수 만들기
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd"); 
+		Calendar c1 = Calendar.getInstance(); 
+		String strToday = sdf.format(c1.getTime()); 
+		System.out.println(strToday);
+
+		
 		try {
 			openConn();
-			sql = "select * from product_market";
+			sql = "select * from product_market where TO_CHAR(pinputdate, 'yyyymmdd') = ?";
 			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, strToday);
 			
 			rs = pstmt.executeQuery();
 			
