@@ -480,7 +480,7 @@ public class ProductDAO {
 		
 		try {
 			openConn();
-			sql = "select * from product_market";
+			sql = "select * from product_market where price > 5000";
 			pstmt = con.prepareStatement(sql);
 			
 			rs = pstmt.executeQuery();
@@ -520,7 +520,7 @@ public class ProductDAO {
 		
 		try {
 			openConn();
-			sql = "select * from product_market";
+			sql = "select * from product_market where pqty < 3";
 			pstmt = con.prepareStatement(sql);
 			
 			rs = pstmt.executeQuery();
