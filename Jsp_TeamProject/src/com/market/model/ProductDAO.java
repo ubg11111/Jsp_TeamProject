@@ -272,7 +272,7 @@ public class ProductDAO {
 			
 			pstmt.setString(5, dto.getPdetails());
 			
-			pstmt.setInt(6, dto.getPnum());
+			pstmt.setInt(7, dto.getPnum());
 			
 			result = pstmt.executeUpdate();
 			
@@ -316,6 +316,7 @@ public class ProductDAO {
 			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			closeConn(rs, pstmt, con);
@@ -431,126 +432,6 @@ public class ProductDAO {
 		return list;
 	} // searchProduct 메서드 end
   
-	// 신상품을 클릭했을때 DB에 내용을 저장하고 View Page에 띄우기
-	
-	public List<ProductDTO> getNewProduct(){
-		
-		List<ProductDTO> list = new ArrayList<ProductDTO>();
-		
-		try {
-			openConn();
-			sql = "select * from product_market";
-			pstmt = con.prepareStatement(sql);
-			
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				
-				ProductDTO dto = new ProductDTO();
-				dto.setPnum(rs.getInt("pnum"));
-				dto.setPname(rs.getString("pname"));
-				dto.setPcategory_fk(rs.getString("pcategory_fk"));
-				dto.setPcompany(rs.getString("pcompany"));
-				dto.setPimage(rs.getString("pimage"));
-				dto.setPqty(rs.getInt("pqty"));
-				dto.setPrice(rs.getInt("price"));
-				dto.setPspec(rs.getString("pspec"));
-				dto.setPdetails(rs.getString("pdetails"));
-				dto.setPinputdate(rs.getString("pinputdate"));
-				
-				list.add(dto);
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			closeConn(rs, pstmt, con);
-		}
-		
-		return list;
-		
-	} // getNewProduct 메서드 end
-	
-	
-	// 베스트상품을 클릭하는 경우 DB에서 값을 가져온 후 페이지에 보여주는 메서드
-	
-	public List<ProductDTO> getBestProduct(){
-		
-		List<ProductDTO> list = new ArrayList<ProductDTO>();
-		
-		try {
-			openConn();
-			sql = "select * from product_market where price > 5000";
-			pstmt = con.prepareStatement(sql);
-			
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				
-				ProductDTO dto = new ProductDTO();
-				dto.setPnum(rs.getInt("pnum"));
-				dto.setPname(rs.getString("pname"));
-				dto.setPcategory_fk(rs.getString("pcategory_fk"));
-				dto.setPcompany(rs.getString("pcompany"));
-				dto.setPimage(rs.getString("pimage"));
-				dto.setPqty(rs.getInt("pqty"));
-				dto.setPrice(rs.getInt("price"));
-				dto.setPspec(rs.getString("pspec"));
-				dto.setPdetails(rs.getString("pdetails"));
-				dto.setPinputdate(rs.getString("pinputdate"));
-				
-				list.add(dto);
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			closeConn(rs, pstmt, con);
-		}
-		
-		return list;
-		
-	} // getNewProduct 메서드 end
-	
-	// 인기상품을 클릭하는 경우 DB에 값을 저장한 후 페이지로 불러오는 메서드
-	
-	public List<ProductDTO> getFamousProduct(){
-		
-		List<ProductDTO> list = new ArrayList<ProductDTO>();
-		
-		try {
-			openConn();
-			sql = "select * from product_market where pqty < 3";
-			pstmt = con.prepareStatement(sql);
-			
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				
-				ProductDTO dto = new ProductDTO();
-				dto.setPnum(rs.getInt("pnum"));
-				dto.setPname(rs.getString("pname"));
-				dto.setPcategory_fk(rs.getString("pcategory_fk"));
-				dto.setPcompany(rs.getString("pcompany"));
-				dto.setPimage(rs.getString("pimage"));
-				dto.setPqty(rs.getInt("pqty"));
-				dto.setPrice(rs.getInt("price"));
-				dto.setPspec(rs.getString("pspec"));
-				dto.setPdetails(rs.getString("pdetails"));
-				dto.setPinputdate(rs.getString("pinputdate"));
-				
-				list.add(dto);
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			closeConn(rs, pstmt, con);
-		}
-		
-		return list;
-		
-	} // getNewProduct 메서드 end
 	
 }
 

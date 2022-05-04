@@ -28,6 +28,7 @@ public class AdminProductListAction implements Action {
 		
 		forward.setPath("admin/admin_product_list.jsp");
 		
+		
 		return forward;
 		
 	}
