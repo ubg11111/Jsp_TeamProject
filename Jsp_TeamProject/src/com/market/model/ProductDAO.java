@@ -431,6 +431,45 @@ public class ProductDAO {
 		return list;
 	} // searchProduct 메서드 end
   
+	// 신상품을 클릭했을때 DB에 내용을 저장하고 View Page에 띄우기
+	
+	public List<ProductDTO> getNewProduct(){
+		
+		List<ProductDTO> list = new ArrayList<ProductDTO>();
+		
+		try {
+			openConn();
+			sql = "select * from product_market";
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				ProductDTO dto = new ProductDTO();
+				dto.setPnum(rs.getInt("pnum"));
+				dto.setPname(rs.getString("pname"));
+				dto.setPcategory_fk(rs.getString("pcategory_fk"));
+				dto.setPcompany(rs.getString("pcompany"));
+				dto.setPimage(rs.getString("pimage"));
+				dto.setPqty(rs.getInt("pqty"));
+				dto.setPrice(rs.getInt("price"));
+				dto.setPspec(rs.getString("pspec"));
+				dto.setPdetails(rs.getString("pdetails"));
+				dto.setPinputdate(rs.getString("pinputdate"));
+				
+				list.add(dto);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return list;
+		
+	} // getNewProduct 메서드 end
 	
 }
 

@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+
+.main_top{
+	text-align: center;
+	margin: 100px 0px 30px 0px;
+}
+
+.main_select{
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 100px;
+}
+
+#card-img{
+	height: 200px;
+}
+
+#card-main{
+	margin: 50px 0px 200px 0px;
+}
