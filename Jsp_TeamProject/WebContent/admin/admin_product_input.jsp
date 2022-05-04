@@ -44,6 +44,10 @@
 		cursor: pointer;
 	}
 	
+	.insert_page textarea{
+		font-size: 18px;
+	}
+	
 </style>
 </head>
 <body>
