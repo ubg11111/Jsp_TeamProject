@@ -157,7 +157,7 @@
 			$.ajax({
 				type: "post",
 				url: "<%=request.getContextPath()%>/user/user_emailCheck.jsp",
-				data:{paramEmail : userEmail},
+				data:{paramEmail : userEmail,paramUserId : ""},
 				datatype: "jsp",
 				success: function(data){
 					if(data==1){
@@ -245,7 +245,7 @@
 		}
 		
 		if(userPhone==''){
-			swal("연락처 유효성검사.", "상세주소를 입력해 주세요.");
+			swal("연락처 유효성검사.", "연락처를 입력해 주세요.");
 			$("#sample4_detailAddress").focus();
 			return false;
 		}

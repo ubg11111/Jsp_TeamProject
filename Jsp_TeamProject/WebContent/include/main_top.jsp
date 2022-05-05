@@ -24,7 +24,6 @@
 			$("#menu_join").css("display","block");
 			$("#menu_login").css("display","block");
 		} 
-		console.log(user_name);
 	});
 
 </script>
@@ -42,7 +41,7 @@
 		          </a>
 		          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_order_list.do">주문내역</a></li>
-		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_Modify.do">개인정보 수정</a></li>
+		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_modify.do">개인정보 수정</a></li>
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_logout.do">로그아웃</a></li>
 		            
 		          </ul>
