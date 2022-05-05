@@ -7,7 +7,7 @@
 }
 
 #main .notice_title {
-	padding-right: 150px;
+	padding-right: 200px;
 }
 
 #search .search_table {
@@ -17,4 +17,10 @@
 
 #search .search_group {
 	padding-bottom: 15px;
+}
+
+#main .table_content a:hover {
+	color: #ff6f28;
+	cursor: pointer;
+	text-decoration: underline;
 }

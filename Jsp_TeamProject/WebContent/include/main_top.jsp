@@ -24,6 +24,7 @@
 			$("#menu_join").css("display","block");
 			$("#menu_login").css("display","block");
 		} 
+		console.log(user_name);
 	});
 
 </script>
@@ -43,7 +44,6 @@
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_order_list.do">주문내역</a></li>
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_modify.do">개인정보 수정</a></li>
 		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/user_logout.do">로그아웃</a></li>
-		            
 		          </ul>
 			</li> 
 			    
@@ -60,9 +60,8 @@
 		          	  고객센터
 		          </a>
 		          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_main.jsp">공지사항</a></li>
-		            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/notice/notice_inquiry_list.jsp">1:1문의</a></li>
-		           
+		            <li><a class="dropdown-item lg" href="<%=request.getContextPath()%>/notice_main_list.do">공지사항</a></li>
+		            <li><a class="dropdown-item lg" href="<%=request.getContextPath()%>/notice_inquiry_list.do">1:1문의</a></li>
 		          </ul>
 			    </li>
 			</ul>
@@ -98,21 +97,21 @@
 			    <div class="collapse navbar-collapse" id="navbarScroll">
 			      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 			        <li>
-			          <a href="#"><span class="product-select">상품</span></a>
+			          <a href="<%=request.getContextPath()%>/main_product_new.do"><span class="product-select">신상품</span></a>
 			        </li>
 			        
 			        <li>
-			          <a href="#" class="product-select"><span class="product-select">베스트 상품</span></a>
+			          <a href="<%=request.getContextPath()%>/main_product_best.do" class="product-select"><span class="product-select">베스트 상품</span></a>
 			        </li>
 			        
 			        <li>
-			          <a href="#" class="product-select"><span class="product-select">특가 상품</span></a>
+			          <a href="<%=request.getContextPath()%>/main_product_famous.do" class="product-select"><span class="product-select">인기 상품</span></a>
 			        </li>
 			      
 			      </ul>
 			     
 			     <form class="d-flex" method="post" action="<%=request.getContextPath()%>/user_search.do">
-			        <input id="Serarch_flex" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_product">
+			        <input id="Serarch_flex" class="form-control me-2" type="search" aria-label="Search" name="search_product">
 			        <button class="btn btn-outline-success" type="submit">검색</button>
 			     </form> 
 		        

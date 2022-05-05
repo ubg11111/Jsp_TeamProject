@@ -110,3 +110,21 @@ html{
 	color: gray;
 }
 
+/* 이미지 처리 */
+.card-main{
+	margin-left: 20px;
+}
+
+.card-img{
+	overflow: hidden;
+	margin: 0px auto;
+	height: 200px;
+}
+
+.card-img:hover{
+	cursor: pointer;
+	transform:scale(1.05);
+	transition:transform .35s linear;
+}
+
+

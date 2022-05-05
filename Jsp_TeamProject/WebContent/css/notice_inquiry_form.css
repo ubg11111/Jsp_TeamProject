@@ -10,10 +10,6 @@
 	margin-bottom: 20px;
 }
 
-.inquiry_section .label_img {
-	display: block;
-}
-
 .inquiry_submit {
 	margin-top: 30px;
 	margin-left: auto;
@@ -35,4 +31,3 @@
 input[type=file] {
 	display: none;
 }
-

@@ -40,7 +40,7 @@
 			<c:forEach items="${find}" var="dto">
 				<div class="card" style="width: 18rem;" id="card-main">
 					  <a href="#">
-					  	<img src="<%=request.getContextPath()%>/uploadFile/딸기.jpg" class="card-img-top" alt="..." id="card-img">
+					  	<img src="<%=request.getContextPath()%>/upload/${dto.getPimage()}" class="card-img-top" alt="..." id="card-img">
 					  </a>
 					  <div class="card-body">
 					    <p class="card-text">

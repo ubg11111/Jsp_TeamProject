@@ -15,12 +15,7 @@
 	
 	<div id="body">
 		<aside id="aside">
-			<h1 class="fw-bolder">고객센터</h1>
-				<ul class="list-group list-group-flush fw-bold">
-					<li class="list-group-item"><a href="<%=request.getContextPath() %>/notice_main_list.do">공지사항</a></li>
-					<li class="list-group-item"><a href="#">1:1문의</a></li>
-					<li class="list-group-item"><a href="#">메일문의</a></li>
-				</ul>
+			<jsp:include page="../include/notice_aside.jsp" />
 		</aside>
 
 		<main id="main">
