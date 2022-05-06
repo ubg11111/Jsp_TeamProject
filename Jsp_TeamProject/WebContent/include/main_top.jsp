@@ -111,8 +111,8 @@
 			      </ul>
 			     
 			     <form class="d-flex" method="post" action="<%=request.getContextPath()%>/user_search.do">
-			        <input id="Serarch_flex" class="form-control me-2" type="search" aria-label="Search" name="search_product">
-			        <button class="btn btn-outline-success" type="submit">검색</button>
+			        <input id="Serarch_flex" name="search_product" required="required" type="text">
+			       	<button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
 			     </form> 
 		        
 		        
