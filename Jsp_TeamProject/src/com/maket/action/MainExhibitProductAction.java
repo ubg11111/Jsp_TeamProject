@@ -64,11 +64,8 @@ public class MainExhibitProductAction implements Action {
 		request.setAttribute("cList_D003", clist_D003);
 		
 		ActionForward forward = new ActionForward();
-		
 		forward.setRedirect(false);
-		
 		forward.setPath("select/exhibit_product_list.jsp");
-		
 		return forward;
 	}
 

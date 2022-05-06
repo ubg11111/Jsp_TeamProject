@@ -173,7 +173,7 @@
 		<c:if test="${empty plist}">
 
 			<div class="not-Search">
-				<h3>검색된 제품이 없습니다.</h3>
+				<h3>검색된 상품이 없습니다.</h3>
 			</div>
 
 		</c:if>
