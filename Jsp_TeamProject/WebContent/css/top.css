@@ -84,21 +84,23 @@
 	padding-left: 12px;
 }
 
-.d-flex{
+.d-flex_main{
 	position: relative;
 }
 
-.d-flex i{
+.d-flex_main i{
 	position: absolute;
-	left: 220px;
+	left: -40px;
 	top: 20px;
 }
 
-.d-flex button{
+.d-flex_main button{
+	position: absolute;
 	border:0;
 	outline:0;
+	padding: 0;
+	margin: 0;
 	background-color: white;
-	overflow: hidden;
 }
 /* 서취버튼 커스텀 end */
 
