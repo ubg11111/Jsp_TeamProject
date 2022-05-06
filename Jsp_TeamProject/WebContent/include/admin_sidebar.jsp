@@ -21,18 +21,16 @@
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><a href="#" class="link-dark rounded">회원목록 & 수정</a></li>
               <li><a href="#" class="link-dark rounded">1:1문의 현황 & 답변</a></li>
-              <li><a href="#" class="link-dark rounded">메일문의 현황 & 답변</a></li>
             </ul>
           </div>
         </li>
         <li class="mb-1">
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-            매출관리
+            		매출관리
           </button>
           <div class="collapse" id="dashboard-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><a href="#" class="link-dark rounded">매출현황</a></li>
-              <li><a href="#" class="link-dark rounded">거래내역</a></li>
             </ul>
           </div>
         </li>
