@@ -189,31 +189,4 @@ public class OrderDAO {
 		
 		return list;
 	}	// getOrderList() 메서드 end
-	
-	
-	
-	
-	
-	
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
