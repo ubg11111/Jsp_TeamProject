@@ -1,4 +1,4 @@
-package com.maket.action;
+package com.admin.action;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,7 +16,7 @@ public class AdminCategoryListAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		CategoryDAO dao = CategoryDAO.getInstance();
-		List<CategoryDTO> list = dao.getCategoryList();
+		List<CategoryDTO> list = dao.getCategoryList("");
 		request.setAttribute("categoryList", list);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);

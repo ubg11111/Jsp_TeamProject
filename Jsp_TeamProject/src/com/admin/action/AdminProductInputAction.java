@@ -21,7 +21,7 @@ public class AdminProductInputAction implements Action {
 		// Category DAO,DTO 필요		
 		CategoryDAO dao = CategoryDAO.getInstance();
 		
-		List<CategoryDTO> list = dao.getCategoryList();
+		List<CategoryDTO> list = dao.getCategoryList("");
 		
 		request.setAttribute("categoryList", list);
 		

@@ -1,4 +1,4 @@
-package com.maket.action;
+package com.admin.action;
 
 import java.io.IOException;
 

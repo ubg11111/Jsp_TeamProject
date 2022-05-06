@@ -1,5 +1,5 @@
 function deleteCategory(num){
-		let res = confirm("정말로 삭제하시겠습니까?");
+		let res = confirm("카테고리를 삭제하시면 해당 카테고리 안에 있는 상품도 전부 삭제됩니다.\n정말로 삭제하시겠습니까?");
 		if(res){
 			location.href="admin_category_delete.do?num="+num;
 		}

@@ -340,7 +340,7 @@ public class ProductDAO {
 			openConn();
 			
 			sql = "select * from product_market "
-					+ " where pcategory_fk = ? ";
+					+ " where pcategory_fk like ? ";
 			
 			pstmt = con.prepareStatement(sql);
 			
