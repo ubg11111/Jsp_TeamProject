@@ -327,5 +327,71 @@ public class UserDAO {
 		return result;
 	}
 	
+	// 회원정보 수정
+	public int userModify(UserDTO dto) {
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "update user_market set user_pwd = ?, user_name = ?, user_email = ?, "
+					+ "user_phone = ?, user_address = ?, user_detailaddress = ?, user_gender = ?, "
+					+ "user_update = sysdate where user_no = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, dto.getUser_pwd());
+			pstmt.setString(2, dto.getUser_name());
+			pstmt.setString(3, dto.getUser_email());
+			pstmt.setString(4, dto.getUser_phone());
+			pstmt.setString(5, dto.getUser_address());
+			pstmt.setString(6, dto.getUser_detailaddress());
+			pstmt.setString(7, dto.getUser_gender());
+			pstmt.setInt(8, dto.getUser_no());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return result;
+		
+	}
+	
+	// 회원 탈퇴
+	public int userOut(int no) {
+		int result = 0;
+		try {
+			openConn();
+			
+			sql = "delete from user_market where user_no = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, no);
+			
+			result = pstmt.executeUpdate();
+			
+			sql = "update user_market set user_no = user_no -1 "
+					+ "where user_no > ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, no);
+			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		return result;
+	}
+	
 	
 }

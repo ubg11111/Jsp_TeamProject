@@ -17,8 +17,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-top: 2px solid black;
-        border-bottom: 2px solid black;
         width: 100%;
         margin: 50px auto;
     }
