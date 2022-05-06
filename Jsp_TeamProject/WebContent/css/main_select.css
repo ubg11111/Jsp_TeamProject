@@ -43,3 +43,49 @@
 #card-main{
 	margin: 50px 0px 200px 0px;
 }
+
+#categoryList {
+	float: left;
+	margin: 0px 0px 0px 50px;
+}
+
+#categoryList a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#categoryList ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	text-align: center;
+}
+
+#categoryList ul li a {
+	text-decoration: none;
+	display: block;
+	width: 150px;
+	height: 35px;
+	line-height: 35px;
+}
+
+#categoryList li {
+	width: 150px;
+	background-color: #007DFF;
+}
+
+#categoryList ul li:hover {
+	background-color: #0064D7;
+}
+
+#categoryList ul ul {
+	display: none;
+	position: absolute;
+	left: 150px;
+}
+
+#categoryList ul li:hover>ul {
+	display: block;
+	margin: -35px 0px 0px 0px;
+}
