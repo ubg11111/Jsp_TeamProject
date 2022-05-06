@@ -14,7 +14,7 @@ import com.market.model.ProductDAO;
 import com.market.model.ProductDTO;
 
 public class MainExhibitProductAction implements Action {
-
+//
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String code;
