@@ -34,23 +34,23 @@
 					  <div class="swiper-wrapper">
 					    <!-- Slides -->
 					    <div class="swiper-slide">
-					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/감자튀김.jpg">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트고기.jpg">
 					    </div>
 					    
 					    <div class="swiper-slide">
-					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/감자튀김.jpg">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트용품.jpg">
 					    </div>
 					    
 					    <div class="swiper-slide">
-					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/감자튀김.jpg">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트채소.jpg">
 					    </div>
 					    
 					    <div class="swiper-slide">
-					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/감자튀김.jpg">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트쿠키.jpg">
 					    </div>
 					    
 					 	<div class="swiper-slide">
-					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/감자튀김.jpg">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트키친.jpg">
 					    </div>
 					    
 					    

@@ -42,3 +42,10 @@
 .swiper-button-next swiper-button-disabled{
 	opacity: 1;
 }
+
+
+.swiper-pagination{
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+}
