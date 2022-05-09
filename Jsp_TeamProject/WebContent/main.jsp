@@ -34,23 +34,38 @@
 					  <div class="swiper-wrapper">
 					    <!-- Slides -->
 					    <div class="swiper-slide">
+					    	<%-- 여름배너 스와이프 click시 상품목록 탄산음료 exhibitpage로 이동 --%>
+					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='B00100001'">
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/무더운여름배너.jpg">
+					    	</a>
 					    </div>
 					    
 					    <div class="swiper-slide">
+					   		<%-- 건강레시피배너 스와이프 click시 상품목록  생선 exhibitpage로 이동 --%>
+					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='A00200001'">
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/건강레시피배너.jpg">
+					    	</a>
 					    </div>
 					    
 					    <div class="swiper-slide">
+					   		<%-- 홈파티배너 스와이프 click시 상품목록   육류 exhibitpage로 이동 --%>
+					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='A00300001'">
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/홈파티배너.jpg">
+					    	</a>
 					    </div>
 					    
 					    <div class="swiper-slide">
+					    	<%-- 디저트모음배너 스와이프 click시 상품목록   디저트 exhibitpage로 이동 --%>
+					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='C00200001'">
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/디저트모음배너.jpg">
+					    	</a>
 					    </div>
 					    
 					 	<div class="swiper-slide">
+					 		<%-- 가전제품배너 스와이프 click시 상품목록   가전제품 exhibitpage로 이동 --%>
+					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='D00300001'">
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/가전제품배너.png">
+					    	</a>
 					   </div>
 					    
 					    
@@ -115,7 +130,11 @@
 				
 				<!-- 특가 배너 이미지  -->
 				<div align="center">
-					<img class="event_banner" src="<%=request.getContextPath()%>/uploadFile/집콕특가 배너.png">				
+					<%-- 집콕배너 click시 상품목록   가정용품 exhibitpage로 이동 --%>
+					<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='D00100001'">
+					<img class="event_banner" src="<%=request.getContextPath()%>/uploadFile/집콕특가 배너.png">
+					</a>	
+							
 				</div>
 				
 				
@@ -172,9 +191,9 @@
 					</div>
 					<div class="main-img1" >
 						<div class="card" style="width: 18rem;" class="card-main">
-							  <a href="#">
+								
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/바게트.png" class="card-img-top" alt="...">
-							  </a>
+							
 							  
 							  <div class="card-body">
 							    <p class="card-text">
