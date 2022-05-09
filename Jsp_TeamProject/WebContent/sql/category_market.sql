@@ -18,3 +18,6 @@ insert into category_market values(8, 'B00200001', '커피');
 insert into category_market values(9, 'B00200002', '차');
 insert into category_market values(10, 'B00300001', '술');
 insert into category_market values(11, 'C00200003', '휴지·티슈');
+insert into category_market values(12, 'C00200001', '디저트');
+insert into category_market values(13, 'D00100001', '가정용품');
+insert into category_market values(14, 'D00300001', '가전제품');
