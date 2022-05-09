@@ -51,7 +51,7 @@
 					    
 					 	<div class="swiper-slide">
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/가전제품배너.png">
-					    </div>
+					   </div>
 					    
 					    
 					  </div>

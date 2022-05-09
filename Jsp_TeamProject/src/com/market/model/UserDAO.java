@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -392,6 +394,212 @@ public class UserDAO {
 		}
 		return result;
 	}
+	
+	// user_market 테이블의 전체 회원수를 확인하는 메서드.
+	public int getUserCount() {
+		int count = 0;
+		try {
+			openConn();
+			
+			sql = "select count(*) from user_market";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		return count;
+	}
+	
+	//user_market 테이블에서 현재 페이지에 해당하는 게시물을 조회하는 메서드
+	public List<UserDTO> getUserList(int page,int rowsize){
+		List<UserDTO> list = new ArrayList<UserDTO>();
+		
+		// 해당 페이지에서 시작 번호
+		int startNo = (page * rowsize) - (rowsize - 1);
+		
+		// 해당 페이지에서 끝 번호
+		int endNo = (page * rowsize);
+		
+		try {
+			
+			openConn();
+			
+			sql = "select *from (select row_number() over(order by user_no desc) rnum, b.*from user_market b) "
+					+ "where rnum >= ? and rnum <= ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, startNo);
+			pstmt.setInt(2, endNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				UserDTO dto = new UserDTO();
+				dto.setUser_no(rs.getInt("user_no"));
+				dto.setUser_id(rs.getString("user_id"));
+				dto.setUser_pwd(rs.getString("user_pwd"));
+				dto.setUser_name(rs.getString("user_name"));
+				dto.setUser_gender(rs.getString("user_gender"));
+				dto.setUser_email(rs.getString("user_email"));
+				dto.setUser_address(rs.getString("user_address"));
+				dto.setUser_detailaddress(rs.getString("user_detailaddress"));
+				dto.setUser_phone(rs.getString("user_phone"));
+				dto.setUser_date(rs.getString("user_date"));
+				dto.setUser_update(rs.getString("user_update"));
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		return list;
+	}
+	
+	// user_market 테이블의 전체 회원수를 검색을 통해 확인하는 메서드.
+	public int searchUserCount(String field,String keyword) {
+		int count = 0;
+		
+		try {
+			openConn();
+			
+			if(field.equals("id")) {
+				sql = "select count(*) from user_market "
+						+ "where user_id like ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, "%"+keyword+"%");
+			}else if(field.equals("name")) {
+				sql = "select count(*) from user_market "
+						+ "where user_name like ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, "%"+keyword+"%");
+			}else {
+				sql = "select count(*) from user_market "
+						+ "where user_id like ? or user_name like ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, "%"+keyword+"%");
+				pstmt.setString(2, "%"+keyword+"%");
+			}
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		return count;
+	}
+	
+	// 검색 페이지에 해당하는 유저리스트
+		public List<UserDTO> getSearchUserList(String filed,String keyword,int page,int rowsize){
+			List<UserDTO> list = new ArrayList<UserDTO>();
+			
+			int startNo = (page * rowsize) - (rowsize - 1);
+			int endNo = (page * rowsize);
+			
+			
+			try {
+				openConn();
+				
+				if(filed.equals("id")) {
+					sql = "select *from "
+							+ "(select row_number() over(order by user_no desc) rnum, b.*from user_market b "
+							+ "where user_id like ?)where rnum >= ? and rnum <= ?";
+					pstmt = con.prepareStatement(sql);
+					pstmt.setString(1, "%"+keyword+"%");
+					pstmt.setInt(2, startNo);
+					pstmt.setInt(3, endNo);
+				}else if(filed.equals("name")) {
+					sql = "select *from "
+							+ "(select row_number() over(order by user_no desc) rnum, b.*from user_market b "
+							+ "where user_name like ?)where rnum >= ? and rnum <= ?";
+					pstmt = con.prepareStatement(sql);
+					pstmt.setString(1, "%"+keyword+"%");
+					pstmt.setInt(2, startNo);
+					pstmt.setInt(3, endNo);
+				}else {
+					sql = "select *from "
+							+ "(select row_number() over(order by user_no desc) rnum, b.*from user_market b "
+							+ "where user_id like ? or user_name like ? )where rnum >= ? and rnum <= ?";
+					pstmt = con.prepareStatement(sql);
+					pstmt.setString(1, "%"+keyword+"%");
+					pstmt.setString(2, "%"+keyword+"%");
+					pstmt.setInt(3, startNo);
+					pstmt.setInt(4, endNo);
+				}
+				
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					UserDTO dto = new UserDTO();
+					dto.setUser_no(rs.getInt("user_no"));
+					dto.setUser_id(rs.getString("user_id"));
+					dto.setUser_pwd(rs.getString("user_pwd"));
+					dto.setUser_name(rs.getString("user_name"));
+					dto.setUser_gender(rs.getString("user_gender"));
+					dto.setUser_email(rs.getString("user_email"));
+					dto.setUser_address(rs.getString("user_address"));
+					dto.setUser_detailaddress(rs.getString("user_detailaddress"));
+					dto.setUser_phone(rs.getString("user_phone"));
+					dto.setUser_date(rs.getString("user_date"));
+					dto.setUser_update(rs.getString("user_update"));
+					list.add(dto);
+				}
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeConn(rs, pstmt, con);
+			}
+			return list;
+		}
+		
+		//오늘날자 회원가입자수
+		public int nowDateCount() {
+			int result = 0;
+			
+			try {
+				openConn();
+				
+				sql = "select count(*)from user_market "
+						+ "where to_char(user_date,'YY/MM/DD') = to_char(sysdate,'YY/MM/DD')";
+				
+				pstmt = con.prepareStatement(sql);
+				
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					result = rs.getInt(1);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeConn(rs, pstmt, con);
+			}
+			return result;
+		}
+	
 	
 	
 }
