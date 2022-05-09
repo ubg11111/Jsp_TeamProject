@@ -74,9 +74,36 @@
 	text-align: center;
 }
 
+
+/* 서취버튼 커스텀 */
 #Serarch_flex{
-	width:200px;
+	width:250px;
+	height: 40px;
+	border-radius: 30px;
+	border: 1px solid gray;
+	padding-left: 12px;
 }
+
+.d-flex_main{
+	position: relative;
+}
+
+.d-flex_main i{
+	position: absolute;
+	left: -40px;
+	top: 20px;
+}
+
+.d-flex_main button{
+	position: absolute;
+	border:0;
+	outline:0;
+	padding: 0;
+	margin: 0;
+	background-color: white;
+}
+/* 서취버튼 커스텀 end */
+
 
 .main_icon{
 	display:flex;

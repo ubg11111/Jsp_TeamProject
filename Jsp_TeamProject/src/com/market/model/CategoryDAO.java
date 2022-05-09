@@ -59,13 +59,14 @@ public class CategoryDAO {
 		}
 	} // closeConn END
 	
-	public List<CategoryDTO> getCategoryList(){ 
+	public List<CategoryDTO> getCategoryList(String code){ 
 		List<CategoryDTO> list = new ArrayList<CategoryDTO>();
 		
 		try {
 			openConn();
-			sql = "select * from category_market order by category_code";
+			sql = "select * from category_market where category_code like ? order by category_code";
 			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, code+"%");
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				CategoryDTO dto = new CategoryDTO();
@@ -171,7 +172,6 @@ public class CategoryDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				code = rs.getString("category_code");
-				System.out.println("code 부여 : " + code);
 			}
 			
 			sql = "delete from category_market where category_num = ?";
@@ -193,7 +193,7 @@ public class CategoryDAO {
 			pstmt.setString(2, code);
 			pstmt.executeUpdate();
 			
-			sql = "update product_market set pcategory = 'null' where pcategory = ?";
+			sql = "delete from product_market where pcategory_fk = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, code);
 			pstmt.executeUpdate();

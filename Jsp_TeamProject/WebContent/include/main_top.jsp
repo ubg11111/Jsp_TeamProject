@@ -96,6 +96,11 @@
 			    
 			    <div class="collapse navbar-collapse" id="navbarScroll">
 			      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+			      
+			        <li>
+			          <a href="<%=request.getContextPath()%>/main_product_exhibit.do"><span class="product-select">상품목록</span></a>
+			        </li>
+			      
 			        <li>
 			          <a href="<%=request.getContextPath()%>/main_product_new.do"><span class="product-select">신상품</span></a>
 			        </li>
@@ -110,9 +115,9 @@
 			      
 			      </ul>
 			     
-			     <form class="d-flex" method="post" action="<%=request.getContextPath()%>/user_search.do">
-			        <input id="Serarch_flex" class="form-control me-2" type="search" aria-label="Search" name="search_product">
-			        <button class="btn btn-outline-success" type="submit">검색</button>
+			     <form class="d-flex_main" method="post" action="<%=request.getContextPath()%>/user_search.do">
+			        <input id="Serarch_flex" name="search_product" required="required" type="text">
+			       	<button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
 			     </form> 
 		        
 		        

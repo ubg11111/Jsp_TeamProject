@@ -9,6 +9,12 @@
 <link rel="stylesheet" type="text/css" href="css/top.css">
 <link rel="stylesheet" type="text/css" href="css/bottom.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/swiper.css">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
 
@@ -21,6 +27,44 @@
 			<div id="TalkMain" class="page_main">
 				<div class="bannaer">
 					<div class="bannaer_content">
+					<!-- 이미지 스와이퍼 작업  -->
+					<!-- Slider main container -->
+					<div class="swiper">
+					  <!-- Additional required wrapper -->
+					  <div class="swiper-wrapper">
+					    <!-- Slides -->
+					    <div class="swiper-slide">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트고기.jpg">
+					    </div>
+					    
+					    <div class="swiper-slide">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트용품.jpg">
+					    </div>
+					    
+					    <div class="swiper-slide">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트채소.jpg">
+					    </div>
+					    
+					    <div class="swiper-slide">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트쿠키.jpg">
+					    </div>
+					    
+					 	<div class="swiper-slide">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트키친.jpg">
+					    </div>
+					    
+					    
+					  </div>
+					  <!-- If we need pagination -->
+					  <div class="swiper-pagination"></div>
+					
+					  <!-- If we need navigation buttons -->
+					  <div class="swiper-button-prev"></div>
+					  <div class="swiper-button-next"></div>
+					
+					</div>
+					
+					
 					<!-- 메인컨텐트 첫번째  -->
 					<div class="main_content" >
 							<h3>이 상품 어때요?</h3>
@@ -275,6 +319,7 @@
 	<jsp:include page="/include/main_bottom.jsp"></jsp:include>
 
 
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/swiper.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/Top.js"></script>
 </body>
 </html>
