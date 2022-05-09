@@ -75,6 +75,12 @@ html{
 	display:flex;
 }
 
+.event_banner{
+	width: 50%;
+	margin-top: 200px;
+}
+
+
 .main-box1{
 	margin-top: 500px;	
 }
@@ -86,16 +92,6 @@ html{
 .main-box3{
 	margin-top: 500px;
 	margin-bottom: 200px;
-}
-
-
-/* 상품마진값 수정 */
-#mushroom{
-	margin-top:20px;
-}
-
-#sausage{
-	margin-top: 22px;
 }
 
 

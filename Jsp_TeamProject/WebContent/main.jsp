@@ -34,24 +34,24 @@
 					  <div class="swiper-wrapper">
 					    <!-- Slides -->
 					    <div class="swiper-slide">
-					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트고기.jpg">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/무더운여름배너.jpg">
 					    </div>
 					    
 					    <div class="swiper-slide">
-					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트용품.jpg">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/건강레시피배너.jpg">
 					    </div>
 					    
 					    <div class="swiper-slide">
-					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트채소.jpg">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/홈파티배너.jpg">
 					    </div>
 					    
 					    <div class="swiper-slide">
-					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트쿠키.jpg">
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/디저트모음배너.jpg">
 					    </div>
 					    
 					 	<div class="swiper-slide">
-					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/이벤트키친.jpg">
-					    </div>
+					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/가전제품배너.png">
+					   </div>
 					    
 					    
 					  </div>
@@ -112,9 +112,16 @@
 							  </div>
 						</div>
 					</div>
+				
+				<!-- 특가 배너 이미지  -->
+				<div align="center">
+					<img class="event_banner" src="<%=request.getContextPath()%>/uploadFile/집콕특가 배너.png">				
+				</div>
+				
+				
+				
 					
-					
-					<!-- 메인컨텐트 두번째 -->
+				<!-- 메인컨텐트 두번째 -->
 				<div class="main_content2" id="main1">
 					<div class="event_box">
 						<div class="main_event">
