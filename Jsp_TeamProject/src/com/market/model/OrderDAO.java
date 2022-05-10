@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -189,4 +190,108 @@ public class OrderDAO {
 		
 		return list;
 	}	// getOrderList() 메서드 end
+	
+	
+	// 일 매출 메서드
+	public SalesDTO getTodaySales(String today){
+		
+		SalesDTO dto = new SalesDTO();
+		
+		try {
+			openConn();
+			
+			sql = "select count(distinct order_group) "
+					+ "from order_market "
+					+ "where to_char(order_date, 'YYYY-mm-dd') = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, today);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setSales_count(rs.getInt(1));
+			}
+			
+			sql = "select sum(order_total) "
+					+ "from order_market "
+					+ "where to_char(order_date, 'YYYY-mm-dd') = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, today);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setSales_total(rs.getInt(1));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return dto;
+	}	// getTodaySales() 메서드 end
+	
+	
+	// 월 매출 
+	public int getMonthlyTotal(String month) {
+		int total = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select sum(order_total) "
+					+ "from order_market "
+					+ "where to_char(order_date, 'YYYY-mm') = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, month);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				total = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		return total;
+	}
+	
+	// 월 주문 건수
+	public int getMonthlyCount(String month) {
+		int count = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select count(distinct order_group) "
+					+ "from order_market "
+					+ "where to_char(order_date, 'YYYY-mm') = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, month);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return count;
+	}
+	
 }

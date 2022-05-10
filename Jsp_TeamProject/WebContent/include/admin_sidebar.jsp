@@ -30,7 +30,7 @@
           </button>
           <div class="collapse" id="dashboard-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">매출현황</a></li>
+              <li><a href="admin_sales_list.do" class="link-dark rounded">매출현황</a></li>
             </ul>
           </div>
         </li>
