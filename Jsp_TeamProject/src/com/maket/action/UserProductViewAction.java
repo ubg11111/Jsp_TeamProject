@@ -37,6 +37,5 @@ public class UserProductViewAction implements Action {
 		return forward;
 		
 	}
-
 }
->>>>>>> 809fe37fb41dabccbba348814c0bd7978d5c86fb
+
