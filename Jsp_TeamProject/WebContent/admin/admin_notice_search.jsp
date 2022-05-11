@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,17 +39,17 @@
 </head>
 <body>
 	<header>
-		<jsp:include page="../include/main_top.jsp" />
+		<jsp:include page="../include/admin_main_top.jsp" />
 	</header>
 	
 	<div id="body">
 		<aside id="aside">
-			<jsp:include page="../include/notice_aside.jsp" />
+			<jsp:include page="../include/admin_notice_aside.jsp" />
 		</aside>
 
 		<main id="main">
 			<section>
-				<h1>공지사항</h1> <hr>
+				<h1>공지사항 - 관리자</h1> <hr>
 				<c:set var="list" value="${noticeList }" />
 				<table class="table table-sm">
 					<tr class="table_head">
@@ -62,7 +63,7 @@
 						<tr class="table_content">
 							<td>${dto.getNotice_no() }</td>
 							<td>
-							<a href="<%=request.getContextPath() %>/notice_detail.do?no=${dto.getNotice_no() }">${dto.getNotice_title() }</a>
+							<a href="<%=request.getContextPath() %>/admin_notice_detail.do?no=${dto.getNotice_no() }">${dto.getNotice_title() }</a>
 							</td>
 							<td>${dto.getAdmin_name() }</td>
 							<td>${dto.getNotice_date().substring(0, 10) }</td>
@@ -71,24 +72,24 @@
 					</c:forEach>
 				</table>
 			</section>
-
+			
 			<section>
 				<nav aria-label="Page navigation example">
 					<ul class="pagination justify-content-center">
 						<c:if test="${page > block}">
 							<li class="page-item">
 								<a class="page-link" 
-									href="notice_search.do?page=1&search_field=${search_field0 }&search_field=${search_field1 }&search_field=${search_field2 }&search_keyword=${search_keyword }">«
+									href="admin_notice_search.do?page=1&search_field=${search_field0 }&search_field=${search_field1 }&search_field=${search_field2 }&search_keyword=${search_keyword }">«
 								</a>
 							</li>
-							<li class="page-item"><a class="page-link" href="notice_search.do?page=${startBlock -1 }&search_field=${search_field0 }&search_field=${search_field1 }&search_field=${search_field2 }&search_keyword=${search_keyword }">‹</a></li>
+							<li class="page-item"><a class="page-link" href="admin_notice_search.do?page=${startBlock -1 }&search_field=${search_field0 }&search_field=${search_field1 }&search_field=${search_field2 }&search_keyword=${search_keyword }">‹</a></li>
 						</c:if>
 						<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
-							<li class="page-item"><a class="page-link" href="notice_search.do?page=${i }&search_field=${search_field0 }&search_field=${search_field1 }&search_field=${search_field2 }&search_keyword=${search_keyword }">${i }</a></li>
+							<li class="page-item"><a class="page-link" href="admin_notice_search.do?page=${i }&search_field=${search_field0 }&search_field=${search_field1 }&search_field=${search_field2 }&search_keyword=${search_keyword }">${i }</a></li>
 						</c:forEach>
 						<c:if test="${endBlock < allPage }">
-							<li class="page-item"><a class="page-link" href="notice_search.do?page=${endBlock + 1 }&search_field=${search_field0 }&search_field=${search_field1 }&search_field=${search_field2 }&search_keyword=${search_keyword }">›</a></li>
-							<li class="page-item"><a class="page-link" href="notice_search.do?page=${allPage }&search_field=${search_field0 }&search_field=${search_field1 }&search_field=${search_field2 }&search_keyword=${search_keyword }">»</a></li>
+							<li class="page-item"><a class="page-link" href="admin_notice_search.do?page=${endBlock + 1 }&search_field=${search_field0 }&search_field=${search_field1 }&search_field=${search_field2 }&search_keyword=${search_keyword }">›</a></li>
+							<li class="page-item"><a class="page-link" href="admin_notice_search.do?page=${allPage }&search_field=${search_field0 }&search_field=${search_field1 }&search_field=${search_field2 }&search_keyword=${search_keyword }">»</a></li>
 						</c:if>
 					</ul>
 				</nav>
@@ -96,7 +97,7 @@
 			</section>
 
 			<section id="search">
-				<form method="post" action="<%=request.getContextPath() %>/notice_search.do">
+				<form method="post" action="<%=request.getContextPath() %>/admin_notice_search.do">
 					<table class="search_table">
 						<tr>
 							<td class="search_group">
@@ -128,7 +129,7 @@
 	</div>
 
 	<footer>
-		<jsp:include page="../include/main_bottom.jsp" />
+		<jsp:include page="../include/admin_main_bottom.jsp" />
 	</footer>
 </body>
 </html>

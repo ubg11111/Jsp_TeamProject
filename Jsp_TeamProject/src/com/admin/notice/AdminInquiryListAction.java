@@ -1,21 +1,23 @@
-package com.maket.action;
+package com.admin.notice;
 
 import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
-import com.market.model.NoticeDAO;
-import com.market.model.NoticeDTO;
+import com.notice.model.InquiryDTO;
+import com.notice.model.NoticeDAO;
+import com.notice.model.NoticeDTO;
 
-public class UserNoticeListAction implements Action {
+public class AdminInquiryListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		// 공지사항 버튼 클릭 시 공지사항 목록을 조회
+		// 사용자 1:1 문의 내역 전체 리스트 조회
 		
 		int rowsize = 10; 		// 한 페이지당 보여질 게시물의 수
 		int block = 5;	 		// 아래에 보여질 페이지의 최대 수
@@ -38,8 +40,8 @@ public class UserNoticeListAction implements Action {
 		
 		NoticeDAO dao = NoticeDAO.getInstance();
 		
-		// DB상의 전체 게시물 수
-		totalRecord = dao.getBoardCount();	
+		// DB상의 전체 문의글 수
+		totalRecord = dao.getInquiryCount();	
 
 		allPage = (int) Math.ceil(totalRecord / (double)rowsize); 
 		
@@ -47,7 +49,7 @@ public class UserNoticeListAction implements Action {
 			endBlock = allPage;
 		}
 		
-		List<NoticeDTO> list = dao.getNoticeList(page, rowsize);
+		List<InquiryDTO> list = dao.getInquiryAll(page, rowsize);
 		
 		// 데이터 view 이동
 		request.setAttribute("page", page);
@@ -57,12 +59,12 @@ public class UserNoticeListAction implements Action {
 		request.setAttribute("allPage", allPage);
 		request.setAttribute("startBlock", startBlock);
 		request.setAttribute("endBlock", endBlock);
-		request.setAttribute("noticeList", list);
+		request.setAttribute("InquiryList", list);
 		
 		ActionForward forward = new ActionForward();
 		
 		forward.setRedirect(false);
-		forward.setPath("notice/notice_main.jsp");
+		forward.setPath("admin/admin_inquiry.jsp");
 		
 		return forward;
 	}
