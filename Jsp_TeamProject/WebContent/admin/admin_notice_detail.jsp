@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>공지내용</title>
 </head>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_detail.css?1">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/notice_detail.css">
 </head>
 <body>
 	<header>

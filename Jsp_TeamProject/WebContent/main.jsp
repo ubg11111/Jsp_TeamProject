@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,6 @@
 	
 	<jsp:include page="/include/main_top.jsp"></jsp:include>
 	
-
 	<div id="main">
 		<div id="content">
 			<div id="TalkMain" class="page_main">
@@ -80,27 +80,28 @@
 					</div>
 					
 					
+					
 					<!-- 메인컨텐트 첫번째  -->
 					<div class="main_content" >
 							<h3>이 상품 어때요?</h3>
 					</div>
 					<div class="main-img1">
 						<div class="card" style="width: 18rem;" class="card-main">
-							  <a href="#">
+							  <a href="<%=request.getContextPath()%>/user_product_view.do?pnum=1">
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/딸기.jpg" class="card-img-top" alt="...">
 							  </a>
 							  
 							  <div class="card-body">
 							    <p class="card-text">
 							    	<span class="nomal_price">국산 딸기 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">4,500원</span><br>
-							    	<span class="event_price">5,000원</span>
+							    	<span class="sale_price1">50%</span> <span class="sale_price2">3,500원</span><br>
+							    	<span class="event_price">7,000원</span>
 							    </p>
 							  </div>
 						</div>
 						
 						<div class="card" style="width: 18rem;" class="card-main">
-							<a href="#">
+							<a href="<%=request.getContextPath()%>/user_product_view.do?pnum=4">
 							  <img class="card-img" src="<%=request.getContextPath()%>/uploadFile/양파.jpg" class="card-img-top" alt="...">
 							</a> 
 							  
@@ -108,21 +109,21 @@
 							  <div class="card-body">
 							    <p class="card-text">
 							   		<span class="nomal_price">국산 양파 100%</span><br><br>
-							    	<span class="sale_price1">10%</span> <span class="sale_price2">2,700원</span><br>
-							    	<span class="event_price">3,000원</span>
+							    	<span class="sale_price1">10%</span> <span class="sale_price2">4,000원</span><br>
+							    	<span class="event_price">4,440원</span>
 							    </p>
 							  </div>
 						</div>
 						<div class="card" style="width: 20rem;" class="card-main">
-							  <a href="#">
+							  <a href="<%=request.getContextPath()%>/user_product_view.do?pnum=12">
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/송이버섯.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
 							  <div class="card-body">
 							    <p class="card-text">
 							  		<span class="nomal_price">국산 송이버섯 100%</span><br><br>
-							    	<span class="sale_price1">20%</span> <span class="sale_price2">3,200원</span><br>
-							    	<span class="event_price">4,000원</span>
+							    	<span class="sale_price1">10%</span> <span class="sale_price2">6,000원</span><br>
+							    	<span class="event_price">6,660원</span>
 							    </p>
 							  </div>
 						</div>
@@ -151,21 +152,21 @@
 						
 						<div class="main_img2">
 							<div class="card" style="width: 20rem;" class="card-main">
-							  <a href="#">
+							  <a href="<%=request.getContextPath()%>/user_product_view.do?pnum=9">
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/소세지.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
 							  <div class="card-body">
 							    <p class="card-text">
 							  		<span class="nomal_price">독일에서 만든 엄청난 소세지</span><br><br>
-							    	<span class="sale_price1">50%</span> <span class="sale_price2">3,000원</span><br>
-							    	<span class="event_price">6,000원</span>
+							    	<span class="sale_price1">50%</span> <span class="sale_price2">7,000원</span><br>
+							    	<span class="event_price">14,000원</span>
 							    </p>
 							 </div>
 							</div>
 							
 							<div class="card" style="width: 18rem;" class="card-main">
-							  <a href="#">
+							  <a href="<%=request.getContextPath()%>/user_product_view.do?pnum=13">
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/연어스테이크.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
@@ -191,23 +192,21 @@
 					</div>
 					<div class="main-img1" >
 						<div class="card" style="width: 18rem;" class="card-main">
-								
+							<a href="<%=request.getContextPath()%>/user_product_view.do?pnum=8">
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/바게트.png" class="card-img-top" alt="...">
-							
-							  
+							</a>
 							  <div class="card-body">
 							    <p class="card-text">
 							    	<span class="nomal_price">바게트빵</span><br><br>
-							    	<span class="sale_price2">5,500원</span><br>
+							    	<span class="sale_price2">3,000원</span><br>
 							    </p>
 							  </div>
 						</div>
 						
 						<div class="card" style="width: 18rem;" class="card-main">
-							<a href="#">
+							<a href="<%=request.getContextPath()%>/user_product_view.do?pnum=14">
 							  <img class="card-img" src="<%=request.getContextPath()%>/uploadFile/치즈케이크.jpg" class="card-img-top" alt="...">
 							</a> 
-							  
 							  
 							  <div class="card-body">
 							    <p class="card-text">
@@ -217,7 +216,7 @@
 							  </div>
 						</div>
 						<div class="card" style="width: 18rem;" class="card-main">
-							  <a href="#">
+							  <a href="<%=request.getContextPath()%>/user_product_view.do?pnum=15">
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/크로아상.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
@@ -239,33 +238,31 @@
 					</div>
 					<div class="main-img1">
 						<div class="card" style="width: 18rem;" class="card-main">
-							  <a href="#">
+							  <a href="<%=request.getContextPath()%>/user_product_view.do?pnum=16">
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/햄버거.jpg" class="card-img-top" alt="...">
 							  </a>
 							  
 							  <div class="card-body">
 							    <p class="card-text">
-							    	<span class="nomal_price">진짜순패티 햄버거</span><br><br>
-							    	<span class="sale_price1">20%</span> <span class="sale_price2">5,500원</span><br>
-							    	<span class="event_price">8,500원</span>
+							    	<span class="nomal_price">100% 소고기햄버거</span><br><br>
+							    	<span class="sale_price1">20%</span> <span class="sale_price2">5,280원</span><br>
+							    	<span class="event_price">6,600원</span>
 							    </p>
 							  </div>
 						</div>
 						<div class="card" style="width: 20rem;" class="card-main">
-							<a href="#">
+							<a href="<%=request.getContextPath()%>/user_product_view.do?pnum=7">
 							  <img class="card-img" src="<%=request.getContextPath()%>/uploadFile/마카롱.jpg" class="card-img-top" alt="...">
 							</a> 
-							  
-							  
 							  <div class="card-body">
 							    <p class="card-text">
 							   		<span class="nomal_price">마카롱 종합세트</span><br><br>
-							    	<span class="sale_price2">10,500원</span><br>
+							    	<span class="sale_price2">8,000원</span><br>
 							    </p>
 							  </div>
 						</div>
 						<div class="card" style="width: 20rem;" class="card-main">
-							  <a href="#">
+							  <a href="<%=request.getContextPath()%>/user_product_view.do?pnum=17">
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/피자.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
@@ -287,7 +284,7 @@
 					</div>
 					<div class="main-img1">
 						<div class="card" style="width: 18rem;" class="card-main">
-							  <a href="#">
+							  <a href="<%=request.getContextPath()%>/user_product_view.do?pnum=18">
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/스테이크.jpg" class="card-img-top" alt="...">
 							  </a>
 							  
@@ -299,10 +296,9 @@
 							  </div>
 						</div>
 						<div class="card" style="width: 19.5rem;" class="card-main">
-							<a href="#">
+							<a href="<%=request.getContextPath()%>/user_product_view.do?pnum=19">
 							  <img class="card-img" src="<%=request.getContextPath()%>/uploadFile/연어롤스시.jpg" class="card-img-top" alt="...">
 							</a> 
-							  
 							  
 							  <div class="card-body">
 							    <p class="card-text">
@@ -312,7 +308,7 @@
 							  </div>
 						</div>
 						<div class="card" style="width:20rem;" class="card-main">
-							  <a href="#">
+							  <a href="<%=request.getContextPath()%>/user_product_view.do?pnum=20">
 							  	<img class="card-img" src="<%=request.getContextPath()%>/uploadFile/감자튀김.jpg" class="card-img-top" alt="...">
 							  </a> 
 							  
@@ -326,7 +322,6 @@
 						</div>
 					</div>
 				</div>
-				
 				
 				
 				</div>

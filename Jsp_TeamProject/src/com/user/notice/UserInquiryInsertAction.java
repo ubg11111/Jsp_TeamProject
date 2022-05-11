@@ -22,7 +22,7 @@ public class UserInquiryInsertAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// 1:1 문의 등록
 		
-		String saveFolder = "C:\\NCS\\java\\workspace(semiPrj)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\Jsp_TeamProject\\uploadFile";
+		String saveFolder = "C:\\NCS\\workspace(jsp)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp3\\wtpwebapps\\Jsp_TeamProject\\uploadFile";
 		
 		int fileSize = 10 * 1024 * 1024;
 		

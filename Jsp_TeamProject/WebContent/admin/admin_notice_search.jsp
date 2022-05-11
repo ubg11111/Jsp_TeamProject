@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_main.css?1">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/notice_main.css">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 	

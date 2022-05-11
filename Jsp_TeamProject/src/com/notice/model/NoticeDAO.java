@@ -358,7 +358,7 @@ public class NoticeDAO {
 				count = rs.getInt(1) + 1;
 			}
 			
-			sql = "INSERT INTO ASK_MARKET VALUES(?, ?, ?, ?, ?, SYSDATE, DEFAULT, '', '')";
+			sql = "INSERT INTO ASK_MARKET VALUES(?, ?, ?, ?, ?, SYSDATE, 0, '', '')";
 			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, count);

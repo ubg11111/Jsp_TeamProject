@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>1:1문의</title>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_list.css?2">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/notice_inquiry_list.css">
 <link rel="stylesheet" href="/Jsp_TeamProject/css/fontello/css/fontello.css">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">

@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>1:1문의</title>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_list.css?2">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/notice_inquiry_list.css">
 <link rel="stylesheet" href="/Jsp_TeamProject/css/fontello/css/fontello.css">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
@@ -59,11 +59,13 @@
 							<tr class="notice_main">
 								<td class="notice_title">${dto.getAsk_title() }</td>
 								<td>${dto.getAsk_date().substring(0, 10) }</td>
-								<td><c:if test="${dto.getAsk_status() eq 0}">
-										<span style="color:#808080;">처리중</span>
+								<td>
+									<c:if test="${dto.getAsk_status() eq 0}">
+											<span style="color:#808080;">처리중</span>
 									</c:if> 
+									
 									<c:if test="${dto.getAsk_status() eq 1}">
-										<span style="color:#ea7500;">답변완료</span>
+											<span style="color:#ea7500;">답변완료</span>
 									</c:if>
 								</td>
 							</tr>

@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_form.css?2">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/notice_inquiry_form.css">
 </head>
 <body>
 	<header>
