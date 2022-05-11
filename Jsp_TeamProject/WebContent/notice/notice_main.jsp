@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_main.css?1">
+<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_main.css?10">
 </head>
 <body>
 	<header>
@@ -24,11 +24,13 @@
 				<c:set var="list" value="${noticeList }" />
 				<table class="table table-sm">
 					<tr class="table_head">
-						<th>번호</th>
-						<th class="notice_title">제목</th>
+						<th><a href="<%=request.getContextPath() %>/notice_main_list.do?num=num">번호</a></th>
+						<th class="notice_title">
+							<a href="<%=request.getContextPath() %>/notice_main_list.do?title=title">제목</a>
+						</th>
 						<th>작성자</th>
-						<th>작성일</th>
-						<th>조회</th>
+						<th><a href="<%=request.getContextPath() %>/notice_main_list.do?date=date">작성일(최근수정일)</a></th>
+						<th><a href="<%=request.getContextPath() %>/notice_main_list.do?hit=hit">조회</a></th>
 					</tr>
 					<c:forEach items="${list }" var="dto">
 						<tr class="table_content">
@@ -37,8 +39,14 @@
 							<a href="<%=request.getContextPath() %>/notice_detail.do?no=${dto.getNotice_no() }">
 								${dto.getNotice_title() }</a>
 							</td>
-							<td>${dto.getNotice_writer() }</td>
-							<td>${dto.getNotice_date().substring(0, 10) }</td>
+							<td>${dto.getAdmin_name() }</td>
+							<c:if test="${empty dto.getNotice_update() }">
+								<td>${dto.getNotice_date().substring(0, 10) }</td>
+							</c:if>
+							<c:if test="${!empty dto.getNotice_update() }">
+								<td>${dto.getNotice_date().substring(0, 10) }
+								(${dto.getNotice_update().substring(0, 10) })</td>
+							</c:if>
 							<td>${dto.getNotice_hit() }</td>
 						</tr>
 					</c:forEach>

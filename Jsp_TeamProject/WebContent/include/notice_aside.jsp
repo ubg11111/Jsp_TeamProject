@@ -11,7 +11,6 @@
 		<ul class="list-group list-group-flush fw-bold">
 			<li class="list-group-item lg"><a href="<%=request.getContextPath() %>/notice_main_list.do">공지사항</a></li>
 			<li class="list-group-item lg"><a href="<%=request.getContextPath() %>/notice_inquiry_list.do">1:1문의</a></li>
-			<li class="list-group-item lg"><a href="#">메일문의</a></li>
 		</ul>
 </body>
 </html>

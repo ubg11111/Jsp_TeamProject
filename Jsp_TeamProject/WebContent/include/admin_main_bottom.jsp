@@ -31,7 +31,7 @@
 						<div class="cc_qna">
 							<h3>
 								<button type="button" class="btn btn-light" id="cc_qna_button">
-									<a href="<%=request.getContextPath() %>/notice_inquiry_list.do" class="tit">
+									<a href="<%=request.getContextPath() %>/admin_inquiry_list.do" class="tit">
 										1:1문의
 									</a>
 								</button>

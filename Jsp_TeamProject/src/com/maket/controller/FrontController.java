@@ -63,7 +63,7 @@ public class FrontController extends HttpServlet{
 		
 		
 		FileInputStream fis = 
-				new FileInputStream("C:\\Users\\ubg11\\git\\Jsp_TeamProject\\Jsp_TeamProject\\src\\com\\maket\\controller\\mapping.properties");
+				new FileInputStream("C:\\NCS\\java\\workspace(save)\\Jsp_TeamProject\\src\\com\\maket\\controller\\mapping.properties");
 				// mapping.properties의 주소의 객체를 생성해주는 작업.
 		
 		prop.load(fis); // Properties prop.load 메서드를 통해서 fis의 프로퍼티를 불러와주는 작업
