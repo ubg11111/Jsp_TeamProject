@@ -39,3 +39,4 @@ public class UserProductViewAction implements Action {
 	}
 
 }
+>>>>>>> 809fe37fb41dabccbba348814c0bd7978d5c86fb

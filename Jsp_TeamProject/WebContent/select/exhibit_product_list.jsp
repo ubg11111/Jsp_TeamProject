@@ -153,8 +153,8 @@
 		<c:if test="${!empty plist}">
 			<c:forEach items="${plist}" var="dto">
 				<div class="card" style="width: 18rem;" id="card-main">
-					<a href="#"> <img
-						src="<%=request.getContextPath()%>/upload/${dto.getPimage()}"
+					<a href="<%=request.getContextPath()%>/user_product_view.do?pnum=${dto.getPnum()}"> 
+						<img src="<%=request.getContextPath()%>/upload/${dto.getPimage()}"
 						class="card-img-top" alt="..." id="card-img">
 					</a>
 					<div class="card-body">
@@ -171,11 +171,9 @@
 
 		<!-- 검색된 제품이 없는경우 -->
 		<c:if test="${empty plist}">
-
 			<div class="not-Search">
 				<h3>검색된 상품이 없습니다.</h3>
 			</div>
-
 		</c:if>
 
 	</div>

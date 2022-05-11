@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>1:1문의</title>
-<link rel="stylesheet" type="text/css" href="/Jsp_TeamProject/css/notice_inquiry_form.css?1">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/notice_inquiry_form.css">
 <script type="text/javascript">
 
 	function PreviewImage() {
@@ -35,11 +35,11 @@
 				<form method="post" enctype="multipart/form-data" action="<%=request.getContextPath() %>/notice_inquiry_insert.do">
 					<div>
 						<label class="label_title">제목</label>
-						<input class="form-control" name="inquiry_title" placeholder="제목을 입력해주세요" required>
+						<input class="form-control" name="inquiry_title" placeholder="제목을 입력해 주세요" required>
 					</div>
 					<div>
 						<label class="label_content">내용</label>
-						<textarea class="form-control" name="inquiry_content" rows="20" placeholder="1:1문의 내용을 작성해주세요" required></textarea>
+						<textarea class="form-control" name="inquiry_content" rows="20" placeholder="1:1문의 내용을 작성해 주세요" required></textarea>
 					</div>
 					<div class="filebox">
 						<img class="img-thumbnail" id="PreImg"/>

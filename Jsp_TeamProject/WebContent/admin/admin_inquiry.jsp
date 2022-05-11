@@ -23,27 +23,39 @@
 		});
 	});
 	
+	$(function() {
+		$(".reply").click(function() {
+			var replybtn = $(this).closest('div');
+			var replyArea = replybtn.next('div');
+			if(replyArea.is(":visible")) {
+				replyArea.hide();
+			} else {
+				replyArea.show();
+			}
+		});
+	});
+	
 </script>
 </head>
 <body>
 	<header>
-		<jsp:include page="../include/main_top.jsp" />
+		<jsp:include page="../include/admin_main_top.jsp" />
 	</header>
 	
 	<div id="body">
 		<aside id="aside">
-			<jsp:include page="../include/notice_aside.jsp" />
+			<jsp:include page="../include/admin_notice_aside.jsp" />
 		</aside>
 
 		<main id="main">
 			<section>
-			<c:set var="list" value="${inquiryList }" />
-				<h1>1:1 문의</h1> <hr>
+			<c:set var="list" value="${InquiryList }" />
+				<h1>1:1 문의 - 관리자</h1> <hr>
 				
 				<%-- 문의 내용이 없는 경우 --%>
 				<c:if test="${empty list }">
 					<div class="inquiry_empty">
-						작성한 1:1 문의가 없습니다.
+						사용자로부터 1:1 문의가 없습니다.
 					</div>
 				</c:if>
 					
@@ -51,21 +63,21 @@
 				<c:if test="${!empty list }">
 					<table class="table table-sm">
 						<tr class="notice_head">
-							<th class="notice_title">제목</th>
+							<th class="notice_title">제목	</th>
+							<th>작성자</th>
 							<th>작성일</th>
 							<th>답변상태</th>
 						</tr>
 						<c:forEach items="${list }" var="dto">
 							<tr class="notice_main">
 								<td class="notice_title">${dto.getAsk_title() }</td>
+								<td>${dto.getAsk_userId() }</td>
 								<td>${dto.getAsk_date().substring(0, 10) }</td>
-								<td>
-									<c:if test="${dto.getAsk_status() eq 0}">
-											<span style="color:#808080;">처리중</span>
+								<td><c:if test="${dto.getAsk_status() eq 0}">
+										<span style="color:#808080;">처리중</span>
 									</c:if> 
-									
 									<c:if test="${dto.getAsk_status() eq 1}">
-											<span style="color:#ea7500;">답변완료</span>
+										<span style="color:#ea7500;">답변완료</span>
 									</c:if>
 								</td>
 							</tr>
@@ -73,7 +85,7 @@
 						<%-- 답변이 없는 경우 --%>
 						<c:if test="${empty dto.getAsk_reply() }" >
 							<tr class="replyRow">
-								<td colspan="3">
+								<td colspan="4">
 									<div class="reply_main">
 										<div class="reply_img_content">
 											<span class="reply_img icon-help"></span>
@@ -86,10 +98,18 @@
 												onerror="this.style.display='none'"/>
 										</div>
 										<div class="reply_btn">
-											<input type="button" value="수정"
-												onclick="location.href='notice_inquiry_update.do?no=${dto.getAsk_no() }'">
+											<input type="button" value="답변" class="reply">
 											<input type="button" value="삭제" 
-												onclick="location.href='notice_inquiry_delete.do?no=${dto.getAsk_no() }'">
+												onclick="if(confirm('정말로 삭제하시겠습니까?')) {
+												location.href='<%=request.getContextPath() %>/admin_inquiry_delete.do?no=${dto.getAsk_no() }'}
+												else { return; }">
+										</div>
+										<div class="reply_area">
+											<form method="post" action="<%=request.getContextPath() %>/admin_inquiry_reply.do">
+												<input type="hidden" name="no" value="${dto.getAsk_no() }">
+												<textarea class="area" name="reply_text" placeholder="해당 문의 내역에 대한 답변을 작성해 주세요" required ></textarea>
+												<input type="submit" value="답변완료" class="reply_ok_btn">
+											</form>
 										</div>
 									</div>
 								</td>
@@ -99,7 +119,7 @@
 						<%-- 답변이 있는 경우 --%>
 						<c:if test="${!empty dto.getAsk_reply() }" >
 							<tr class="replyRow">
-								<td colspan="3">
+								<td colspan="4">
 									<div class="reply_main">
 										<div>
 											<div class="reply_img_content">
@@ -120,9 +140,17 @@
 													<pre class="content">${dto.getAsk_reply() }</pre>
 												</div>
 											</div>
-											<div class="reply_content">
-												${dto.getAsk_replyDate().substring(0, 10) }
+											<div class="reply_date_dbtn">
+												<div class="reply_content">
+													${dto.getAsk_replyDate().substring(0, 10) }
+												</div>
+												<div class="reply_btn">
+												<input type="button" value="삭제" 
+													onclick="if(confirm('정말로 삭제하시겠습니까?')) {
+													location.href='<%=request.getContextPath() %>/admin_inquiry_delete.do?no=${dto.getAsk_no() }'}
+													else { return; }">
 											</div>
+										</div>
 										</div>
 									</div>
 								</td>
@@ -133,15 +161,28 @@
 				</c:if>
 			</section>
 
-			<div class="inquiry_btn">
-				<input type="button" class="btn btn-secondary btn-lg" value="문의하기" 
-					onclick="location.href='notice/notice_inquiry_form.jsp'">
-			</div>
+			<section>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center">
+						<c:if test="${page > block}">
+							<li class="page-item"><a class="page-link" href="admin_inquiry_list.do?page=1">«</a></li>
+							<li class="page-item"><a class="page-link" href="admin_inquiry_list.do?page=${startBlock -1 }">‹</a></li>
+						</c:if>
+						<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
+							<li class="page-item"><a class="page-link" href="admin_inquiry_list.do?page=${i }">${i }</a></li>
+						</c:forEach>
+						<c:if test="${endBlock < allPage }">
+							<li class="page-item"><a class="page-link" href="admin_inquiry_list.do?page=${endBlock + 1 }">›</a></li>
+							<li class="page-item"><a class="page-link" href="admin_inquiry_list.do?page=${allPage }">»</a></li>
+						</c:if>
+					</ul>
+				</nav>
+			</section>
 		</main>
 	</div>
 
 	<footer>
-		<jsp:include page="../include/main_bottom.jsp" />
+		<jsp:include page="../include/admin_main_bottom.jsp" />
 	</footer>
 	
 

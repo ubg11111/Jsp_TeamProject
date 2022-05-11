@@ -26,9 +26,10 @@
 		<c:if test="${!empty famouslist}">
 			<c:forEach items="${famouslist}" var="dto">
 				<div class="card" style="width: 18rem;" id="card-main">
-					  <a href="#">
+					  <a href="<%=request.getContextPath()%>/user_product_view.do?pnum=${dto.getPnum()}">
 					  	<img src="<%=request.getContextPath()%>/upload/${dto.getPimage()}" class="card-img-top" alt="..." id="card-img">
 					  </a>
+					  
 					  <div class="card-body">
 					    <p class="card-text">
 					    	<span class="main_Pname">${dto.getPname()}</span><br><br>

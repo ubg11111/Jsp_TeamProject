@@ -1,4 +1,4 @@
-package com.maket.action;
+package com.user.notice;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpSession;
 
 import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
-import com.market.model.NoticeDAO;
 import com.market.model.UserDTO;
+import com.notice.model.NoticeDAO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 

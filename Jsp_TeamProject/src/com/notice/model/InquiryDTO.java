@@ -1,4 +1,4 @@
-package com.market.model;
+package com.notice.model;
 
 public class InquiryDTO {
 	private int ask_no;

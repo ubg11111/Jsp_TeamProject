@@ -1,4 +1,4 @@
-package com.maket.action;
+package com.user.notice;
 
 import java.io.IOException;
 
@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.maket.controller.Action;
 import com.maket.controller.ActionForward;
-import com.market.model.InquiryDTO;
-import com.market.model.NoticeDAO;
+import com.notice.model.InquiryDTO;
+import com.notice.model.NoticeDAO;
 
 public class UserInquiryUpdateAction implements Action {
 

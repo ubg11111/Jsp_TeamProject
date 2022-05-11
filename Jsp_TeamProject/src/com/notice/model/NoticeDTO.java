@@ -1,12 +1,11 @@
-package com.market.model;
+package com.notice.model;
 
 public class NoticeDTO {
 	private int notice_no; // 번호
-	private String notice_userId; // 사용자 아이디
-	private String notice_writer; // 작성자
+	private String admin_id; // 작성자 아이디
+	private String admin_name; // 작성자 이름
 	private String notice_title; // 제목
 	private String notice_content; // 내용
-	private String notice_pwd; // 비밀번호
 	private int notice_hit; // 조회수
 	private String notice_date; // 작성일
 	private String notice_update; // 수정일
@@ -15,24 +14,24 @@ public class NoticeDTO {
 		return notice_no;
 	}
 
+	public String getAdmin_id() {
+		return admin_id;
+	}
+
+	public void setAdmin_id(String admin_id) {
+		this.admin_id = admin_id;
+	}
+
+	public String getAdmin_name() {
+		return admin_name;
+	}
+
+	public void setAdmin_name(String admin_name) {
+		this.admin_name = admin_name;
+	}
+
 	public void setNotice_no(int notice_no) {
 		this.notice_no = notice_no;
-	}
-
-	public String getNotice_userId() {
-		return notice_userId;
-	}
-
-	public void setNotice_userId(String notice_userId) {
-		this.notice_userId = notice_userId;
-	}
-
-	public String getNotice_writer() {
-		return notice_writer;
-	}
-
-	public void setNotice_writer(String notice_writer) {
-		this.notice_writer = notice_writer;
 	}
 
 	public String getNotice_title() {
@@ -49,14 +48,6 @@ public class NoticeDTO {
 
 	public void setNotice_content(String notice_content) {
 		this.notice_content = notice_content;
-	}
-
-	public String getNotice_pwd() {
-		return notice_pwd;
-	}
-
-	public void setNotice_pwd(String notice_pwd) {
-		this.notice_pwd = notice_pwd;
 	}
 
 	public int getNotice_hit() {
