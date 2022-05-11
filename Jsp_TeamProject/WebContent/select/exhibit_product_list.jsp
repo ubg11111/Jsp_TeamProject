@@ -33,6 +33,8 @@
 	<c:set var="clist_D001" value="${cList_D001}" />
 	<c:set var="clist_D002" value="${cList_D002}" />
 	<c:set var="clist_D003" value="${cList_D003}" />
+	
+	<c:set var="clist_Z001" value="${cList_Z001}" />
 
 	<div id="categoryList" align="left">
 		<ul>
@@ -141,6 +143,15 @@
 				<li><a href="<%=request.getContextPath()%>/main_product_exhibit.do?code=D003">가전제품</a>
 					<ul>
 						<c:forEach items="${clist_D003}" var="dto">
+							<li><a href="<%=request.getContextPath()%>/main_product_exhibit.do?code=${dto.getCategory_code() }">${dto.getCategory_name() }</a></li>
+						</c:forEach>
+					</ul></li>
+			</c:if>
+
+			<c:if test="${!empty clist_Z001}">
+				<li><a href="<%=request.getContextPath()%>/main_product_exhibit.do?code=Z001">기타 제품</a>
+					<ul>
+						<c:forEach items="${clist_Z001}" var="dto">
 							<li><a href="<%=request.getContextPath()%>/main_product_exhibit.do?code=${dto.getCategory_code() }">${dto.getCategory_name() }</a></li>
 						</c:forEach>
 					</ul></li>
