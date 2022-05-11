@@ -18,7 +18,7 @@
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
-
+	
 	
 	<jsp:include page="/include/main_top.jsp"></jsp:include>
 	
@@ -35,35 +35,36 @@
 					    <!-- Slides -->
 					    <div class="swiper-slide">
 					    	<%-- 여름배너 스와이프 click시 상품목록 탄산음료 exhibitpage로 이동 --%>
-					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='B00100001'">
+					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code=${'Z00100001'}">
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/무더운여름배너.jpg">
 					    	</a>
 					    </div>
 					    
 					    <div class="swiper-slide">
 					   		<%-- 건강레시피배너 스와이프 click시 상품목록  생선 exhibitpage로 이동 --%>
-					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='A00200001'">
+					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code=${'A001'}">
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/건강레시피배너.jpg">
 					    	</a>
 					    </div>
 					    
 					    <div class="swiper-slide">
 					   		<%-- 홈파티배너 스와이프 click시 상품목록   육류 exhibitpage로 이동 --%>
-					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='A00300001'">
+					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code=${'A00300003'}">
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/홈파티배너.jpg">
 					    	</a>
 					    </div>
 					    
 					    <div class="swiper-slide">
 					    	<%-- 디저트모음배너 스와이프 click시 상품목록   디저트 exhibitpage로 이동 --%>
-					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='C00200001'">
+					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code=${'A00400003'}">
+					    	
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/디저트모음배너.jpg">
 					    	</a>
 					    </div>
 					    
 					 	<div class="swiper-slide">
 					 		<%-- 가전제품배너 스와이프 click시 상품목록   가전제품 exhibitpage로 이동 --%>
-					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='D00300001'">
+					    	<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code=${'D00300001'}">
 					    	<img alt="" src="<%=request.getContextPath()%>/uploadFile/가전제품배너.png">
 					    	</a>
 					   </div>
