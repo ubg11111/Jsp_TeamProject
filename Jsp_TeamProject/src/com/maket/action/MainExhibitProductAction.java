@@ -45,6 +45,8 @@ public class MainExhibitProductAction implements Action {
 		List<CategoryDTO> clist_D002 = dao2.getCategoryList("D002");
 		List<CategoryDTO> clist_D003 = dao2.getCategoryList("D003");
 		
+		List<CategoryDTO> clist_Z001 = dao2.getCategoryList("Z001");
+		
 		request.setAttribute("pList", plist);
 		
 		request.setAttribute("cList_A001", clist_A001);
@@ -62,6 +64,8 @@ public class MainExhibitProductAction implements Action {
 		request.setAttribute("cList_D001", clist_D001);
 		request.setAttribute("cList_D002", clist_D002);
 		request.setAttribute("cList_D003", clist_D003);
+		
+		request.setAttribute("cList_Z001", clist_Z001);
 		
 		ActionForward forward = new ActionForward();
 		
