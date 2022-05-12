@@ -19,9 +19,8 @@
           </button>
           <div class="collapse show" id="home-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">회원목록 & 수정</a></li>
-              <li><a href="<%=request.getContextPath() %>/admin_notice_list.do" class="link-dark rounded">공지사항 등록</a></li>
-              <li><a href="#" class="link-dark rounded">1:1문의 현황 & 답변</a></li>
+              <li><a href="<%=request.getContextPath() %>/admin_user_list.do" class="link-dark rounded">회원목록 & 수정</a></li>
+              <li><a href="<%=request.getContextPath() %>/admin_notice_list.do" class="link-dark rounded">공지사항 & 답변</a></li>
             </ul>
           </div>
         </li>
@@ -31,8 +30,7 @@
           </button>
           <div class="collapse" id="dashboard-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">매출현황</a></li>
-              <li><a href="#" class="link-dark rounded">거래내역</a></li>
+              <li><a href="<%=request.getContextPath()%>/admin_sales_list.do" class="link-dark rounded">매출현황</a></li>
             </ul>
           </div>
         </li>

@@ -16,8 +16,8 @@
     const productPrice = $("#product_price").val();
     
     $(".plus").click(function(){
-    var num = $(".numBox").val();
-    var plusNum = Number(num) + 1;
+   	const num = $(".numBox").val();
+    const plusNum = Number(num) + 1;
     
     if(plusNum >= 100) {
      $(".numBox").val(num);
@@ -29,8 +29,8 @@
    });
    
    $(".minus").click(function(){
-    var num = $(".numBox").val();
-    var minusNum = Number(num) - 1;
+    const num = $(".numBox").val();
+    const minusNum = Number(num) - 1;
     
     if(minusNum <= 0) {
      $(".numBox").val(num);
@@ -60,7 +60,7 @@
 	<div id="detail_main">
 	<c:set var="dto" value="${productCont }"/>
         <div id="detail_image">
-            <img src="<%=request.getContextPath()%>/uploadFile/${dto.getPimage()}" alt="...">
+            <img src="<%=request.getContextPath()%>/upload/${dto.getPimage()}" alt="...">
         </div>
 		
         <div id ="detail_info">

@@ -143,7 +143,7 @@
 		</div>
 		
 		<div class="pay-button">
-			<button onclick="check('${dto.getUser_pwd() }');"><fmt:formatNumber value="${total + 3000}" />원 결제하기</button>
+			<button onclick="check('${dto.getUser_pwd()}');"><fmt:formatNumber value="${total + 3000}" />원 결제하기</button>
 		</div>
 	</div>
 	

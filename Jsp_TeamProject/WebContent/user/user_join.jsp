@@ -13,11 +13,12 @@
         new daum.Postcode({
             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
+				
+                
                 // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
                 // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var roadAddr = data.roadAddress; // 도로명 주소 변수
-                var extraRoadAddr = ''; // 참고 항목 변수
+                const roadAddr = data.roadAddress; // 도로명 주소 변수
+                const extraRoadAddr = ''; // 참고 항목 변수
 				const detailAddress = document.getElementById("sample4_detailAddress");
 				const jibunAddress = document.getElementById("sample4_jibunAddress");
 				
@@ -259,13 +260,12 @@
 		
 	}
 	
-	
-	
 
 </script>
 </head>
 
 <body>
+
 <jsp:include page="/include/main_top.jsp"></jsp:include>
 <div class="container">
 	<h2>회원가입</h2>
@@ -327,7 +327,7 @@
 			<tr>
 				<th>휴대폰<span class="ico">*</span></th>
 				<td>
-					<input type="text" id="user_phone" name="user_phone" placeholder="숫자만 입력해주세요">
+					<input type="text" id="user_phone" name="user_phone" placeholder="'-'제외하고 숫자만 입력해주세요">
 				</td>
 			</tr>
 
@@ -402,7 +402,7 @@
 
 					<span class="txt txt_case1">추천인 아이디와 참여 이벤트명 중 하나만 선택 가능합니다.</span>
 					<span class="txt txt_case1">가입 이후, 수정이 불가합니다.</span>
-					<span class="txt txt_case1">대소문자 및 띄어스기에 유의해 주세요.</span>
+					<span class="txt txt_case1">대소문자 및 띄어쓰기에 유의해 주세요.</span>
 					</div>
 				</td>
 			</tr>
@@ -486,7 +486,7 @@
 <jsp:include page="/include/main_bottom.jsp"></jsp:include>
 
 
-<script src="<%=request.getContextPath()%>/js/join.js"></script>
+<script src="<%=request.getContextPath()%>/js/join.js" defer></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

@@ -47,7 +47,7 @@ public class UserCartListAction implements Action {
 		} else {
 			out.println("<script>");
 			out.println("alert('로그인하셔야 본 서비스를 이용하실 수 있습니다')");
-			out.println("history.back()");
+			out.println("location.href='user_login.do'");
 			out.println("</script>");
 			
 			return null;
