@@ -143,16 +143,15 @@
             </form>
             
             
-            <form method="post" action="<%=request.getContextPath()%>/user_liked_list.do" onsubmit="return submitCheck();">
+            <form method="post" action="<%=request.getContextPath()%>/user_liked_add.do" onsubmit="return submitCheck();">
             	<div class="favorite_main">
             		<input type="hidden" id="userId" name="userId" value="${userCont.getUser_id()}">
 		            <input type="hidden" name="pnum" value="${dto.getPnum()}">
 		            <input type="hidden" name="pname" value="${dto.getPname()}">
 		            <input id="product_price" name="price" type="hidden" value="${dto.getPrice()}">
-		            <input type="hidden" name="pspec" value="${dto.getPspec()}">
 		            <input type="hidden" name="pimage" value="${dto.getPimage()}">
             		
-            		<button class="favorite_button"><i class="fa-solid fa-heart fa-2x"></i></button>
+            		<button type="submit" class="favorite_button"><i class="fa-solid fa-heart fa-2x"></i></button>
             	</div>
             </form>
             

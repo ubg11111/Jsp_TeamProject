@@ -11,7 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-public class CartDAO {
+public class LikedDAO {
 
 	Connection con = null;
 	PreparedStatement pstmt = null;
@@ -20,15 +20,16 @@ public class CartDAO {
 	String sql = null;
 	
 	// DAO 싱글톤 방식으로 만들기
-	private static CartDAO instance = null;
+	private static LikedDAO instance = null;
 	
-	private CartDAO() {	}
+	private LikedDAO() {	}
+	
 	
 	// getInstance() 메서드
-	public static CartDAO getInstance() {
+	public static LikedDAO getInstance() {
 		
 		if(instance == null) {
-			instance = new CartDAO();
+			instance = new LikedDAO();
 		}
 		
 		return instance;
@@ -80,27 +81,26 @@ public class CartDAO {
 
 	
 	// 장바구니 리스트를 받아오는 메세드
-	public List<CartDTO> getCartList(String id) {
+	public List<LikedDTO> getLikedList(String id) {
 		
-		List<CartDTO> list = new ArrayList<CartDTO>();
+		List<LikedDTO> list = new ArrayList<LikedDTO>();
 		
 		try {
 			openConn();
 			
-			sql = "select * from cart_market where cart_userId = ? order by cart_num desc";
+			sql = "select * from liked_market where liked_userId = ? order by liked_num desc";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				CartDTO dto = new CartDTO();
-				dto.setCart_num(rs.getInt("cart_num"));
-				dto.setCart_pnum(rs.getInt("cart_pnum"));
-				dto.setCart_userId(rs.getString("cart_userId"));
-				dto.setCart_pname(rs.getString("cart_pname"));
-				dto.setCart_pqty(rs.getInt("cart_pqty"));
-				dto.setCart_price(rs.getInt("cart_price"));
-				dto.setCart_pimage(rs.getString("cart_pimage"));
+				LikedDTO dto = new LikedDTO();
+				dto.setLiked_num(rs.getInt("liked_num"));
+				dto.setLiked_pnum(rs.getInt("liked_pnum"));
+				dto.setLiked_userId(rs.getString("liked_userId"));
+				dto.setLiked_pname(rs.getString("liked_pname"));
+				dto.setLiked_price(rs.getInt("liked_price"));
+				dto.setLiked_pimage(rs.getString("liked_pimage"));
 				list.add(dto);
 			}
 			
@@ -112,24 +112,24 @@ public class CartDAO {
 		}
 		
 		return list;
-	}	// getCartList() 메서드 end
+	}	// getlikedList() 메서드 end
 
 
 	// 장바구니 아이템 삭제 메서드
-	public int deleteCart(int no) {
+	public int deleteLiked(int no) {
 		
 		int result = 0;
 		
 		try {
 			openConn();
 			
-			sql = "delete from cart_market where cart_num = ?";
+			sql = "delete from liked_market where liked_num = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, no);
 			
 			result = pstmt.executeUpdate();
 			
-			sql = "update cart_market set cart_num = cart_num - 1 where cart_num > ?";
+			sql = "update liked_market set liked_num = liked_num - 1 where liked_num > ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, no);
 			pstmt.executeUpdate();
@@ -142,18 +142,18 @@ public class CartDAO {
 		}
 		
 		return result;
-	}	// deleteCart() 메서드 end
+	}	// deleteLiked() 메서드 end
 
 
 	// 장바구니 추가 메서드
-	public int insertCart(CartDTO dto) {
+	public int insertLiked(LikedDTO dto) {
 		
 		int result = 0, count = 0;
 		
 		try {
 			openConn();
 			
-			sql = "select max(cart_num) from cart_market";
+			sql = "select max(liked_num) from liked_market";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
@@ -161,15 +161,14 @@ public class CartDAO {
 				count = rs.getInt(1) + 1;
 			}
 			
-			sql = "insert into cart_market values(?, ?, ?, ?, ?, ?, ?)";
+			sql = "insert into liked_market values(?, ?, ?, ?, ?, ?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, count);
-			pstmt.setInt(2, dto.getCart_pnum());
-			pstmt.setString(3, dto.getCart_userId());
-			pstmt.setString(4, dto.getCart_pname());
-			pstmt.setInt(5, dto.getCart_pqty());
-			pstmt.setInt(6, dto.getCart_price());
-			pstmt.setString(7, dto.getCart_pimage());
+			pstmt.setInt(2, dto.getLiked_pnum());
+			pstmt.setString(3, dto.getLiked_userId());
+			pstmt.setString(4, dto.getLiked_pname());
+			pstmt.setInt(5, dto.getLiked_price());
+			pstmt.setString(6, dto.getLiked_pimage());
 			
 			result = pstmt.executeUpdate();
 			
@@ -181,18 +180,18 @@ public class CartDAO {
 		}
 		
 		return result;
-	}	// insertCart() 메서드 end
+	}	// insertLiked() 메서드 end
 
 
 	// 장바구니를 비우는 메서드
-	public int deleteAllCart(String id) {
+	public int deleteAllliked(String id) {
 		
 		int result = 0;
 		
 		try {
 			openConn();
 			
-			sql = "delete cart_market where cart_userId = ?";
+			sql = "delete liked_market where liked_userId = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			result = pstmt.executeUpdate();
@@ -205,6 +204,6 @@ public class CartDAO {
 		}
 		
 		return result;
-	}	// DeleteAllCart() 메소드 end
+	}	// DeleteAllliked() 메소드 end
 	
 }
