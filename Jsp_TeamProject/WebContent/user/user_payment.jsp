@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="css/bottom.css">
 <link rel="stylesheet" type="text/css" href="css/payment.css">
 <script type="text/javascript">
+	
 	function check(pwd) {
 		var test = prompt("비밀번호를 입력하세요.");
 		
@@ -142,7 +143,7 @@
 		</div>
 		
 		<div class="pay-button">
-			<button onclick="check(${dto.getUser_pwd() })"><fmt:formatNumber value="${total + 3000}" />원 결제하기</button>
+			<button onclick="check('${dto.getUser_pwd() }');"><fmt:formatNumber value="${total + 3000}" />원 결제하기</button>
 		</div>
 	</div>
 	
