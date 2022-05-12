@@ -158,8 +158,8 @@
 }
 
 .favorite_main{
-	position: absolute;
-	bottom: 100px;
+	position: relative;
+	bottom: 130px;
 }
 
 .favorite_button{

@@ -57,6 +57,7 @@
 </head>
 <body>
 <jsp:include page="../include/main_top.jsp" />
+	
 	<div id="detail_main">
 	<c:set var="dto" value="${productCont }"/>
         <div id="detail_image">
