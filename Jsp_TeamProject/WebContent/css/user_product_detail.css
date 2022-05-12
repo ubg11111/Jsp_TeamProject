@@ -157,7 +157,17 @@
     border-radius: 3px;
 }
 
+.favorite_main{
+	position: absolute;
+	bottom: 100px;
+}
 
+.favorite_button{
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background-color: white;
+	padding: 13px;
+}
 
 
 

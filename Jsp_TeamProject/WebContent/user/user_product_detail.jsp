@@ -137,11 +137,17 @@
                         <td colspan="2"  align="right">
                             <button class="cart_button"type="submit" class="btn btn-primary">장바구니 담기</button>
                         </td>
-                        
                     </tr>
-                    
                 </table>
             </form>
+            
+            
+            <form method="post" action="<%=request.getContextPath()%>/user_liked_list.do" onsubmit="return submitCheck();">
+            	<div class="favorite_main">
+            		<button class="favorite_button"><i class="fa-solid fa-heart fa-2x"></i></button>
+            	</div>
+            </form>
+            
         </div>
     </div>
 
