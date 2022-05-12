@@ -33,7 +33,6 @@ const check_input6 = document.getElementById("exampleRadios6");
 function screenTxtId(){
     txt_userId[0].style.display = 'block';
     txt_userId[1].style.display = 'block';
-    
 }
 
 function screenTxtPwd(){
@@ -79,11 +78,43 @@ function check_input(){
 }
 
 
+// tab키는 10진수값으로 9코드를 가진다
+function tabKeyId(e){
+	let tabkey = e.key || e.keyCode;
+	if(e.target === input_userId){
+		if(tabkey === 9 || tabkey === 'Tab')
+		screenTxtId();
+	}
+};
+
+function tabKeyPwd1(e){
+	let tabkey = e.key || e.keyCode;
+	if(e.target === input_userPwd){
+		if(tabkey === 9 || tabkey === 'Tab')
+		screenTxtPwd();
+	}
+};
+
+function tabKeyPwd2(e){
+	let tabkey = e.key || e.keyCode;
+	if(e.target === input_userPwd2){
+		if(tabkey === 9 || tabkey === 'Tab')
+		screenTxtPwd2();
+	}
+};
+
+
 
 /*input창 클릭시 하단 텍스트 표시*/
 input_userId.addEventListener("click",screenTxtId);
 input_userPwd.addEventListener("click",screenTxtPwd);
 input_userPwd2.addEventListener("click",screenTxtPwd2);
+
+// tab키 클릭시
+input_userId.addEventListener("keyup", tabKeyId);
+input_userPwd.addEventListener("keyup",tabKeyPwd1);
+input_userPwd2.addEventListener("keyup",tabKeyPwd2);
+
 
 /*추가입력사항 라디오버튼 클릭시 인풋창 및 텍스트 표시*/
 radio_recommendId.addEventListener("click",screenTxtRecommand);

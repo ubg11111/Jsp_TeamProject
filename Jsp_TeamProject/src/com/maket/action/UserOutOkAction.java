@@ -28,13 +28,13 @@ public class UserOutOkAction implements Action {
 			System.out.println("삭제 실시");
 			int check = dao.userOut(user_no);
 			if(check == 1) {
+				
 				HttpSession session = request.getSession();
 				session.invalidate();
 				forward.setRedirect(false);
 				forward.setPath("main.jsp");
 				
 			}else {
-				
 				out.println("<script>");
 				out.println("alert('삭제실패')");
 				out.println("history.back()");

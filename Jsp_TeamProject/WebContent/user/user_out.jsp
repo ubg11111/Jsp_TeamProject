@@ -6,6 +6,29 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/user_modify.css">
+<script type="text/javascript">
+	
+	function submitCheck(){
+	    const userPwd = document.getElementById("hidden_oldPwd");
+	    const inputPwd = document.getElementById("user_Pwd");
+	    
+	    if(confirm("정말로 탈퇴하시겠습니까?")){
+	       if(userPwd.value == inputPwd.value){
+	          alert("지금까지 이용해 주셔서 감사합니다.");
+	          return true;
+	       }else{
+	          alert("비밀번호가 일치하지 않습니다.");
+	          inputPwd.value= "";
+	          inputPwd.focus();
+	          return false;
+	       }
+	    }else{
+	       alert("취소를 클릭하셨습니다.");
+	       return false;
+	    }
+	 }
+
+</script>
 </head>
 <body>
 	<jsp:include page="/include/main_top.jsp"></jsp:include>
@@ -13,7 +36,7 @@
 	<div class="title">
 	<span>회원탈퇴 안내</span>
 	</div>
-	<form method="post" action="<%=request.getContextPath()%>/user_out_ok.do">
+	<form method="post" action="<%=request.getContextPath()%>/user_out_ok.do" onsubmit="return submitCheck();">
 	<input type="hidden" name="user_no" value = "${userCont.getUser_no()}">
 		<table border="0" cellspacing="0" >
 			<tr>
