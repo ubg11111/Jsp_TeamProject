@@ -22,8 +22,9 @@ public class UserCartAddAction implements Action {
 		String cart_pname = request.getParameter("pname").trim();
 		int cart_pqty = Integer.parseInt(request.getParameter("pqty").trim());
 		int cart_price = Integer.parseInt(request.getParameter("price").trim());
-		String cart_pspec = request.getParameter("pspec").trim();
 		String cart_pimage = request.getParameter("pimage").trim();
+		System.out.println("cart_pqty" + cart_pqty);
+		System.out.println("cart_pimage" + cart_pimage);
 		
 		CartDTO dto = new CartDTO();
 		dto.setCart_pnum(cart_pnum);
@@ -31,7 +32,6 @@ public class UserCartAddAction implements Action {
 		dto.setCart_pname(cart_pname);
 		dto.setCart_pqty(cart_pqty);
 		dto.setCart_price(cart_price);
-		dto.setCart_pspec(cart_pspec);
 		dto.setCart_pimage(cart_pimage);
 		
 		CartDAO dao = CartDAO.getInstance();
