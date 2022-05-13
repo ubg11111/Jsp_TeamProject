@@ -133,10 +133,9 @@
 				<!-- 특가 배너 이미지  -->
 				<div align="center">
 					<%-- 집콕배너 click시 상품목록   가정용품 exhibitpage로 이동 --%>
-					<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code='D00100001'">
-					<img class="event_banner" src="<%=request.getContextPath()%>/uploadFile/집콕특가 배너.png">
+					<a href="<%=request.getContextPath()%>/main_product_exhibit.do?code=${'D00300001'}">
+						<img class="event_banner" src="<%=request.getContextPath()%>/uploadFile/집콕특가 배너.png">
 					</a>	
-							
 				</div>
 				
 				
