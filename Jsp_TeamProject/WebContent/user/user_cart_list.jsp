@@ -78,7 +78,7 @@
 						<c:if test="${empty list }">
 							<tr class="empty-cart">
 								<td colspan="5">
-									<div>
+									<div align="center">
 										<h3>장바구니에 담긴 상품이 없습니다</h3>
 									</div>
 								</td>

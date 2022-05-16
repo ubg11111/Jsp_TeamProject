@@ -22,7 +22,7 @@ public class AdminProductInputOkAction implements Action {
 		
 		// 첨부파일 저장위치
 		String saveFolder = 
-		"C:\\Users\\ubg11\\git\\Jsp_TeamProject\\Jsp_TeamProject\\WebContent\\upload";
+		"C:\\NCS\\workspace(jsp)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp3\\wtpwebapps\\Jsp_TeamProject\\upload";
 		
 		// 첨부파일 용량(크기) 제한 - 파일 업로드 최대 크기
 		int fileSize = 10 * 1024 * 1024;  // 10MB	

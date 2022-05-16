@@ -121,7 +121,7 @@
 			</c:if>
 			
 			<c:if test="${empty list }">
-				<h4>주문 내역이 없습니다.</h4>
+				<h4 class="order_not_list">주문 내역이 없습니다.</h4>
 			</c:if>
 			
 		</div>

@@ -40,6 +40,11 @@
 	height: 200px;
 }
 
+#card_text_box{
+	height: 150px;
+}
+
+
 #card-main{
 	margin: 50px 0px 200px 0px;
 }

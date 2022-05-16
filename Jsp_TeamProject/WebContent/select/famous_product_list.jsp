@@ -30,7 +30,7 @@
 					  	<img src="<%=request.getContextPath()%>/upload/${dto.getPimage()}" class="card-img-top" alt="..." id="card-img">
 					  </a>
 					  
-					  <div class="card-body">
+					  <div class="card-body" id="card_text_box">
 					    <p class="card-text">
 					    	<span class="main_Pname">${dto.getPname()}</span><br><br>
 					    	
