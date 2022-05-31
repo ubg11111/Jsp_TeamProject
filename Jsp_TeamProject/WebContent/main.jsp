@@ -18,7 +18,7 @@
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
-	
+	<!-- 주석처리 -->
 	
 	<jsp:include page="/include/main_top.jsp"></jsp:include>
 	
